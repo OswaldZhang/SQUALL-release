@@ -1,0 +1,5 @@
+{
+  "internal_test_loss": 0.21179069578647614,
+  "internal_test_mean_gene_pearson": 0.30033308267593384,
+  "n_internal_test_tiles": 674
+}

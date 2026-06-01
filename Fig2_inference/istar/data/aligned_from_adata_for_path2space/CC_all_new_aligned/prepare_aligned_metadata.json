@@ -1,0 +1,15 @@
+{
+  "sample": "CC_all_new_aligned",
+  "adata_path": "/lustre1/zxzeng/bwqin/STORM/Xenium/CC_Xenium_public/adata.h5ad",
+  "public_dir": "/lustre1/zxzeng/bwqin/STORM/Xenium/CC_Xenium_public",
+  "he_ome_path": "/lustre1/zxzeng/bwqin/STORM/Xenium/CC_Xenium_public/Xenium_Prime_Cervical_Cancer_FFPE_he_image.ome.tif",
+  "target_mpp": 0.5,
+  "original_mpp": 0.27381533896542964,
+  "resize_scale_factor": 1.8260481749823634,
+  "image_W": 20930,
+  "image_H": 25489,
+  "n_obs": 840387,
+  "n_vars": 5101,
+  "n_in_image": 840382,
+  "in_image_fraction": 0.9999940503601317
+}

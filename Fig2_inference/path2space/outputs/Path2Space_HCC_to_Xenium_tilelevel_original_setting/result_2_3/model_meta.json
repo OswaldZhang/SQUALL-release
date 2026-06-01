@@ -1,0 +1,9 @@
+{
+  "n_inputs": 768,
+  "hidden": 768,
+  "n_outputs": 4828,
+  "dropout": 0.2,
+  "output_relu": true,
+  "best_epoch": 68,
+  "best_valid_loss": 0.001434495043940842
+}

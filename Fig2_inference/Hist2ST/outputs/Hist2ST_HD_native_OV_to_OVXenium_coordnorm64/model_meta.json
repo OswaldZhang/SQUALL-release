@@ -1,0 +1,16 @@
+{
+  "tag": "5-7-2-8-4-16-32",
+  "fig_size": 112,
+  "crop_size": 224,
+  "n_pos": 64,
+  "coord_mode": "normalized",
+  "n_genes": 4828,
+  "library_size": 1.0,
+  "prune": "NA",
+  "neighbor": 4,
+  "policy": "mean",
+  "zinb": 0.25,
+  "nb": "F",
+  "bake": 5,
+  "lamb": 0.5
+}

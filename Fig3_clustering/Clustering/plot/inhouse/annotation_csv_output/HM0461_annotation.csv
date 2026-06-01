@@ -1,0 +1,3030 @@
+barcode,annotation
+GTTAAAGTAGGACTGG-1,normal tissue
+AACCAAGACTTCTCTG-1,Tumor
+AGCAACCGAAAGTAAT-1,suspected tumor
+GCTGGTTTAGGCCATA-1,suspected tumor
+TAAATGAATCCGTTTC-1,Stroma
+CCTGTGAAACCGTAAC-1,Stroma
+CTTGGCCAAGCTGGGA-1,normal tissue
+CATAAGAAGCTTGGCT-1,stroma with high immune infiltration
+ACGTGCGCCTCGTGCA-1,Stroma
+CCTATGGCTCCTAGTG-1,
+GTCCCAACGTAAAGTA-1,
+AAGGCTGTGCTCATCG-1,
+TGATTCTGTCGCCGGT-1,stroma with high immune infiltration
+GTTTACGTTCCATCTG-1,normal tissue
+TAGAAGAAGGGTTACA-1,Stroma
+TGGGCAATAGTTGGGT-1,normal tissue
+CTCTATTTGGCTGCAG-1,normal tissue
+CCGGAGCGTACTTTCT-1,normal tissue
+ATTGGATTACAGCGTA-1,normal tissue
+TTGTAAGGCCAGTTGG-1,normal tissue
+TGTTGTCAAGAAGTCT-1,normal tissue
+GTTCATCGTTTGGCTG-1,normal tissue
+GAGGTACGCGTGTCCC-1,Stroma
+GCTACAATCGAGGATA-1,Stroma
+TGGGCCACAAGAGCGC-1,stroma with high immune infiltration
+GCAGTGTGGCTATAGG-1,Stroma
+GATCGCGGGCTCTCCA-1,stroma with high immune infiltration
+AAACCGTTCGTCCAGG-1,stroma with high immune infiltration
+CGGAGTTTGAGAGACA-1,Stroma
+CGCAAACACGAGTTAC-1,Stroma
+CGGCAAACATCGTGCG-1,normal tissue
+GCCTATTCCGATATAG-1,Stroma
+ATTGCGATCAGTAACT-1,normal tissue
+GTGAGCGTGCTGCACT-1,Stroma
+TATCTTGCAATACAAC-1,suspected tumor
+GTGTACGAACCGTTCC-1,stroma with high immune infiltration
+GTGGAGCGTTTACCGA-1,suspected tumor
+GGGCCCTACGAAAGGG-1,Stroma
+TCGTAACTCCCAAGAC-1,Stroma
+ATACTTGTTCTCGAGC-1,Stroma
+GGTACATCTGGGACGA-1,
+TGGCAACTCGCGCGCC-1,normal tissue
+AAATGGTCAATGTGCC-1,
+TTGGTTGCGGTGCGCG-1,suspected tumor
+TTGATTATGCAGATGA-1,Stroma
+TCATTTAAGTCTCCGA-1,
+AGCTGAAGTAAACCAA-1,normal tissue
+CCACAATGTACGTCTT-1,normal tissue
+CATTCGTCGTAGCGGT-1,Stroma
+GATCCTAAATCGGGAC-1,normal tissue
+ATCAGGTAGCTGACAG-1,normal tissue
+AGAGTAAACTTCACTA-1,normal tissue
+CGTCGCATGTGAGCCA-1,Stroma
+TCAGCAAATGCATCTC-1,stroma with high immune infiltration
+GGTCTCCAAGTAGTGC-1,smooth muscle
+CCTCTACAAGGATTGG-1,normal tissue
+CGTTGTTTCAATTCCC-1,Stroma
+GTGTCGTATAGCGTTC-1,stroma with high immune infiltration
+TGCCTAATTGAAGATT-1,normal tissue
+CAATGTGCCAACCCTT-1,normal tissue
+TAATAGTGACGACCAG-1,normal tissue
+CTAACAGCACAATAAC-1,suspected tumor
+AACATTGAAGTTGATC-1,normal tissue
+AGTGCTTGCACGAATA-1,normal tissue
+GCTGAGGCGTGAGTAT-1,normal tissue
+GTTTCATATCGTCGCT-1,Tumor
+TAACAATATTTGTTGC-1,Stroma
+CATACTATGTAATTGT-1,stroma with high immune infiltration
+GCTGGCGGCGCATGCT-1,stroma with high immune infiltration
+AAATAGGGTGCTATTG-1,normal tissue
+AAACGGGCGTACGGGT-1,Stroma
+ATATCAACCTACAGAG-1,stroma with high immune infiltration
+CTATCGGGTCTCAACA-1,
+GACCCAATTATGATAC-1,suspected tumor
+GCAACACACTAGAACT-1,suspected tumor
+CCGACGGGCATGAGGT-1,suspected tumor
+CGATTCGCCTGGCTGC-1,stroma with high immune infiltration
+TACGACTGCCTCTTAG-1,normal tissue
+CCACGAGAAGAGAATC-1,stroma with high immune infiltration
+TACTCTCCGAACAAAT-1,normal tissue
+AATTACGAGACCCATC-1,suspected tumor
+TGTTTGAGATCGTCAG-1,normal tissue
+CACATATTAGCAGGAT-1,normal tissue
+TGCAGAACTATATCGT-1,Tumor
+CCATCGCAGTTAAACT-1,normal tissue
+TGACAGGACAAGTCCA-1,suspected tumor
+CTAGTCACGTCTTAAG-1,
+AAAGAATGACCTTAGA-1,Stroma
+ACTCATGGCAGCCTTC-1,normal tissue
+TATGTCTCATTGTGCC-1,normal tissue
+TCCACCTCTAGCCTTT-1,normal tissue
+TGGCAAGCACAAGTCG-1,
+GGGCGTCCACTGGCTC-1,normal tissue
+CATATGTCAGGCTACG-1,Tumor
+TCAGCCAATCCGTAAA-1,Stroma
+AATTGTGGTTGCCAAA-1,Stroma
+GTTTGTTAGCCAAGTA-1,suspected tumor
+AAGAGATGAATCGGTA-1,Stroma
+ATCGCACGCCGGGAGA-1,Stroma
+ACCAATATGCAAGTTA-1,stroma with high immune infiltration
+GGTTCTACTCGTCTGA-1,stroma with high immune infiltration
+GACGGTCCTAGGGTGT-1,stroma with high immune infiltration
+TGCCTAAATTTAATAG-1,normal tissue
+TTGGGACACTGCCCGC-1,stroma with high immune infiltration
+GCCACAATTTAAGGAC-1,Tumor
+GATATGCGGTAGCCAA-1,stroma with high immune infiltration
+CACCCGGTTTGTGACT-1,
+ACAATTGTGTCTCTTT-1,normal tissue
+ATATACGCTCGTGACG-1,Stroma
+TTCTGCCGCGCCTAGA-1,normal tissue
+GTATAGGACTCAGTAG-1,
+CTGCTGAGGCCACGAA-1,Tumor
+AAATTGATAGTCCTTT-1,stroma with high immune infiltration
+GAGTAGATACTAGTTG-1,Stroma
+TACGTAAAGCGGAGTG-1,Stroma
+TTGAATATGGACTTTC-1,stroma with high immune infiltration
+TTGAAGAATTCCCAGG-1,interlobular bile duct
+AACGGACGTACGTATA-1,normal tissue
+TCAGAGTGTGAGCATG-1,Stroma
+CGTACCTGATAGGCCT-1,stroma with high immune infiltration
+GCTCTAAACCCTGACG-1,Stroma
+AGTGAGACTTCCAGTA-1,stroma with high immune infiltration
+GGTGCTGGTACACATT-1,stroma with high immune infiltration
+ACCTCCGCCCTCGCTG-1,normal tissue
+AACCATAGGGTTGAAC-1,blood vessel
+ACCGATGGTAGCATCG-1,stroma with high immune infiltration
+TGTTCGTATTGCGGTG-1,normal tissue
+GGAAACCTTGTTGAAT-1,normal tissue
+GTTGAGTCCCGCCGGT-1,normal tissue
+CACAGCTAGGGAGTGA-1,
+GACAAGAGATGAGATT-1,Stroma
+CTCGGGATAACACCTA-1,normal tissue
+GAAGTCTCCCTAGCGA-1,normal tissue
+AAACTGCTGGCTCCAA-1,normal tissue
+GACCGCGTCTGACGTG-1,normal tissue
+ATCGGAGACAGACGGC-1,normal tissue
+GGTACACCAGATTTAT-1,normal tissue
+ATCCTGAATCGCTGCG-1,Tumor
+TGATCCCAGCATTAGT-1,normal tissue
+TTCTGCTAGACTCCAA-1,normal tissue
+CCAGTCAAATCTCTTA-1,Stroma
+CGGCAGGGTCGGGTTG-1,normal tissue
+AAGGTGATAAACCAGC-1,normal tissue
+TCCGATTACATTGCCG-1,Stroma
+TTACTAAAGGACTTTA-1,normal tissue
+GTCTCAAGGCCCGGCT-1,
+TGCCGTTCTTAATCGG-1,suspected tumor
+GTTTGGCCCAAGTTAT-1,normal tissue
+AGCAAAGGCCGCTAGT-1,Stroma
+GATATTTCCTACATGG-1,normal tissue
+CGGTCAAGTGGGAACC-1,normal tissue
+ATGAGGGCAGCGGCTA-1,stroma with high immune infiltration
+TACTTTCCGCACGCCA-1,suspected tumor
+AATTGAACGCTCTGGT-1,stroma with high immune infiltration
+AACAATACATTGTCGA-1,
+GGTTGTGTAGCCTGGC-1,Stroma
+CGTGCTTCTACCTAAA-1,blood vessel
+GAATGTGGTCCGGATT-1,stroma with high immune infiltration
+AGCCGTGGCTAAATGT-1,suspected tumor
+TAAAGACAACCCTTTA-1,stroma with high immune infiltration
+ATTCGACGCCGGGCCT-1,Tumor
+CCAGCTTCCGCCCGCA-1,Stroma
+CATCTGCAGGATCATT-1,Stroma
+AGCATATCAATATGCT-1,normal tissue
+ATACAGGCCCTCCAAT-1,stroma with high immune infiltration
+TTCGACGGGAAGGGCG-1,Stroma
+ACGCTGTGAGGCGTAG-1,Stroma
+CGGACCTTTACGTCCC-1,Stroma
+GCGTAAATGGCCATAA-1,normal tissue
+TGTGTTCGTATCCAAG-1,Stroma
+TTGACAGGAGCTCCCG-1,normal tissue
+TTGACAGGAGCTCCCG-1,blood vessel
+AGCGAGACGTGAAGGC-1,normal tissue
+AAATTACCTATCGATG-1,normal tissue
+GCATAGAGCACTCAGG-1,normal tissue
+GTCCGGACCTGAAATT-1,normal tissue
+GTATGTGGGTCTAGTT-1,normal tissue
+TTCGCACTCGCGTGCT-1,Stroma
+TGTGGCTCCCACCAAC-1,normal tissue
+ATCAGTAGGCAGGGAT-1,normal tissue
+AGTCGGCTCAACTTTA-1,Tumor
+TTGTTTCACATCCAGG-1,stroma with high immune infiltration
+CAGTTCAAATTGACAC-1,stroma with high immune infiltration
+CAGCAGTCTGTGCTGC-1,Stroma
+AACAGGATGGGCCGCG-1,Stroma
+ACTATCTGCCCGCGTA-1,normal tissue
+CAACTATATCGAATGC-1,stroma with high immune infiltration
+GGGCGATATGTGTGAA-1,stroma with high immune infiltration
+TATATAGGGCTTTACG-1,normal tissue
+TCGACAACTGAACCCG-1,suspected tumor
+GAAGGAGTCGAGTGCG-1,Stroma
+ACCCGTGTCATCAGTA-1,normal tissue
+AATGATGCGACTCCTG-1,stroma with high immune infiltration
+CCGCACGTGACCTCGG-1,Stroma
+TCGCTCGATATATTCC-1,stroma with high immune infiltration
+GAAATTGTCTCTATAA-1,
+GGTTAGTTACGGCGCC-1,Stroma
+CGGCCCAACCTGTAGT-1,normal tissue
+GAGCGCTGTTAGGTAA-1,Stroma
+CACATTCTTTCGATGG-1,
+AGAGGCTTCGGAAACC-1,normal tissue
+CCCTCCTCGCTCGTAT-1,normal tissue
+CTATGGGAAGCGGAAT-1,normal tissue
+CTGTACTTCTTAGCAT-1,stroma with high immune infiltration
+CATAAGCTCTCCGTCT-1,
+AATGTTGTCGTGAGAC-1,Stroma
+ACAATTTGAGCAGTGG-1,normal tissue
+CTGCCCACGAAGCGTT-1,Stroma
+GGCAATAGTCAATGAG-1,stroma with high immune infiltration
+CGTGAAGTTAATTCAC-1,normal tissue
+TAACTATCGAAGGTCC-1,Stroma
+GTGGGAAGACTGAATC-1,suspected tumor
+TGCTCGGTGGGTCACC-1,Stroma
+GGAGCACCAAGAACTA-1,normal tissue
+GTCTTGTAGCTATTCA-1,normal tissue
+TCACGATGTCCGTGGA-1,Tumor
+GTACGTTTGCCCGTCA-1,normal tissue
+ATCCACATCGACAGAA-1,Stroma
+CTAGGCGCCCTATCAG-1,normal tissue
+GCTAAGTAGTTTCTCT-1,stroma with high immune infiltration
+TCTTCGATACCAATAA-1,
+TGCAGATCGTCCTAGG-1,Tumor
+GCCGTGGAAGAAATGT-1,stroma with high immune infiltration
+GCTAGTAGAGCTTGTA-1,normal tissue
+GGTTAGCTATATGTCT-1,normal tissue
+ATACTACCCGTACCAC-1,Stroma
+AGAGATCTCTAAAGCG-1,Tumor
+TGTACGAACAAATCCG-1,normal tissue
+GATACCGTGTCGGAGT-1,normal tissue
+GCACAAACCCTAGATG-1,normal tissue
+CCGCCGTTGAGGATAA-1,normal tissue
+TCTAATACTGCCTCAG-1,suspected tumor
+GCACGTGGTTTACTTA-1,Stroma
+GACAAACATATGCAGG-1,normal tissue
+TCGCTGCCAATGCTGT-1,Stroma
+CGGGCAGCTAAACCGC-1,stroma with high immune infiltration
+CCATATGGAAACTATA-1,normal tissue
+GATCTCGACGCTGTGG-1,normal tissue
+AGCATTACGAGGCAAG-1,Stroma
+CTCAACTAACCCGGAT-1,Stroma
+CTCAACTAACCCGGAT-1,blood vessel
+TCCTAACCGTCGGGCA-1,normal tissue
+AGCAGAAGGAGAAAGA-1,Stroma
+TTGACTATTGTCCGGC-1,normal tissue
+GACGCCGTAAAGGCTA-1,
+GATGACAAGTAGGGCA-1,stroma with high immune infiltration
+ACACGAGACTCCTTCT-1,interlobular bile duct
+CGGTTTACTGAACATT-1,Stroma
+ATCCAGGATTCGTGAA-1,stroma with high immune infiltration
+TTCTGACCGGGCTCAA-1,normal tissue
+TGTGGCAAAGCGTATG-1,normal tissue
+CACATTTCTTGTCAGA-1,normal tissue
+TTATTTAGGTTCCTTA-1,Stroma
+GGCCGGCGTCTGCTAT-1,Stroma
+TAGTTAAGATAGGATA-1,stroma with high immune infiltration
+GCTATGCCAGCTTATG-1,
+GTGCCTGAGACCAAAC-1,Stroma
+AGAAGAGCGCCGTTCC-1,normal tissue
+TGGAAGGATAAAGATG-1,stroma with high immune infiltration
+AGAAGTGATTCGTGAT-1,Tumor
+CATGTCTCATTTATGG-1,normal tissue
+TACAACGCACAACTCA-1,stroma with high immune infiltration
+AACGCGGTCTCCAGCC-1,
+CAGTACATTCTCTAAA-1,stroma with high immune infiltration
+CCGCACAAAGACCAAC-1,
+GAGGAATGGAGAGGTT-1,Stroma
+TCCCTCTTCTCAAGGG-1,Stroma
+GACGACGATCCGCGTT-1,normal tissue
+GTCTTGAGGAGCAGTG-1,normal tissue
+GCCATCGAGCTGCGTG-1,stroma with high immune infiltration
+AGCTAAGTACGCAGGC-1,Stroma
+AGCTAAGTACGCAGGC-1,blood vessel
+CAATACGCTCTGAGGC-1,Stroma
+GGATGAAGATCGCTGA-1,normal tissue
+TTCCGGTTACCCACTT-1,normal tissue
+ACACGGGAACTTAGGG-1,stroma with high immune infiltration
+CTCATGGTAATTTGCG-1,Tumor
+GGGTATTCTAGCAAAC-1,suspected tumor
+CTAGATTTACGACGGC-1,normal tissue
+GGTTAGGCTTGGAGAA-1,Stroma
+CTACTATCTTTCAGAG-1,normal tissue
+TAGCTCGCCTGATAAC-1,normal tissue
+ACCGAGTCTCCTTATT-1,Stroma
+CCTCCTGAGCCCACAT-1,Stroma
+CCGACAATAGGCCGCC-1,Stroma
+ACTGTCCAGGATTATA-1,stroma with high immune infiltration
+GCACACGCCCATGGTC-1,Stroma
+CCAGCCTGGACCAATA-1,normal tissue
+CCGATTCGAGGGACCC-1,Tumor
+TACCTATCCCTAGAGG-1,Stroma
+GTCCTACTCTACGGGC-1,suspected tumor
+ATTCATCGTTGAGGCA-1,Stroma
+ATTCATCGTTGAGGCA-1,blood vessel
+GCCGACCCACGACTGC-1,stroma with high immune infiltration
+CAGAATATTCGTTATC-1,smooth muscle
+GAGCTAAGGGCATATC-1,normal tissue
+GCCGCTTGTGAGAAAC-1,Stroma
+GTATTCTGAGAAACGA-1,Tumor
+AACACACGCTCGCCGC-1,normal tissue
+TGGTAAGCAGGATTGA-1,Stroma
+TATGTCAAGACCGACT-1,stroma with high immune infiltration
+CAATTGGGCCGCACTC-1,suspected tumor
+TATTTGTTACCCTTTA-1,blood vessel
+GGCCGCAGGAACCGCA-1,Stroma
+TCGCACCAGGAGGCAG-1,normal tissue
+CCGTAGGGTTGTTTAC-1,Stroma
+CGGTGAAGACTAAAGT-1,
+GATTACTGAATTTGGG-1,Tumor
+AACTCTCAATAGAGCG-1,stroma with high immune infiltration
+GAGATCTGTCACTCCG-1,stroma with high immune infiltration
+TAGTTTGATCGGTCGC-1,Stroma
+TAGTCTAACAACGAGA-1,Tumor
+TATTGACATTTCTGCC-1,normal tissue
+TCTGTGCCATCATAGT-1,
+CTAAAGGGAAATAGGA-1,normal tissue
+TGTCATTTGTTGGGAA-1,normal tissue
+TATTATGTTTGCCTGC-1,suspected tumor
+GTTCGCTGAGACGTCT-1,normal tissue
+GACCACACTTCCCTTT-1,Stroma
+GTGGCGGTCCCAGCGT-1,Tumor
+TTACTGGGATATTTCA-1,normal tissue
+CCATGCCTGTTTAGTA-1,stroma with high immune infiltration
+ATTTGTCTTGGGAGCT-1,stroma with high immune infiltration
+ACGAGGATACCACTCT-1,suspected tumor
+GTGACAGCTTCCCACT-1,Stroma
+TCAAACTTAGATTGTT-1,stroma with high immune infiltration
+CGCCACAGGTCGCGAT-1,suspected tumor
+AAGTTGTGATGTTATA-1,Stroma
+GACTAGGCCGTTAGGT-1,Stroma
+CCCTATGTAGAGCAGA-1,suspected tumor
+GACGAGGCTAATAAAC-1,normal tissue
+CAAGACTCAGAAGCGC-1,normal tissue
+GGATTCCGCTATACCC-1,normal tissue
+CCAAATAACAAGATTC-1,normal tissue
+GATATGGATTACGCGG-1,Stroma
+GCTTTCAGAGGAGGTG-1,normal tissue
+GTGCGACAGGGAGTGT-1,stroma with high immune infiltration
+TCGGAGTACATGAGTA-1,interlobular bile duct
+ACATCCTGGTAACTGT-1,normal tissue
+CCACAGTACCCATCCT-1,normal tissue
+GAAAGTGACTAACTGC-1,Stroma
+TACTCCTCTAGTTGAC-1,normal tissue
+CACCGTATCCCATCCG-1,normal tissue
+ACGTTAATGTCGAAGA-1,normal tissue
+CGTGTCCCATTCGCGA-1,blood vessel
+GAGTATGCGCGTGCAT-1,Stroma
+CCGGGTTCGAGGTTAC-1,Tumor
+CACCGTTGCGCGATAT-1,Tumor
+TACGATGTTGATCATC-1,
+CAGTCGAGGATGCAAT-1,stroma with high immune infiltration
+CGAATTCCCGGTTCAA-1,Stroma
+CCCTGCGCTACGCATA-1,Stroma
+TTGGTCACACTCGTAA-1,stroma with high immune infiltration
+CACCGGTAGAGACATT-1,normal tissue
+TTGTTTCCATACAACT-1,Tumor
+AGCCCTTGGACATCCC-1,Stroma
+CTGCCTTTAATACCTT-1,blood vessel
+ATCCAATGGAGGGTCC-1,Tumor
+CAGCTGGCGTAACCGT-1,suspected tumor
+GGGTACTTCATGAACT-1,
+ACTTGACTCCCTCTTT-1,normal tissue
+TTGCACAATTCAGAAA-1,normal tissue
+TCTTACGGCATCCGAC-1,Stroma
+AATGTGCCCGAGGTGT-1,suspected tumor
+GAAAGCCCTTTGGACC-1,Stroma
+TCAGCTTGAGCTTTCG-1,suspected tumor
+ACTACCAGCTCTCTGG-1,Stroma
+CCGGAATGGTTTCAGT-1,Stroma
+GTGACCTAAAGAATAA-1,normal tissue
+TCCGCGGCAGCATCTG-1,stroma with high immune infiltration
+ATTGCCTTTATGTTTG-1,Stroma
+AATCTGGCTTTCTAGT-1,suspected tumor
+CTGGCGCACAGGTCTG-1,stroma with high immune infiltration
+GCAATTAGTCGCACCG-1,normal tissue
+CCGCGGAATGCGTCAC-1,stroma with high immune infiltration
+GCTAGCACCTGGGCCA-1,normal tissue
+TGATCAGGGAACTGCT-1,Tumor
+AGGCCACCCGTTATGA-1,Stroma
+ATGGAGCAGGCCGTGA-1,stroma with high immune infiltration
+TATTAACCTGACCGCG-1,stroma with high immune infiltration
+TCTTTAGAGTCTAACA-1,normal tissue
+GAAAGCAGTGCACTTT-1,normal tissue
+TTACTCTGGTACGTAC-1,Tumor
+GCTCGCTCATGTCCAA-1,normal tissue
+CTGGCTGGTTGTCAGT-1,normal tissue
+AGCTTGATCTTAACTT-1,Tumor
+GCGTGGTACTGGGTTA-1,stroma with high immune infiltration
+GCTTATGAAGCAGGAA-1,stroma with high immune infiltration
+TACCGCGGACTTGCAG-1,normal tissue
+AAATTACACGACTCTG-1,stroma with high immune infiltration
+AACTGAGTTATACTGA-1,smooth muscle
+CACATCGTGCACGCGC-1,stroma with high immune infiltration
+ACGAGGTTTACAACGT-1,suspected tumor
+ATATGTCTCCCTAGCC-1,
+TGCCGGATGTACGAGC-1,normal tissue
+ATATAAAGCGCTCGTG-1,stroma with high immune infiltration
+GAGCACGGCGCCTCTT-1,stroma with high immune infiltration
+ATGTAGCGCGCGTAGG-1,Stroma
+CCTCGCCAGCAAATTA-1,stroma with high immune infiltration
+GCGGCTCTGACGTACC-1,Tumor
+CACAGTTCGCTTCCCA-1,normal tissue
+ACCCTATGCCATATCG-1,stroma with high immune infiltration
+GTACAGAGGCAAGGGT-1,stroma with high immune infiltration
+CTATACTTAAAGCGAG-1,suspected tumor
+TTGATGTGTAGTCCCG-1,normal tissue
+GAATAGTGCTCGATTA-1,stroma with high immune infiltration
+AACTCCAGAGCGTGTT-1,Stroma
+TAGACTACCTAGCGTT-1,stroma with high immune infiltration
+CATCGGACGGGTTAAT-1,normal tissue
+GACCGTTACATGCGAC-1,Stroma
+ACCCGTAGTCTAGTTG-1,Stroma
+TGTGACTAGAGTTTGC-1,Stroma
+AGGGTGCCGTTCTTTA-1,normal tissue
+CTAGTGAAGGACAGGA-1,Stroma
+TCCGAATGGTCCTGAG-1,normal tissue
+CATGGTTTATTAATCA-1,Stroma
+CGCGCAAATGTCCAGA-1,suspected tumor
+CACAGGGCCATATAGT-1,
+TGCAAGAATGACGTAA-1,stroma with high immune infiltration
+TATCCAATTGGTTATC-1,stroma with high immune infiltration
+TCAACATAGCGCCCTA-1,
+CGACGCATCCGTACCT-1,suspected tumor
+CGTTCATGGTGCGCGT-1,suspected tumor
+GTAGCCAAACATGGGA-1,normal tissue
+GGGCACTATTGACCAT-1,
+ACCACAAGTTTCTATC-1,stroma with high immune infiltration
+CACTCTTCTGCTAGCC-1,Stroma
+ACGCGGGCCAAGGACA-1,stroma with high immune infiltration
+ATAACGCCGGAGGGTC-1,stroma with high immune infiltration
+CGGTTGACCTGGCATA-1,Tumor
+AACCGCTAAGGGATGC-1,normal tissue
+CGCGGGAATTAGGCAG-1,normal tissue
+GACCAGAGCCCTGTAG-1,interlobular bile duct
+ACAAATGGTAGTGTTT-1,
+TACGCCGCCTCAGAAG-1,
+GTTAACATCACTTAAA-1,stroma with high immune infiltration
+TGCATATGTCTGTCAC-1,stroma with high immune infiltration
+CTGGTAACACATAGAA-1,normal tissue
+TGAACTGCTATGACTT-1,Stroma
+TTCACTCGAGCACCTA-1,stroma with high immune infiltration
+CAAGGCCAGTGGTGCA-1,Stroma
+ACCTAATCGACTTCCT-1,Stroma
+TCCTTCAATCCCTACG-1,Stroma
+TGTAGGAGAAATTTCC-1,stroma with high immune infiltration
+TAACCTAGGGAGTCCA-1,Stroma
+CCTCGGACCGGGATAG-1,normal tissue
+CGGGAATTTATGTAAA-1,normal tissue
+AAGGGTTTGATTTCAG-1,suspected tumor
+TTCCAGACGAGATTTA-1,stroma with high immune infiltration
+GTCCGGGTTCACATTA-1,Stroma
+GTGATCAAGCGTGCAC-1,normal tissue
+AGGTATGCGGACATTA-1,normal tissue
+CGCATGGTGCGATGCT-1,normal tissue
+CTAATTCGCACGCGCT-1,Stroma
+GTACTGGAGTTAGACC-1,interlobular bile duct
+TGGCGATCAAGTTATG-1,stroma with high immune infiltration
+TCGCTTTAAACGTTTG-1,normal tissue
+ACGCTAGTGATACACT-1,normal tissue
+AATGACGTAGGATGTC-1,normal tissue
+AGGTGTATCGCCATGA-1,Stroma
+ACATCGGTCAGCCGCG-1,Tumor
+CTGCGGGTGAAATGTT-1,Stroma
+TAACTATTACGCCAAA-1,normal tissue
+CGCTTATTCCCGGTCG-1,Tumor
+GGGCGTTTACATTCAT-1,normal tissue
+ACCATATCCGCAATAA-1,normal tissue
+GTAGTCTACGATATTG-1,Stroma
+GCCCGCGCGTAAACGG-1,Tumor
+GGACGGGCGACCAACC-1,Stroma
+CCCTGAAATGAGTTGA-1,Stroma
+TCAGGTTCTTTGAGAA-1,Stroma
+GCAAGAATTCCTTGGC-1,Tumor
+GAACGACCGAATGATA-1,Stroma
+ACGATCATACATAGAG-1,stroma with high immune infiltration
+CGCATTAGCTAATAGG-1,stroma with high immune infiltration
+GTGGTTACTTCTTTCG-1,normal tissue
+CTTTAGTGCTATTATT-1,normal tissue
+GTTTGGTGATCGGTGC-1,normal tissue
+ACGACCCATGAGTTGC-1,Stroma
+GGTACTAAGTGCTTTG-1,smooth muscle
+TTGTGATCTGTTCAGT-1,Stroma
+AGTGGCGTCTGAAGGT-1,Stroma
+GGAGGGCTTGGTTGGC-1,interlobular bile duct
+CGCCCAGCACGCCTAG-1,normal tissue
+AGCTCTAGACGTTCCA-1,stroma with high immune infiltration
+CGCTTTCTTGCATTCG-1,normal tissue
+GATCGGTGGCCATAAC-1,stroma with high immune infiltration
+TGAGTGCCTCTTAAAT-1,Tumor
+CCATGCCCTAGATTTC-1,normal tissue
+TTCCAATCTGGCTATC-1,stroma with high immune infiltration
+GTTGCGGACGGTCAGG-1,normal tissue
+GTCCTAGGATACCTTA-1,Stroma
+GTGGAACCTACATGCG-1,stroma with high immune infiltration
+TTCGGCAACCCGCTGA-1,normal tissue
+ATGCTTAGGAGTTGAT-1,
+ACTACATCCCGACAAG-1,Stroma
+AAGGTATCCTAATATA-1,normal tissue
+AAGTCTTCTGTGGCCT-1,Stroma
+GCTCCCAGTCGGTCCA-1,normal tissue
+TGCGAGAATATTACCC-1,Tumor
+ATTCAGTAGCAGGGTC-1,Stroma
+CAGCTCACTGAGACAT-1,stroma with high immune infiltration
+GTTTCTGCAGTCTCCC-1,normal tissue
+TCGGTCCCGACAATAG-1,suspected tumor
+CGTGCATTGTCGACGC-1,Tumor
+GCGACGATAGTTGTAC-1,
+TCCGGCTGTCGGGTCG-1,Stroma
+TCGGACGCCCAGCCCA-1,interlobular bile duct
+CTGCACAACTACATAT-1,normal tissue
+CTAAGGGAATGATTGG-1,normal tissue
+CGTCGTCCTTCGCGAA-1,stroma with high immune infiltration
+TGATTTATTAGCTGTG-1,Tumor
+ACTTCGCCATACGCAC-1,stroma with high immune infiltration
+TGACATATATGACGAT-1,Stroma
+TTACGGATGGTTCGAG-1,normal tissue
+GAACGCGGGTCACACG-1,normal tissue
+GGGCAGAGCAATCGTT-1,normal tissue
+ATGGGTGTATACCTCC-1,
+GACCGACTGAAGCGTC-1,Stroma
+AAACGAGACGGTTGAT-1,stroma with high immune infiltration
+CACCACGCCACACAGA-1,Stroma
+AGTGCTAAACACAGCA-1,Stroma
+TCCAGAGCACCGGTTC-1,normal tissue
+GATCCTCGACACTGGC-1,Tumor
+CGAGTTTATCGGACTG-1,normal tissue
+CGAGAGCGCGTAGATA-1,suspected tumor
+TGATTCGTCTATCACT-1,Stroma
+GGGCCTAAATGGGCTA-1,suspected tumor
+TGGGTAAGGTTCCCGC-1,stroma with high immune infiltration
+TCTACCCAATAGAGAG-1,normal tissue
+ATCTCCCTGCAATCTA-1,
+TGGCCAATTTGGTACT-1,suspected tumor
+AGTACATCATTTATCA-1,normal tissue
+TTGCTCCCATACCGGA-1,blood vessel
+GTTGCACGGAGTTTCG-1,
+TCGAAATTTAGGACCA-1,Stroma
+GCGGGCGAGCCTTACC-1,stroma with high immune infiltration
+CGGTCTATCAACCCGT-1,normal tissue
+TCAGTAGGGACTATAA-1,stroma with high immune infiltration
+CCAATAGTGCCGTCGA-1,Stroma
+CAATGCGAGAAGTATC-1,normal tissue
+AGGCTATGGTTAGCTT-1,Stroma
+TTGCCGCTTTCTAGTA-1,Stroma
+TAAGTTGCGACGTAGG-1,normal tissue
+CGTTTCGCTCATTACA-1,stroma with high immune infiltration
+AAGAGGCATGGATCGC-1,stroma with high immune infiltration
+GCCCTGAGGATGGGCT-1,Stroma
+GGAGTTGATTCTGTGT-1,Stroma
+CGACACGCTCCGACAG-1,normal tissue
+CGAACAGTATGGGCGT-1,normal tissue
+TTGGGACGTAAGAGTT-1,normal tissue
+GCCGCACTCCGTTTCA-1,
+CCATAGAGGCTGCCAG-1,suspected tumor
+GGATTGCTGTGACTCC-1,Stroma
+TCCTCGGGCTGGGCTT-1,normal tissue
+TGATACATTTAGCCGT-1,stroma with high immune infiltration
+TACCGAATAATTGTAA-1,Stroma
+TGGTCTGTTGGGCGTA-1,Tumor
+ACGTCGGGCAACTCGG-1,Stroma
+TACGAACACGACTTCA-1,stroma with high immune infiltration
+TAAGAGGGACAGGGAC-1,Stroma
+GTCTATTGGTTCCGGT-1,normal tissue
+CCCGTCAGCGTCTGAC-1,blood vessel
+CCCAGAGGAGGGCGTA-1,normal tissue
+TGGCAGATTACGATCA-1,normal tissue
+CGTTGTCGGCAATTGA-1,Stroma
+TTGAAACCCTCATTCC-1,Stroma
+CTTATGCGCTCAGGGC-1,Stroma
+AACGTCAGACTAGTGG-1,Stroma
+TGGAAGAAGGGAACGT-1,Tumor
+GTGTTACTATGCGTCC-1,normal tissue
+ATTAGGCGATGCTTTC-1,stroma with high immune infiltration
+CTGGTAAAGTGTGGGC-1,Stroma
+GAGACTTCGCGACCGA-1,normal tissue
+CCTGCCCGTTGTCTAG-1,Stroma
+CGACCCTTAACGCCGG-1,suspected tumor
+AATCATGTAAAGACTC-1,normal tissue
+CTTCAGTGGTCGCCTA-1,suspected tumor
+AAACTCGGTTCGCAAT-1,Stroma
+AAACTCGGTTCGCAAT-1,blood vessel
+CCGGGCGGTCTCGTCA-1,interlobular bile duct
+GTCACTCATGAGCGAT-1,Stroma
+CGCGAGTCTGCCGGGT-1,suspected tumor
+GCTATCATACTCATGG-1,stroma with high immune infiltration
+TCGCCGGTCGATCCGT-1,
+AACCCGAGCAGAATCG-1,Stroma
+CCGAAGGGCGTACCGC-1,normal tissue
+GAACCTCGACCTACAC-1,Stroma
+ACGTCTCGTTCCGGGA-1,suspected tumor
+CTTTGACGTCGCTTCT-1,
+CGGTCCGTCGCAAGCC-1,normal tissue
+CACACACGCTAACGAG-1,normal tissue
+CCGGCGTGAGACTCTG-1,suspected tumor
+TCCGAACTTGGCTTAC-1,Stroma
+TTAGACACGATCGTTG-1,normal tissue
+GAAATGGCGGTGTTAG-1,stroma with high immune infiltration
+GTCAAGCGGACTCGGG-1,stroma with high immune infiltration
+CAAGAGGGCGGAGTAC-1,normal tissue
+ACTTCCAGTGGAAGCT-1,suspected tumor
+GGAAAGTGCCCATGCC-1,normal tissue
+ACTTTGGTCGTGCTCC-1,suspected tumor
+CCCAACATACGTCGCG-1,Tumor
+AGTGCACGCTTAAGAA-1,normal tissue
+TGCCACCTGGCGAAAC-1,stroma with high immune infiltration
+ACAAGGACAAGAGGTT-1,Stroma
+ACAATCCATTTAAACC-1,Tumor
+ACTGCCCGCCATTCTC-1,normal tissue
+ACAAATCGCACCGAAT-1,normal tissue
+GATCTTTGCAGGGTAT-1,Stroma
+AATTAACGGATTTCCA-1,stroma with high immune infiltration
+TCTGCATACCTTGCTT-1,Stroma
+AACTAGGCTTGGGTGT-1,normal tissue
+TCCCGTCAGTCCCGCA-1,blood vessel
+GTGTACCTTGGCTACG-1,normal tissue
+AGATTATAGGACGTTT-1,stroma with high immune infiltration
+GTAATCTGATTCTTCG-1,stroma with high immune infiltration
+CCTACTCAACACGATT-1,Stroma
+GCAGCCTATATCACAT-1,normal tissue
+TCCTGCGTTGATACTC-1,Tumor
+TAAGCAGGCGACACGC-1,Stroma
+AAGCTAGATCGAGTAA-1,normal tissue
+ATACGTTATGCACGGA-1,Stroma
+TCAAGAAATACTAGCT-1,normal tissue
+TGGTTAACTTACATTT-1,suspected tumor
+TACGGAAGCCAAACCA-1,Stroma
+GAAATCGCGCGCAACT-1,blood vessel
+CATTACGTCGGCCCGT-1,blood vessel
+ACAGTAATACAACTTG-1,suspected tumor
+TCAAAGAGCTATCTGT-1,suspected tumor
+GGGCGTGGTTTCCCAG-1,Stroma
+TCCAATGCGTCGCCGC-1,Stroma
+GTCATGGACATGACTA-1,stroma with high immune infiltration
+CTCACTTGGCTGGTAA-1,Tumor
+TCTAGGTGGCGACGCT-1,normal tissue
+ACTGTAGCACTTTGGA-1,blood vessel
+TCTATGCTATAACGAC-1,Stroma
+TTGTTCAGTGTGCTAC-1,blood vessel
+TGTCCGTGGCGCCTTT-1,Stroma
+TCTGGCCGTTCAAGTT-1,normal tissue
+GAGGCTATCAAAGTCG-1,Tumor
+CCAAGCGTAACTCGTA-1,stroma with high immune infiltration
+TCACATCTTATCTGAT-1,Stroma
+GACACTGGAACCCGAT-1,normal tissue
+CTTAGTGTAGTAGCAT-1,Stroma
+CGGTGCAGATAGAACG-1,Tumor
+GGTGATAAGGAGCAGT-1,blood vessel
+TGCGAATATGGGATTT-1,suspected tumor
+GCACAAACGAGGCGTG-1,normal tissue
+TTCGGGTTGCCACGGG-1,Stroma
+ACGTTAGATTTGCCCG-1,Tumor
+TGGCTACACTCTACCT-1,Stroma
+AACGATAATGCCGTAG-1,normal tissue
+AAACCTCATGAAGTTG-1,
+AACAATTACTCTACGC-1,Stroma
+CGTGCAGACTGGGACA-1,normal tissue
+GGCGGGCTCTAAGAGT-1,smooth muscle
+TGTACCTACACGAGGG-1,Stroma
+TCCTCCTAAGACATTC-1,suspected tumor
+GAGATCTGCTTGGCAT-1,
+CCTAAATTAACGGTTC-1,normal tissue
+TGCTTCCCAAGCAGTA-1,Stroma
+CGAAGGGTTTCAGATT-1,normal tissue
+CACAGAGACGAGGACG-1,Stroma
+ACGTTCGCAATCAATT-1,normal tissue
+GTCTCGATCTGCTTTC-1,normal tissue
+ACTTTACCCTCATGAA-1,normal tissue
+GCATGAGGGACGCGGC-1,normal tissue
+AACTGGGTCCCGACGT-1,blood vessel
+TCTTAGAGCTCCAATT-1,normal tissue
+TAAGGCTGAATCCCTC-1,normal tissue
+GCATTCAAGGCAACGC-1,normal tissue
+TACGCCTCCATTCCGA-1,normal tissue
+CCTGTCACCCGGGCTC-1,stroma with high immune infiltration
+GGGCGGGTTCCCTACG-1,Tumor
+ATGTACGATGACGTCG-1,Stroma
+ATGTACGATGACGTCG-1,blood vessel
+ACCGATAGGCATAACC-1,Stroma
+ATAGCAACTAGGGAAG-1,Stroma
+GGACCTCTAGGCCGCC-1,suspected tumor
+GAGCCAGCTACCTGTG-1,normal tissue
+CTGGGATAAATAATGG-1,stroma with high immune infiltration
+CTGGAAGACACGGTGG-1,normal tissue
+CTTACACGGTATTCCA-1,Stroma
+GCCATATTGCACACAG-1,normal tissue
+CTGGCTGATTCATCCT-1,normal tissue
+GGGATTTACCGCACCT-1,normal tissue
+TCTAGCATCTTCGATG-1,Stroma
+TGGCTATGTGACATAC-1,Stroma
+GAGCACCTGTGTCCAG-1,Stroma
+GAGTCCGCTTACCGGA-1,normal tissue
+AGTATAATACTAGGCA-1,Stroma
+TTAACTTCAGGTAGGA-1,Tumor
+ATGTGGACATCTTGAT-1,normal tissue
+GAATAGCATTTAGGGT-1,normal tissue
+TAGGCGATGAGGTCTC-1,
+CGAGGGTATCCAGGTG-1,normal tissue
+AACTTTACGGGAGCTT-1,Stroma
+GAATTATAGTGAAAGG-1,interlobular bile duct
+AATCGCGCAGAGGACT-1,normal tissue
+GAGAGGCCTATGTGTA-1,Stroma
+GCCCGATCTGTGGTCG-1,stroma with high immune infiltration
+AATCTATGCCGGAGCC-1,normal tissue
+TGGCAGCAGTAATAGT-1,normal tissue
+TTCAATACTCTGAATC-1,stroma with high immune infiltration
+TTGTGTTTCCCGAAAG-1,stroma with high immune infiltration
+CCACGGAGCCATAAGA-1,Tumor
+TATTCCGAGCTGTTAT-1,normal tissue
+TCAGTGTATACGTCAT-1,stroma with high immune infiltration
+TTCGACAGAGCCCGTG-1,normal tissue
+GGCCTGCTTCTCCCGA-1,Stroma
+GCCTACGTTCTGTGCA-1,Stroma
+ATATTTAACCCTCAAG-1,stroma with high immune infiltration
+TTCATGGCGCAACAGG-1,stroma with high immune infiltration
+TATTCCTCCGCCCACT-1,Tumor
+CTCGTTTCTAATGTTT-1,normal tissue
+TATCCATCTCGGTTAG-1,suspected tumor
+GCGCCTCCCACTCCGA-1,normal tissue
+AGCACTTAAGGACGCC-1,Stroma
+TAATCGATCCGTACGT-1,normal tissue
+ATGGATCCGGCGTCCG-1,normal tissue
+CCTATCTATATCGGAA-1,stroma with high immune infiltration
+CACCTTGGCGCCTTTG-1,normal tissue
+CAGCCTCGATAGCGGT-1,Stroma
+AGCTCTTTACTCAGTT-1,stroma with high immune infiltration
+TATCACCCAACCGACC-1,stroma with high immune infiltration
+ACGTATTACTCCGATC-1,normal tissue
+GATCTAACCGTATTCA-1,suspected tumor
+CACACAGCTTGCGCTC-1,normal tissue
+GGCTATTAAGTTGTAT-1,Stroma
+ACCCGGAAACTCCCAG-1,stroma with high immune infiltration
+CCGCGCAAGATACCCA-1,
+GCTTCCGTCCCTAGAC-1,stroma with high immune infiltration
+GGTATTGCCGAGTTTA-1,stroma with high immune infiltration
+ATCTTAGGGCATTAAT-1,normal tissue
+AAGACATACGTGGTTT-1,Stroma
+CGAATGAAGTCATTGC-1,Stroma
+TCTCCCTGGGCAGCGT-1,
+GTTCGGGCGTACCATT-1,stroma with high immune infiltration
+CACAGTCCCGCTTCGC-1,Stroma
+AGTGGCGGCAATTTGA-1,stroma with high immune infiltration
+TCTGGAGCGTAAGAGT-1,normal tissue
+TCCCAGCTTTAGTCTG-1,stroma with high immune infiltration
+TTAAGCCGACAACTTC-1,stroma with high immune infiltration
+GTTCGTCTAAAGAACT-1,normal tissue
+GGTTCGGATTATACTA-1,Stroma
+TAGATTCCTGGTTATT-1,Stroma
+AGGGTGCTCTCGAGGG-1,normal tissue
+TCGCGTCCAGAAGGTC-1,Stroma
+ATCTGGTTAAGACTGT-1,
+TGAGGAGTGCCAGCTT-1,normal tissue
+CCATTGTTTCCTCCAT-1,normal tissue
+CATAGAGGAGATACTA-1,Stroma
+GCCACTCAGAGCGCGA-1,Stroma
+GGACCAACAGGATAAC-1,normal tissue
+AGGTAGATCGAGATAT-1,normal tissue
+CGCGGTACGGTATACA-1,Stroma
+GATTCCTATACGGCGC-1,Stroma
+GACAGGCACACACTAT-1,Tumor
+TGTGCTTTACGTAAGA-1,Stroma
+CGGCCACGCACAAAGT-1,stroma with high immune infiltration
+AGCACACGTTTAGACT-1,normal tissue
+AAGGCGCGTAAAGCTT-1,Stroma
+GAGAACGGTTCTGACT-1,Stroma
+TACCGTGCCTCGGACC-1,normal tissue
+CGTAGCGAATTGTCAG-1,Stroma
+CTTAGTTGAGGAATCG-1,normal tissue
+TGGAATATCCTTGACC-1,normal tissue
+CGCCCGCTTCCGTACA-1,normal tissue
+AACAGGTAGTATGGAT-1,normal tissue
+CCAGCTCGAACGCATT-1,Stroma
+GTGAAACGGCGCCACC-1,normal tissue
+TCCCAAAGCCCTAAAT-1,stroma with high immune infiltration
+GTCCCAATCATCCCGC-1,Stroma
+CGTATTAAGAGATCTA-1,stroma with high immune infiltration
+ATCTCCCACGGAATAT-1,Stroma
+AATCTCTACTGTGGTT-1,Stroma
+GCGCCGTTCCACGATA-1,normal tissue
+AGTCGTGGGCATTACG-1,Tumor
+GAGGATAAACAGTGCT-1,stroma with high immune infiltration
+CGACTCAGGATGTTAT-1,normal tissue
+CCATCTCACCAGTGAA-1,normal tissue
+TCAACATCGACCGAGA-1,suspected tumor
+CGGTACGGCAAACCCA-1,suspected tumor
+TGAGTGGTCCGTGACG-1,normal tissue
+CTACTCTAGGCCCGGC-1,Stroma
+TGCTCCACAGTTCTTA-1,normal tissue
+GTGCTTACATCAGCGC-1,normal tissue
+CTACGACTAGCTATAA-1,Tumor
+GATATTGAGATTGGCG-1,normal tissue
+TCCAACTTTAAATTCT-1,Tumor
+ACCCGGATGACGCATC-1,normal tissue
+TCTAGTGATATCGTGG-1,normal tissue
+TATGTAGAAACCCGGC-1,suspected tumor
+TTCTGCGAGCGCCCTT-1,Stroma
+ATAAAGGCTCGGTCGT-1,
+CCCAATTTCACAACTT-1,Tumor
+AGCAGCCAGATGAATA-1,normal tissue
+TAGAAAGGTGGCGCTA-1,normal tissue
+CCCTTTAATGGAGTTC-1,Stroma
+GAAACATAGGAAACAG-1,suspected tumor
+GAGGCCCGACTCCGCA-1,suspected tumor
+TAGAATAGCCGATGAA-1,Stroma
+CCCAATGAGATTTGCA-1,stroma with high immune infiltration
+CCTAGGCGTAGCGATC-1,stroma with high immune infiltration
+GCCAACCATTTCCGGA-1,normal tissue
+TCTATAGGTGGGTAAT-1,Stroma
+TCTTACTTATGCCTCT-1,normal tissue
+CTAAATCCGGTGTACA-1,
+CCGCGGGTACGAAGAA-1,Stroma
+CAAAGGTCATCTGAAA-1,normal tissue
+CAACCAGTGGCCTACC-1,Stroma
+GCAAGCTGGAAACCGC-1,suspected tumor
+GACATCGATTTATAAC-1,stroma with high immune infiltration
+CCACCTGTATGGAATA-1,Stroma
+CGAACCCGCATGCGTC-1,stroma with high immune infiltration
+CCTAAATTGTATCCTA-1,normal tissue
+GATCGTGACTGATATC-1,
+GAGTTCTGTGGGTGCT-1,suspected tumor
+CGCATGCCGAATGCGT-1,Stroma
+TACCAAATAGCCCAGA-1,
+AAACCGGGTAGGTACC-1,Tumor
+GCTTACGTAGTTAGTA-1,normal tissue
+GAACGTTAGGAAGACG-1,Stroma
+CAAGCACCAAATGCCT-1,blood vessel
+GCTGCTCTCCGGACAC-1,stroma with high immune infiltration
+TCACCGCTCGGCACTC-1,normal tissue
+AAATAAGGTAGTGCCC-1,normal tissue
+ACTTATTAGGATCGGT-1,stroma with high immune infiltration
+TGGTCCCACGCTACGG-1,normal tissue
+TCGTGTTCGACCACAA-1,Stroma
+GGCAAAGGCGCCAATA-1,
+GCGCTGATCCAGACTC-1,normal tissue
+TCTAGCATGCCCAGAA-1,normal tissue
+CAGTAAGGGACGTCTC-1,Stroma
+GTCGTTATTCGCTTAT-1,normal tissue
+AATTAGCGCTGCAGCG-1,normal tissue
+ATAAACGTTGCACCAC-1,Stroma
+TATCTGAGCCGATATT-1,Stroma
+AAGGCAGGCTGTCTCC-1,
+ATTCGTGCTATCTCTT-1,normal tissue
+GGTGCATAAATGATTA-1,normal tissue
+GAAACTCTAATGAAGG-1,stroma with high immune infiltration
+CTTCCGCTCCGTGAAG-1,stroma with high immune infiltration
+TTCTTGTGTCCATCAG-1,Stroma
+CCTATGGTCAAAGCTG-1,Stroma
+TACTGTTTCTCTGGTA-1,normal tissue
+GTATCTCAGTCTTGAC-1,suspected tumor
+AGCCCTAAGCGAAGTT-1,Stroma
+GTCTATCTGAGTTTCT-1,Tumor
+CGCTACGGGACATTTA-1,stroma with high immune infiltration
+CGGCCAGAGCGACCAT-1,normal tissue
+TTAGAATAAGGGTCGG-1,normal tissue
+TATACCGAGTGCCACA-1,normal tissue
+AAGTGAGTCGGGTTTA-1,normal tissue
+GCGGTTCCCTATCATG-1,stroma with high immune infiltration
+CCGTAAGTTGGTCCCA-1,interlobular bile duct
+CATGGGTATGCCTTAT-1,stroma with high immune infiltration
+CCATTTCTACCTATTA-1,stroma with high immune infiltration
+TCATTTAGAAGTGTGA-1,normal tissue
+GGCGCATGAATTGATG-1,normal tissue
+CTCATTGCTCTAACAA-1,Stroma
+GGGAGGATGCCCGAAA-1,stroma with high immune infiltration
+AAGCCGAAGCGGTTTA-1,normal tissue
+CATGGATTGTCTTCCG-1,normal tissue
+TATTTATACCGAGTAG-1,stroma with high immune infiltration
+CGGTTGAGTATCCTTC-1,normal tissue
+ACGTAGATTGCTGATG-1,interlobular bile duct
+GTCATTAGAGCGAACG-1,normal tissue
+ATTAATGAACCAGTCG-1,normal tissue
+CATGGGTCGGGTGTGG-1,normal tissue
+TTGGCTCAATATGTGT-1,Stroma
+AGCCCTCCCTGGTGGC-1,normal tissue
+AGCTCTTCCCAGTGCA-1,normal tissue
+ACTATTTCCGGGCCCA-1,stroma with high immune infiltration
+ATATCTCCCTCGTTAA-1,normal tissue
+ATTAAACATGCGGACC-1,normal tissue
+ATCGACCCAATACAGA-1,normal tissue
+GGACTCTTCCGGTTGA-1,Stroma
+GATCTGCTATCTAAGG-1,normal tissue
+TACGCAGTTCTTTCCT-1,stroma with high immune infiltration
+TCTGGGAACCTTTGAA-1,normal tissue
+GAGATCTTCCATGACA-1,normal tissue
+TATCGATGATTAAACG-1,blood vessel
+ATTCGCGCCTTGAGAG-1,Stroma
+GCCAATAGGGCATCTC-1,normal tissue
+CTCTACACTGGCGATT-1,suspected tumor
+CTTTAGGAACACTGTT-1,normal tissue
+CTTTGTCGAATGCTCC-1,suspected tumor
+GTAGCTTCCTCTTGTT-1,normal tissue
+GATCGGATAGAACCAT-1,Stroma
+TGTAAGACTGATAAGA-1,Stroma
+AGTTTATGTAAAGACA-1,normal tissue
+TCGGGATTCAAACATA-1,Stroma
+TTCCAATCAGAGCTAG-1,stroma with high immune infiltration
+CGCATCCATCAGCCAG-1,normal tissue
+CATGGTATTAGTTTGT-1,suspected tumor
+CATAGCCGCCCGGGAT-1,Stroma
+TCCTATCATAGGTAAC-1,normal tissue
+AATTCCAAGCATGTAC-1,Stroma
+GGTTACCCGACACTTT-1,normal tissue
+ACCCATTTGTCCCTCT-1,Stroma
+TTGACATGAACGTGGA-1,Tumor
+CGTTAAACTAGTTAGG-1,normal tissue
+TCACGCATTGTAGATC-1,interlobular bile duct
+ACTCGCCGTTCGATAA-1,Stroma
+TTATGATCTTAACGAA-1,blood vessel
+CTAATTCTCAGATATT-1,normal tissue
+TCGGGAGACAGCGTAC-1,Stroma
+GGCGCAGGACATCTTC-1,Tumor
+CGAACGCCCAGTGCCG-1,Stroma
+TTGACTACCATATGGT-1,Tumor
+TGCAACCCATCTGCGG-1,Stroma
+GCGAGTTCTGCAAAGA-1,stroma with high immune infiltration
+AGTGATATGAGTAGTT-1,stroma with high immune infiltration
+ACCGGTCAGGTACACC-1,suspected tumor
+GTAGTGAGCAACCTCA-1,Stroma
+GGAATGCGCTAGCGTG-1,stroma with high immune infiltration
+AGTTACCGCACATGGT-1,Stroma
+TATTACCATCCTGCTT-1,normal tissue
+TCTTGATGCGTAGCGA-1,interlobular bile duct
+ACGATGCATATGTTAT-1,stroma with high immune infiltration
+TATGGTTAGTGGGAGA-1,normal tissue
+GAATAGACGCGACCCA-1,normal tissue
+GGGACCCGTATATCTT-1,normal tissue
+TCAGAACCTCCACAGG-1,normal tissue
+CAAATGTCCTTCCGTG-1,
+GCGAAACTTAACTGGA-1,stroma with high immune infiltration
+TCCCGTCGCGTCATAG-1,normal tissue
+TCAAATTTGAGACTCA-1,Stroma
+TTGTGGTGGTACTAAG-1,Stroma
+ATTCCTCCGCCAGTGC-1,
+ATAAATATTAGCAGCT-1,Tumor
+GGGACTGCATAGATAG-1,stroma with high immune infiltration
+AGTGGCTCCGTCGGCC-1,Stroma
+TCGTTAGGAGTCCCTA-1,stroma with high immune infiltration
+GGAACCGTGTAAATTG-1,stroma with high immune infiltration
+CAGCAGTCCAGACTAT-1,normal tissue
+CCCGTAAGTCTAGGCC-1,Tumor
+CACCGTTAGGGATCAC-1,Tumor
+ACACAAAGACGGGTGG-1,Stroma
+TTGTCGTTCAGTTACC-1,Stroma
+TAGGTGAGCCCTACTC-1,Stroma
+GAAGGCTACCATTGTT-1,normal tissue
+AGGAGGCCTTCGCGCG-1,normal tissue
+GGCAAGGCGAAATAGC-1,normal tissue
+GTCGTCTGGTTGGCTA-1,normal tissue
+GCCTCTATACATAGCA-1,stroma with high immune infiltration
+ATAAGTTACCGCGACG-1,stroma with high immune infiltration
+CACCAATCATCCGTCT-1,suspected tumor
+ACTCCCTAATGCTAAA-1,stroma with high immune infiltration
+GACCGTCAGGTCGTGA-1,stroma with high immune infiltration
+GTCCGAGAGCAATCAT-1,Stroma
+ATTATAGCTACTTTAC-1,normal tissue
+TGCGCCGTTAATAACG-1,normal tissue
+ATTCATATACTGTCCA-1,normal tissue
+TCATGCAGGTTCTCAT-1,normal tissue
+GTGGGCTTAGACACAC-1,Stroma
+TTAGCTGATTTGCCGT-1,normal tissue
+TGTTATTGTATGTGGC-1,normal tissue
+AGTCCATTGGCTGATG-1,normal tissue
+TCAATACGCCGTCATG-1,normal tissue
+ATATAAATGTAGCTGC-1,normal tissue
+AATAATCTTCGTATCG-1,normal tissue
+CCCAGTAAACTTGGGA-1,suspected tumor
+CAAGGTCCTATAGGCT-1,normal tissue
+CGGATCCTCAAGGACT-1,Stroma
+TGCGTACGGCTAATTG-1,Stroma
+CAAACTCGCGACGCCG-1,normal tissue
+AAGATGGCACCGGACC-1,stroma with high immune infiltration
+CAGAACTTAGCCCTCT-1,normal tissue
+ATCGGTTACCTAGTAA-1,Stroma
+GCAAACGTAAGCGACC-1,normal tissue
+CTGCCAAGGTTGGAAG-1,stroma with high immune infiltration
+TTCTTGGAGTAATGAG-1,normal tissue
+GGGCCCTTATCTATAC-1,Stroma
+TACACCGTCGTTAGTC-1,normal tissue
+ATGGTCGCGTGGTTTC-1,normal tissue
+ACCTAAGTACCTTTCA-1,Tumor
+GAAGCTCGGACCCGTC-1,suspected tumor
+GCAGTTCGATCCGAGC-1,Stroma
+ATACGTCCACTCCTGT-1,normal tissue
+CCTCCTGTTGTGTCGT-1,Stroma
+AGGATATAGGGATTTA-1,normal tissue
+AGGATATAGGGATTTA-1,blood vessel
+ACGGCTGGATGTAGAA-1,suspected tumor
+GAAGCGTGAGGAATTT-1,stroma with high immune infiltration
+AAGAGCTCTTTATCGG-1,stroma with high immune infiltration
+TAGGTGACGATAACCT-1,Stroma
+AGTGACCTACTTTACG-1,stroma with high immune infiltration
+AGCGATGCGCCTAATA-1,Stroma
+ATCTTGACCTGCAACG-1,blood vessel
+TCGGCGAACCCAAACC-1,normal tissue
+CTGGATTTACACTTGA-1,normal tissue
+GGAGGCCGAAGTCGTC-1,stroma with high immune infiltration
+GTATCCTTTGGTAACC-1,Stroma
+ATTGTACAACTCGGCT-1,stroma with high immune infiltration
+GCGCTAATTGAATAGA-1,stroma with high immune infiltration
+GGTAGAAGACCGCCTG-1,normal tissue
+CGCCATCCGATTATGA-1,normal tissue
+TGTACCCGACCCTAAT-1,Stroma
+GTTATAATACGGTGAA-1,normal tissue
+ATAGTGAAGCGTTCTC-1,normal tissue
+GCCAAGAATACTTCTG-1,suspected tumor
+CGGAACGTAAACATAG-1,stroma with high immune infiltration
+GAGTAAGGCCACGGGA-1,suspected tumor
+TTGCCGCAGACCTACA-1,Stroma
+TACGCCATATTCTAAT-1,normal tissue
+GACGTTCGTAAATACA-1,normal tissue
+ACCATCCGCCAACTAG-1,suspected tumor
+ACCCAACGCCCGTGGC-1,normal tissue
+CTTCTATGTTGAAGTA-1,Tumor
+AGCGGACACTTCGTAG-1,normal tissue
+ATAATAGCTGTTGAAT-1,normal tissue
+CTTAAGCAGCGAGCCG-1,suspected tumor
+CTGCCTTTCTAGTAAA-1,Stroma
+GGAGACCATCTACATA-1,suspected tumor
+AGAATTATGGATTCGA-1,normal tissue
+GCTCCTGACATACTGG-1,stroma with high immune infiltration
+CAAACCCTCCGGCGGG-1,Stroma
+GTCGATAGGTGACTTT-1,normal tissue
+CGATCCGACCCAGTGC-1,stroma with high immune infiltration
+CATCCTCTCAAAGATC-1,normal tissue
+TTACCCTAACAGTCCT-1,Stroma
+AGACGAAGTGCCGGTC-1,normal tissue
+CTAACTGGTCCGGTTC-1,Tumor
+TCGCATAAAGGGCGCA-1,Stroma
+GATGTTCAATCCACGA-1,
+ACGCGAAGTCAGACGA-1,normal tissue
+ACGGACTCTCAAAGCG-1,Stroma
+ATAAGGTGGAGAACAT-1,normal tissue
+GATTCCGCGTTTCCGT-1,stroma with high immune infiltration
+CGAGGATCGGGAACGA-1,normal tissue
+CACGGGATTGAGGGTT-1,Stroma
+TGCTGTTGAAGAACTC-1,normal tissue
+TCATAAGTCCAAGAAG-1,Stroma
+AATCTGCGTTGGGACG-1,normal tissue
+CTACTATCATAGGTTT-1,suspected tumor
+CATCCCGAGATTCATA-1,Stroma
+ATGCACGCGCTGTTCA-1,suspected tumor
+AGAATAAATCTTCAGG-1,Stroma
+ATCTTTCGTATAACCA-1,normal tissue
+GGATCAGAGCCATCAG-1,Stroma
+AGGACAGTCGAATCCC-1,normal tissue
+TCTTCGCGGTGAGAGG-1,Stroma
+CCTAGGTAAAGGTAGC-1,suspected tumor
+CGGTTATCCAACAGTG-1,normal tissue
+CTGAGCGAGACTTATT-1,normal tissue
+GATCCGAATATAAGTG-1,normal tissue
+GATGCGTCCTGCATTC-1,normal tissue
+AGCCCGGCATTAGAGG-1,blood vessel
+TATTGCCGGGCTTGTA-1,Stroma
+CTTGAGTTAGGGTAAT-1,normal tissue
+GACTGCTGGTGAGAAA-1,normal tissue
+GCCGGGTTAGGGTCGC-1,normal tissue
+ACTCAAGTGCAAGGCT-1,Stroma
+ACCTGCGTGTCATGTT-1,suspected tumor
+AAGTTTATGGGCCCAA-1,Stroma
+TAGTGCCCTCCAGAGT-1,stroma with high immune infiltration
+CCACGGTGCCCGGTAG-1,stroma with high immune infiltration
+GACCTTCCACGTCTAC-1,Stroma
+CCGACAAAGGGAGTGC-1,Stroma
+TTAACGTTAAAGCCTG-1,Stroma
+TACTGGACAGCTCGGC-1,Tumor
+TCCGGGCTTGACGGGA-1,Stroma
+TTGAGCAGCCCACGGT-1,normal tissue
+TCTAGTTATCAGAAGA-1,stroma with high immune infiltration
+GCTCTCGGGTACCGAA-1,stroma with high immune infiltration
+GGCCCGTATACCATGC-1,normal tissue
+AACATATCAACTGGTG-1,normal tissue
+GCCACTCCTTACGGTA-1,
+GCATTCGAAATGAACA-1,Stroma
+GGTGCTGATCACAAAG-1,Stroma
+ACATTAGTTTATATCC-1,stroma with high immune infiltration
+GCTTCGACGTTCAATC-1,normal tissue
+CAGACCTGTAAGTGTT-1,normal tissue
+CACGAAAGTTAGTCCC-1,Stroma
+TGAGTTAAAGACATTC-1,normal tissue
+CGATGGACCCTACGCC-1,stroma with high immune infiltration
+TAAGGCATAACATCAA-1,stroma with high immune infiltration
+TACAAGGGCTTCTTTA-1,Stroma
+AGCTCTTCGTAACCTT-1,stroma with high immune infiltration
+GACGGGTTGGCCCGTA-1,normal tissue
+AGGTGGTGACCTTCGC-1,normal tissue
+TCAGGGTGTAACGTAA-1,stroma with high immune infiltration
+CGTTAATGTCCCGACG-1,Stroma
+GTCCCGCGACGTTATG-1,Stroma
+TGAGCTCAACTGTATA-1,Stroma
+CATTTAGCGGACCATG-1,normal tissue
+TCGCTACTGGCTTTGA-1,Stroma
+AACGGCCATCTCCGGT-1,Tumor
+GGTTTAGCCTTTCTTG-1,normal tissue
+CTTCGTAGATAGGTGA-1,stroma with high immune infiltration
+AAAGTGTGATTTATCT-1,normal tissue
+TGGTTCAACGGGTAAT-1,normal tissue
+ACCCGAGCGAAATTAC-1,
+TCCTAGCAAAGAAGCT-1,Tumor
+CTACAAGAAATAACCC-1,stroma with high immune infiltration
+TGATTCAGGTCCCGCG-1,suspected tumor
+GAACAACTGGGATGAA-1,Stroma
+CACTCGGTTAGGAGGA-1,Stroma
+CTAAATCCTATTCCGG-1,normal tissue
+CATTCCCATTCCGTCG-1,normal tissue
+GGGCGGCAAATGAATT-1,stroma with high immune infiltration
+CCCAGTTAAGGCGCCG-1,stroma with high immune infiltration
+GTGCACGAAAGTGACT-1,stroma with high immune infiltration
+CAGTAGCCCACGCGGT-1,normal tissue
+CTGGGTAGGCAGTTAA-1,normal tissue
+CTCTCACAATCGATGA-1,interlobular bile duct
+ACCGCAATAACTGCCT-1,normal tissue
+AACCCATCCCATGATC-1,suspected tumor
+GTGTCAGTGTACGTGG-1,normal tissue
+CACGCAGCGAGGCTTT-1,Stroma
+TAATTAGGACATCCGT-1,normal tissue
+GCCTATCAGGTAAGAT-1,Stroma
+CACGCACAGCGCAGCT-1,stroma with high immune infiltration
+CGCGGCTCAACTTGAA-1,normal tissue
+TGCGTTTGTTGACACT-1,normal tissue
+CGGGCCTTCTTTGTAA-1,normal tissue
+TTAAGATAGGATTGAC-1,normal tissue
+AGATATAATACGACTA-1,Stroma
+GTACTCCCTTATCGCT-1,Tumor
+CTCCTTTACGCAAGTC-1,normal tissue
+TAACTCATCCGCGCGG-1,stroma with high immune infiltration
+CAATACGAGAGTCTGA-1,normal tissue
+CTCCTCCAGCTCACAC-1,normal tissue
+TAACGCTTTGAGAGCG-1,Stroma
+AACAACTGGTAGTTGC-1,blood vessel
+CACCGCCAGAAGGTTT-1,stroma with high immune infiltration
+CACATCTCACCGACGA-1,stroma with high immune infiltration
+TATAGCGCACGTTATC-1,suspected tumor
+AATATCGAATCAATGC-1,normal tissue
+ACACATGATCAAATCT-1,suspected tumor
+ATCGCCAGTCAACATT-1,normal tissue
+GATATGAGACACTAAC-1,blood vessel
+CTGTCAAATGGCTCGG-1,normal tissue
+AGTGGTTGCGTATAGG-1,Stroma
+TAGATGGTTCCTTACT-1,Stroma
+GTATCTTTCATAACCA-1,normal tissue
+CGTGTCTCGTTACGAC-1,stroma with high immune infiltration
+AGTCGGCCCAAACGAC-1,Stroma
+TTGATAGTCAATACAT-1,normal tissue
+AGACCGGGAAACCCTG-1,Tumor
+GTGACTTCAGTAGTGC-1,stroma with high immune infiltration
+ATTCCCACATAAACAA-1,Stroma
+AACGTGCGAAAGTCTC-1,stroma with high immune infiltration
+GTGCAGCGTAGAGTAG-1,smooth muscle
+CCAACGATGCACTGAT-1,Stroma
+TGGCGACTGCTCCAAA-1,stroma with high immune infiltration
+TGCAGAGTACCGAGCA-1,stroma with high immune infiltration
+AGGTTCTCCTTTCCGG-1,
+AATAACACTAGAACAA-1,Tumor
+GCTACAGTACGGACCG-1,Stroma
+ACAAGGATGCTTTAGG-1,Stroma
+ACAAGGATGCTTTAGG-1,blood vessel
+ACAAAGAAGGTAGGCC-1,suspected tumor
+GGTCGGATAAACGGCG-1,stroma with high immune infiltration
+ACCGACACATCTCCCA-1,Stroma
+TCTGTTACCCAGCATA-1,Tumor
+GTTGCGCTAACATTAC-1,stroma with high immune infiltration
+CGGTTCAAGTAGGTGT-1,stroma with high immune infiltration
+TTGAGCGCCACGTGAT-1,normal tissue
+AGTGGTGTTACCCGTG-1,suspected tumor
+AAGGGAACGACTGGCT-1,blood vessel
+CACCCAAATCTTATGT-1,stroma with high immune infiltration
+TCGCCGAAGTTGCGTC-1,Tumor
+GCGCATCCAGTCAGCA-1,normal tissue
+AGGGCGAGCAGCTGAT-1,suspected tumor
+AAAGGCCCTATAATAC-1,normal tissue
+AAAGGCTACGGACCAT-1,normal tissue
+ATGCGAGTCCCACCAC-1,normal tissue
+CCTGTAAGACATGATA-1,stroma with high immune infiltration
+ACGCCAGATGATTTCT-1,stroma with high immune infiltration
+TGTGTCGCGAGTTGCA-1,Stroma
+TGACTCCGAATCATAC-1,
+CCTCTAATCTGCCAAG-1,blood vessel
+AGATGATGGAGTCTGG-1,
+CTGCGACCTCGCCGAA-1,Stroma
+GGTTTCAATCGGTCAG-1,normal tissue
+GAATATTCGGAGTCCC-1,stroma with high immune infiltration
+TTAAACTCGAATTCAT-1,normal tissue
+ACGGGCGTATGCGACA-1,normal tissue
+AAGCGCAGGGCTTTGA-1,Stroma
+CTTAGTAGGCCTACAG-1,normal tissue
+ATCATGGACTACCGAC-1,stroma with high immune infiltration
+AGCGCTAGAGCGATGT-1,normal tissue
+CTGTGCAGGGTAGGTC-1,normal tissue
+CGATAGCGATACAGTG-1,Stroma
+ATACCACGGGCAACTT-1,Tumor
+CTAGTATTCGGAATTA-1,stroma with high immune infiltration
+CGGCTCTAAAGCTGCA-1,normal tissue
+AGGACGACCCATTAGA-1,stroma with high immune infiltration
+CAGGCGCACGGTGGTC-1,suspected tumor
+GGGTTTAGGATAGGAT-1,normal tissue
+CGCCTGGCCTACGTAA-1,Tumor
+CACAATGAGCTGCTAT-1,stroma with high immune infiltration
+AAATTAACGGGTAGCT-1,stroma with high immune infiltration
+AAGCTCGTGCCAAGTC-1,blood vessel
+CTCGGGTTCTCTGGCC-1,Stroma
+GTCTCGACTAAGTTTG-1,normal tissue
+CTGCACCTAGTCCACA-1,normal tissue
+TTCAAGCCGAGCTGAG-1,stroma with high immune infiltration
+GAAACTCGTGCGATGC-1,Stroma
+AATATCGAGGGTTCTC-1,normal tissue
+TTGACCAGGAACAACT-1,Stroma
+GTCCATTACTGCTACG-1,normal tissue
+TACCTCTTTACCATCC-1,Stroma
+TTACTCCGGCCGGGAA-1,stroma with high immune infiltration
+GATTGGGAAAGGTTGT-1,Stroma
+CGCTCTCCGTAGATTA-1,Stroma
+TGAGACGTACCTCTCA-1,Stroma
+TCCTTGTCCTTTAATT-1,Stroma
+TCGAGTCTACGATTCG-1,suspected tumor
+ACTCAATAAAGGCACG-1,stroma with high immune infiltration
+GGTTACCACCCTCGGG-1,Tumor
+CCAACTTGATAGATCC-1,normal tissue
+ATTGATCACCACATTT-1,suspected tumor
+GGGCGCAGCGTTACTC-1,normal tissue
+TCTTACCGGAACTCGT-1,normal tissue
+CCGCTCTTCCGAACTA-1,Stroma
+CCCGGTGGAAGAACCT-1,Stroma
+GGGCGTCACCACGTAA-1,stroma with high immune infiltration
+GATCATTCCAAACATT-1,stroma with high immune infiltration
+TGTTCTTCCATTGACT-1,Stroma
+TCTGGCGCAAGCCGGG-1,Stroma
+CGCGCATGTTTGATTG-1,stroma with high immune infiltration
+CCGTATCTCGTCGTAG-1,
+ATAATCTTGGAGAACC-1,Stroma
+CAGGACAGCTGCCCTT-1,normal tissue
+CGCGAAGTGGCATACT-1,Stroma
+ACCTACAGTATGTGGT-1,normal tissue
+ATCAGACGGCACGCCG-1,Tumor
+GACTCACCCACGTGAG-1,stroma with high immune infiltration
+ATCTGCACCTCTGCGA-1,normal tissue
+CCAGATAGTTGAGTGA-1,normal tissue
+GGCCGAGACTCTGGTG-1,stroma with high immune infiltration
+TCACAGGGAATCGCAA-1,normal tissue
+GGCATACAGGTAGCGG-1,Stroma
+TCCACTTTATCTAGGT-1,stroma with high immune infiltration
+CCTGAACGATATATTC-1,stroma with high immune infiltration
+CTGGTGAATGGGCCTA-1,normal tissue
+CGCCTCCCTCCTCTAT-1,normal tissue
+TTGCTGATCATGTTCG-1,stroma with high immune infiltration
+GGAAACTAAATGGGCC-1,Stroma
+CCACGAATTTAACCTC-1,normal tissue
+TTAGGATGGGAGGGTA-1,normal tissue
+GCTGAATCTTCCAATC-1,suspected tumor
+CCAATCGGTAGATCGA-1,stroma with high immune infiltration
+CTCATTAACGTTGCCC-1,normal tissue
+GCAAACCCTACATTAT-1,stroma with high immune infiltration
+CTCTGTTTGAGGATTC-1,Stroma
+AGACCCGCCCTCCTCG-1,
+TTGTGGTAGGAGGGAT-1,Tumor
+TGCAGTTTCCTCCCAT-1,normal tissue
+CAGGCAGTCTTACCAG-1,Stroma
+TGCAGTGGTAGGGAAC-1,normal tissue
+ACAATTTGGCCATATT-1,stroma with high immune infiltration
+GACTGCGGCACGTGTA-1,Stroma
+GTTAAGGGTGCGATGT-1,Stroma
+GCTATACGTCTCGGAC-1,normal tissue
+TTCTAGAAAGTCTTAT-1,normal tissue
+TATCCGCACCGTCGGG-1,normal tissue
+GTCATGCACCTCCGTT-1,stroma with high immune infiltration
+TGACATCGAGCGGACC-1,stroma with high immune infiltration
+GTTGGTCATGCTATCC-1,stroma with high immune infiltration
+CTGCAAGCACGTTCCG-1,Stroma
+ATAAACGGACCCGTAA-1,normal tissue
+ACCCTCCCTTGCTATT-1,normal tissue
+CTCCGGCCTAATATGC-1,blood vessel
+TTGTTGTGTGTCAAGA-1,stroma with high immune infiltration
+GGAACTTTGGCGATTA-1,Stroma
+AGAAGGTTGTAGGTCG-1,Stroma
+TACGCTCGGTATTGGA-1,Stroma
+CCACTATCCGGGTCAC-1,normal tissue
+CCATTCCCTGCCCACA-1,Stroma
+TCGCCGACATATTCGC-1,Stroma
+GCAAATGAGGACACTT-1,Stroma
+ACTTATACTTACCCGG-1,stroma with high immune infiltration
+AAGATTGGCGGAACGT-1,normal tissue
+ATCACGTGCTAATTAA-1,Tumor
+TATAGATGGTCGCAGT-1,normal tissue
+GCATGCTAATAACGAT-1,Stroma
+ACACACCAGGACCAGT-1,normal tissue
+TAGGCGGCTGCAAAGA-1,
+GGTAGACCGTTGGGCG-1,stroma with high immune infiltration
+CTCGATATTTGCGAGC-1,stroma with high immune infiltration
+GAAACAGATGACCACC-1,normal tissue
+AGGCACGTGACTGTCC-1,Stroma
+GAGTATCAAAGTTACA-1,Stroma
+TATGAAGAATTAAGGT-1,Stroma
+AGTTACTCTATCGTGG-1,stroma with high immune infiltration
+ATCACTTCATCCTCGC-1,stroma with high immune infiltration
+ATGTTTCGGCCCGGAG-1,normal tissue
+GGCTTTCAATAAGGGT-1,normal tissue
+CCCGAGTTTCTCCGTA-1,normal tissue
+CCTTGACCACTTTATT-1,normal tissue
+TACATAGGCATACACC-1,normal tissue
+TCAGACGCTATAGAAG-1,normal tissue
+ACGCATACGTTTACTA-1,normal tissue
+TCGCCCACTGCGAGAG-1,Stroma
+ATCAATCTGGGCTGCA-1,stroma with high immune infiltration
+GACGTGTAGGGATTAT-1,Stroma
+CTGTTCACTGCCTGTG-1,Stroma
+GAATGTTGGGTAATCT-1,stroma with high immune infiltration
+CCATAACCTGTGCAGT-1,suspected tumor
+AGAAGGTTGCCGAATT-1,stroma with high immune infiltration
+CAGCTCGACAAGTTAA-1,normal tissue
+TAGAGGTTCTACTTGT-1,normal tissue
+AGCAACATATCTTATT-1,normal tissue
+GGACTCACAAATTAGG-1,normal tissue
+ATCCAACGCAGTCATA-1,Stroma
+CAATGAGGTTCGACTA-1,normal tissue
+TTGCGTCGGCCAACCG-1,Tumor
+GCGCTATGCCGAGGCA-1,stroma with high immune infiltration
+GACTCCTTCCAATTGA-1,suspected tumor
+AGGAAGCTGTCCGCCG-1,Stroma
+AGGAACGAACGACTTC-1,Stroma
+TGAATGTCAGCCGGCC-1,normal tissue
+GTGATTCGCCGCTCAA-1,Tumor
+ATCGTTAGCTAGCGGA-1,Stroma
+CAGCAGCCCGTTCCTT-1,normal tissue
+GTCTAGTGAGCCGCTT-1,Stroma
+AAAGTTGACTCCCGTA-1,normal tissue
+CCTATATCGTGTCACG-1,suspected tumor
+AAGAGGCCCTTTGGAA-1,Stroma
+AGTGAGTCGAATTAAC-1,Stroma
+ATCTTGACTTGTCCAA-1,normal tissue
+TGACTATAATCCTTTC-1,normal tissue
+TAGGCCTATATAGTCT-1,Stroma
+ACAAGGGCAGGCTCTG-1,normal tissue
+GTCATGCGCGAGGGCT-1,Stroma
+GCTGCACGGTTTCTTA-1,normal tissue
+TATCTAGCCTAAAGGA-1,Stroma
+CCCAGGTCTGAAGGCT-1,normal tissue
+GTAGCTCCGGGAGGCT-1,normal tissue
+ATGCCATTTGCGACCA-1,normal tissue
+ACGAAATGGGCGGCAC-1,Stroma
+TGTGCCAGAGGCAAAG-1,suspected tumor
+CGTTTGGTGTTGTGGG-1,Stroma
+ACTTGCTCTATCTACC-1,normal tissue
+CAGGCCGTTTGGGTGT-1,stroma with high immune infiltration
+CTTTGGGATTGTTGCA-1,normal tissue
+GGGCCATTCGTGCTGG-1,normal tissue
+GGAGACGACACCTTTG-1,normal tissue
+GTGGTGGCCAAGTGAA-1,normal tissue
+ACGTTCGTTCAGGAAA-1,normal tissue
+TCCTTTCTTACGCTTA-1,stroma with high immune infiltration
+ACTCTTCAGCTCCCGC-1,normal tissue
+AGGCCACATTGGTTAC-1,normal tissue
+TCGAGGGCAACAGACG-1,Stroma
+TCGTAAGACGACATTG-1,normal tissue
+GATGAGGAACCTTCGG-1,Stroma
+TTATGAATGAAAGGGA-1,normal tissue
+GCGCAAATATATTCAA-1,suspected tumor
+CATAACGGACAGTCGT-1,stroma with high immune infiltration
+TAGGTGTTCCACAGAT-1,normal tissue
+GAATTCACCCGGGTGT-1,normal tissue
+GCTACGACTTATTGGG-1,normal tissue
+TACGCTGCTGTGTTAA-1,normal tissue
+CACTCCTCTCGGTCGG-1,normal tissue
+AAATCGCGGAAGGAGT-1,suspected tumor
+CGAGAGATGTGAACCT-1,stroma with high immune infiltration
+AATTGCGTGGATTACA-1,normal tissue
+CAGTGAATAAATGACT-1,normal tissue
+TTAGTAGGGCGGCGGG-1,Stroma
+ATCAGCTCGTCCACTA-1,suspected tumor
+GACAAGACGCCCGTGC-1,Stroma
+TGGGCAGGCCACCGCA-1,normal tissue
+ACACCACATAATTAGC-1,normal tissue
+CCCGACCATAGTCCGC-1,blood vessel
+CGGGAATATAGTATAC-1,normal tissue
+AATATTGGAGTATTGA-1,Tumor
+TTGTGGCCCTGACAGT-1,blood vessel
+AAGTGACGACCGAATT-1,Tumor
+GCAGGACTATAGAATA-1,Stroma
+TTGTGCAGCCACGTCA-1,Stroma
+TGATAGCGGGATTCTA-1,Stroma
+CCTCGCGCGATATAGG-1,stroma with high immune infiltration
+GCTGTTGCTACCGAAC-1,normal tissue
+AGATCGTGCATAAGAT-1,stroma with high immune infiltration
+GCGTCGCCAGGGTGAT-1,stroma with high immune infiltration
+TGGCAAACTAAATTAC-1,normal tissue
+AGCTAACAAGCAATGT-1,stroma with high immune infiltration
+CTACTGCCACCTGACC-1,stroma with high immune infiltration
+AGATACCAATAGAACC-1,Stroma
+TGTGACTACGCCAGTC-1,blood vessel
+GACTCCCAGAATAAGG-1,normal tissue
+ATACGCCGGCGAAACC-1,normal tissue
+GGATCCGGAATATACT-1,stroma with high immune infiltration
+GTGCTGCAGATAAGGA-1,Stroma
+TTATCCTCAAGGAATA-1,suspected tumor
+ACACTGATCAAGGTGT-1,stroma with high immune infiltration
+GGCGTCCTATCCGCTG-1,Stroma
+GAATTTCTCGCTGCAG-1,Stroma
+AATGACTGTCAGCCGG-1,Stroma
+CGTTTGTGTAGAGGGT-1,stroma with high immune infiltration
+AGTACAGAAGCTTATA-1,Stroma
+AGGGCTGCAGTTACAG-1,stroma with high immune infiltration
+TTCGGTGGAGACGCCC-1,normal tissue
+CGGTACTAGAATCAAA-1,stroma with high immune infiltration
+TAGTACCACAACTTTC-1,Stroma
+CCCGGTGTATCGGAAT-1,suspected tumor
+GAACTGTGGAGAGACA-1,Stroma
+CTGGTTCGCGAGCTAC-1,stroma with high immune infiltration
+TTCGGACTGGGCATGG-1,normal tissue
+CTCCTGTTCAAGGCAG-1,normal tissue
+ACATAATAAGGCGGTG-1,Stroma
+GTTACAATTGGTGACG-1,Tumor
+TCCCGTGTGCAATTTG-1,normal tissue
+ACAATGAATACGGAGA-1,stroma with high immune infiltration
+TCCCAGGCTTAGCTAA-1,interlobular bile duct
+AGTGAACAAACTTCTC-1,normal tissue
+TATGACCTTGCGCTGG-1,suspected tumor
+CATGATGGAAGTTAGC-1,normal tissue
+TCGCGTAGCAGTGTCC-1,Stroma
+TAATAGGTCACCAGAA-1,Stroma
+CCTACATTCACAGACG-1,Tumor
+TCAACGCGACCGGCAG-1,Tumor
+GTTACCTACAACTTGC-1,normal tissue
+GCACAACCTCGGGCGT-1,suspected tumor
+TGTGGCGGGCTTCTGG-1,Stroma
+ACTTCAGGCTGATCCC-1,normal tissue
+GATCAACATAAAGGGA-1,normal tissue
+GGGACAGAGTTACTCC-1,suspected tumor
+CAGATAATGGGCGGGT-1,Stroma
+CATGATCGCTTTGAGA-1,Stroma
+CAGGAAGACTTTATAT-1,stroma with high immune infiltration
+TACTATGGTTCCTCAG-1,stroma with high immune infiltration
+CATACACAAAGTCAGC-1,suspected tumor
+GCAAAGGGCGTTAGCC-1,normal tissue
+GCAAACCTTGGCCATA-1,stroma with high immune infiltration
+GTAAGTAGGGTATACC-1,Stroma
+GTTTGACCAAATCCTA-1,stroma with high immune infiltration
+CACCTTGCGAAACTCG-1,normal tissue
+GCGGTGAACTGCGCTC-1,stroma with high immune infiltration
+TGTATAACAGATCCTG-1,normal tissue
+CACACAGGGATAGATT-1,Stroma
+GTTCGCCATAAGTGCC-1,stroma with high immune infiltration
+GTTAACTATGTTGTCA-1,normal tissue
+CCTGTACTCACGCCCA-1,Tumor
+ACAAGCTATATGGAAG-1,Stroma
+TTGAGAGTACTGCTAA-1,Tumor
+ACAGAACTGAGAACAA-1,suspected tumor
+TGCGACGGCCGAACGT-1,stroma with high immune infiltration
+GCTACTATAGTAGAGT-1,normal tissue
+AAAGACTGGGCGCTTT-1,Stroma
+ATTACATGTCAGTCTT-1,normal tissue
+TTATGACAAACTGGAT-1,Stroma
+AAGCGTCCCTCATCGA-1,stroma with high immune infiltration
+GTGGTTTCCGCCTTTC-1,Tumor
+CTTTGGCTTTAGTAAA-1,Stroma
+ATTCACTGATGTTGGA-1,stroma with high immune infiltration
+TAAACCCAGGAGGGCA-1,Tumor
+GCAACAGCAGTATGCG-1,normal tissue
+CAAGTGTGGTTGCAAA-1,normal tissue
+AGGCCTGAGAATCTCG-1,Stroma
+AGGCCTGAGAATCTCG-1,blood vessel
+AGGGTCGATGCGAACT-1,normal tissue
+GCGAGGCCCGAGCAGA-1,stroma with high immune infiltration
+ACTTACGCATCCACGC-1,Stroma
+GTTTGGTAGGGTCAAC-1,normal tissue
+GCTAACTGAAGTCTGA-1,Stroma
+CCTATGAAGTGGTGCC-1,
+CCGTGGAACGATCCAA-1,normal tissue
+CTTCTGGGCGTACCTA-1,normal tissue
+ACGCAATCACTACAGC-1,normal tissue
+AAGACCAAATAACTCA-1,suspected tumor
+CCCTGACTAACAAATT-1,Stroma
+GAACCTTTAACGATCC-1,Stroma
+TCATCGATGGTCCCAA-1,suspected tumor
+GTCGCGTAACCCGTTG-1,
+CTGACTGCGCAGCTCG-1,normal tissue
+GCGTCTAACCTCCTAA-1,normal tissue
+CTCGAGGTCGAACAGT-1,stroma with high immune infiltration
+TCGGATCTGGATGACC-1,Stroma
+TGAGCGGAAAGTGTTC-1,stroma with high immune infiltration
+ACACGTAGGCCACAAG-1,Stroma
+TTACGTATCTATGACA-1,Stroma
+CAAGGATCGCATGTTC-1,normal tissue
+ATTTCCGGGTTCTGCG-1,stroma with high immune infiltration
+CCTCGAAGTGGACGGG-1,
+AAATAGCTTAGACTTT-1,stroma with high immune infiltration
+GCAGGAACTTAGATCT-1,suspected tumor
+CCGTGTTAAATTCCAT-1,Tumor
+AACAGGAAATCGAATA-1,Stroma
+CGAGAGGGTAGCCGCG-1,normal tissue
+TTGATTAGCTGTTTCT-1,Tumor
+TGATGGCTGTTTCTGA-1,normal tissue
+CCAGTAGTCTGATCCA-1,normal tissue
+TTCTTGGACGATCTGC-1,Tumor
+CGTGTATGGGAGCTGA-1,Stroma
+GACCGATTAAATATGT-1,normal tissue
+GCTCAATGTAATACCG-1,normal tissue
+TGGAGTGATGCGATGA-1,Stroma
+CTTTGCATCGCTCTTG-1,Stroma
+CAAAGATTATTGGGCC-1,suspected tumor
+TATTTGATTTGCACAG-1,normal tissue
+ACTATCCAGGGCATGG-1,stroma with high immune infiltration
+ATACTAGCATGACCCT-1,Stroma
+TAATTTCCGTCCAGTA-1,Stroma
+TAATGAAAGACCCTTG-1,Stroma
+GGTGAAGTACAGGGAT-1,Tumor
+CGTATCTAGAACTAAG-1,Stroma
+CAATTTCGTATAAGGG-1,normal tissue
+GCGTCGAAATGTCGGT-1,Stroma
+TAGAGTCTAAGCGAAC-1,blood vessel
+GGTCGGCCAGGAGCTT-1,normal tissue
+AGGATCACGCGATCTG-1,suspected tumor
+TTGAATCGTTGTATAA-1,suspected tumor
+TCGCCGCACCGCGTGA-1,suspected tumor
+CAAGCGGCACATAATT-1,normal tissue
+CGAGGCTAAATATGGC-1,stroma with high immune infiltration
+GGATGACGCGAGTTTA-1,stroma with high immune infiltration
+AGCCCATACATGTAAG-1,Tumor
+GCTCTATGTTACGTGC-1,blood vessel
+AGCGACAGGAACGGTC-1,Tumor
+CCGCACACGAACGTGT-1,normal tissue
+CCTATAATGAGTGCCC-1,stroma with high immune infiltration
+GTTGGATTTGCGTTGG-1,stroma with high immune infiltration
+GCCTCCGACAATTCAC-1,Stroma
+CGCCCTAATTGTTCAA-1,normal tissue
+GCGAAACGATCGGGAG-1,normal tissue
+AAGTGCCTTGACTGTA-1,normal tissue
+CTGCCATGCATCACAT-1,normal tissue
+GAGCTGTCGTCTCGGA-1,normal tissue
+ATTGCTGCTCCTCCAT-1,stroma with high immune infiltration
+GTCCACGTCGCATTCG-1,Stroma
+TTCAAAGTCTCTAGCC-1,stroma with high immune infiltration
+GTTGTTGCAAGATGGC-1,Stroma
+AGCTATTTAATCCAAC-1,
+ATACGGTGAAGATGCA-1,Stroma
+CTTGTCAACATTCGAG-1,normal tissue
+CGAATGACGCATAATG-1,normal tissue
+AGTTTGGCCAGACCTA-1,Tumor
+TCAAGCGCGGACGGTA-1,Stroma
+TATATATCGAGAAATG-1,Stroma
+ATTTACTAAGTCCATT-1,normal tissue
+CTACGCACGGAGTACC-1,stroma with high immune infiltration
+TCTTCTATAACCCGCC-1,normal tissue
+CCGCTTGCTGACATGG-1,normal tissue
+TTGTCACCGCGGTATC-1,suspected tumor
+CAGAATAACACACGGA-1,normal tissue
+GGGCAGGATTTCTGTG-1,blood vessel
+GTAGGTGATCCGTGTA-1,stroma with high immune infiltration
+AAACCCGAACGAAATC-1,normal tissue
+CGGGATCAATGTAAGA-1,Stroma
+AACCTTTAAATACGGT-1,
+ACCGAAGAGTCTGGTT-1,suspected tumor
+ACCCACCTACATGCTC-1,Stroma
+TTGAATTCACGTGAGG-1,normal tissue
+CCGGAAGTTATCAGTC-1,normal tissue
+AGGCCCTAGAACGCCA-1,Tumor
+CATTATCCCATTAACG-1,normal tissue
+TAATAAACAAGGAGAT-1,stroma with high immune infiltration
+GTGAACTCCCATTCGA-1,normal tissue
+AAACAAGTATCTCCCA-1,normal tissue
+CTAGCTTAATGGTCCC-1,normal tissue
+GTCGTATTGGCGTACA-1,stroma with high immune infiltration
+AAATCTAGCCCTGCTA-1,normal tissue
+CTTAGCCTTCCACATG-1,normal tissue
+TCCGTTTAGCCTTGAA-1,normal tissue
+CACCAGTCAGCATGCA-1,suspected tumor
+GCTCCGCTCGCTTCAG-1,normal tissue
+GTGAAGTCACGACTCG-1,suspected tumor
+TCTTTAGCAGGCGAAC-1,normal tissue
+TCAACAAAGATAATTC-1,Tumor
+CTAAAGAATGCCTACT-1,Tumor
+GGGAGCGACCGTAGTG-1,Stroma
+CCATACCTTTACTTGT-1,normal tissue
+CTGAATCCGAGACCTC-1,
+TCACGGCCCAAGAGAG-1,normal tissue
+CATACACGGTTCCCAC-1,normal tissue
+TCTGCCAGAAACTGCA-1,normal tissue
+TCGGAATGCGCTCTGA-1,Stroma
+TCCCTGGCTCGCTGGA-1,Stroma
+AAGTCAATTGTCGTCA-1,normal tissue
+CAGCGCCAACACGATA-1,Stroma
+TATGGGTACGTATCGT-1,stroma with high immune infiltration
+ATACCTAACCAAGAAA-1,stroma with high immune infiltration
+ATTTCATTATTTCGCG-1,stroma with high immune infiltration
+CAAGATATTATAACGT-1,normal tissue
+GGGTCGTGGCAAGTGT-1,normal tissue
+CGGGTTTGTTAGGGCT-1,Stroma
+GGTCTGAGAATCTGGA-1,normal tissue
+CTTATAGATGGCTGTT-1,Stroma
+TCTTTAAGACTATGAA-1,normal tissue
+AGCGCGGGTGCCAATG-1,normal tissue
+AAACTTGCAAACGTAT-1,suspected tumor
+TTCGCCGCTCGCGCTA-1,suspected tumor
+TGGGTGTAATAGATTT-1,Stroma
+TGAGCCATACAGTCTC-1,Tumor
+CTCCCAATGAGTCGCG-1,normal tissue
+TGGGAAATGCCTTTCC-1,Stroma
+TCGAGCCAGGCAGGCC-1,stroma with high immune infiltration
+GGTCGGTCGTCCACAG-1,stroma with high immune infiltration
+TACCAATAAAGTACCA-1,
+TATGAAGACAGGTGCG-1,Stroma
+GACGCATACCCGTCGG-1,Stroma
+CAAACTACGATAGAGA-1,stroma with high immune infiltration
+GGTGGAGGTTGATACG-1,normal tissue
+CGATTAAATATCTCCT-1,normal tissue
+CCTATATTTGTCCTGG-1,normal tissue
+TCAACGAGGAGACAAA-1,normal tissue
+TGTGGACTATCTACGT-1,smooth muscle
+TTGAACGACGTGCTGA-1,Stroma
+ACTCCCTAGAATAGTA-1,normal tissue
+GCGTTATATTTGGAAC-1,Stroma
+GCGTTATATTTGGAAC-1,blood vessel
+TGCCGAAAGCGTATTC-1,normal tissue
+CATTGCGAAATGGGCG-1,Stroma
+CTCCGCCCACATGAGG-1,Tumor
+AGGTTACACCATGCCG-1,normal tissue
+ACTCGTAACCCGTCCT-1,suspected tumor
+CGTGTGTTAAACCCTG-1,normal tissue
+AGGTCAGGTGAGAGTG-1,suspected tumor
+AAAGGGCAGCTTGAAT-1,Stroma
+TCCAGGGTATATACGA-1,normal tissue
+TTCCGGCCTTGAGGCT-1,stroma with high immune infiltration
+AGTTCCTACAGAATTA-1,stroma with high immune infiltration
+TACGTGCAAGGTTCCT-1,normal tissue
+GCTGCTACTGCGTAGC-1,normal tissue
+ATTTACAGTTTACTGG-1,Stroma
+GGTCAAGACTACTTCG-1,normal tissue
+CGCTTCGGTCTAAGAC-1,Stroma
+AGAAATTATGACTCGC-1,normal tissue
+GCTAAGTAAAGGCGAT-1,Stroma
+CTGGGCCTGCTATATC-1,Tumor
+GATAGGTAACGTTGAC-1,normal tissue
+GTATTTAATGGCATAA-1,normal tissue
+TGGTGATCGTATTTGT-1,Stroma
+TCCGTTAAGCTAATAT-1,normal tissue
+TATCGATCTATGCATA-1,normal tissue
+TTACTATCGGCTTCTC-1,Stroma
+ATTATGAGACCCAATT-1,normal tissue
+TACGTGGGCCCAGGGC-1,Stroma
+TAGGTTCGAGTTCGTC-1,stroma with high immune infiltration
+CCTTTGAATTATGGCT-1,suspected tumor
+CAGAGACGGTCACCCA-1,stroma with high immune infiltration
+GGGAACGGTTTCAGAT-1,normal tissue
+TCCAGATGTACGCCAA-1,normal tissue
+TCAACGCAGGAAATAA-1,Tumor
+ACAAACCATGCGTCCT-1,Stroma
+ATATAACACGGGCGCA-1,Stroma
+TGCGCAAAGCATTTGG-1,interlobular bile duct
+CGAAGACGGTGAGTGC-1,Stroma
+ACAATAGTCGTACGTT-1,Tumor
+CGAGTACTAAAGAGGA-1,Tumor
+ATGCTCTGGCGCGGTA-1,Stroma
+CGCTAGAGACCGCTGC-1,normal tissue
+ACCTCCGTTATTCACC-1,normal tissue
+ACGAGTACGGATGCCC-1,normal tissue
+ATACTGCCTTACACCG-1,Stroma
+TTGGTATGGCTTGTGT-1,normal tissue
+TCTTTCCTTCGAGATA-1,Stroma
+GTAGTCGCGGGAATCA-1,normal tissue
+AAACAGCTTTCAGAAG-1,suspected tumor
+AGACCAAACCACACCT-1,suspected tumor
+CACGTTTCGTACACAC-1,normal tissue
+AACGCTGTTGCTGAAA-1,normal tissue
+CGTTATCATACTTCCA-1,suspected tumor
+AAACAGGGTCTATATT-1,suspected tumor
+AACATTGTGACTCGAG-1,
+CTAACGAAACTTGCTG-1,normal tissue
+TCAATCCCGCGCCAAA-1,Stroma
+GGTCAGTGGGTCCCAC-1,normal tissue
+GTTAGCCCATGACATC-1,Stroma
+CGGGAGCTTCAGTGTA-1,normal tissue
+GGGTTAACATTTGAGT-1,stroma with high immune infiltration
+CCTAACCCAAACAAGT-1,normal tissue
+TTGTAAGGACCTAAGT-1,Tumor
+GCTCGGAATTTAAAGC-1,normal tissue
+TTAGAGTTTAGAAGGA-1,normal tissue
+CTCTAGCCCTCGGAAA-1,Stroma
+AGGCGATAACTGGCGT-1,Stroma
+CTTGCAACCGCCTCCT-1,Tumor
+TAGCCGGCGGTCAGCG-1,stroma with high immune infiltration
+CGTCTTGAGTGTGACG-1,normal tissue
+TGTATGGCGCAGACAG-1,normal tissue
+GATCGACACTATCTGA-1,blood vessel
+AGGTGTTGCCGACCAC-1,Stroma
+GCATACGAGGTCTTTA-1,Stroma
+GGGTCTATCGCTTTCC-1,Stroma
+GTACTCCTGGGTATGC-1,stroma with high immune infiltration
+CCCTGCCCAATCCGCT-1,Tumor
+TGGACCAATCTAAGAT-1,Stroma
+ATATAGAGTATTGGTC-1,Stroma
+TCTACCGTCCACAAGC-1,stroma with high immune infiltration
+TAGATATGGACTGGAA-1,stroma with high immune infiltration
+GTACGAGATTGCGACA-1,Stroma
+TACTTTACTGAGCCGG-1,normal tissue
+TATGCTCCCTACTTAC-1,Stroma
+GTGCCCGTTCGGATTC-1,stroma with high immune infiltration
+TGGGCACGTTCTATGG-1,blood vessel
+ATGGAACCTTTGCACA-1,normal tissue
+GCGCTCGATCACCTGT-1,normal tissue
+TAAGGCCCGTCACCCT-1,Stroma
+CTACGCCATTTCCGAT-1,stroma with high immune infiltration
+CTATTTGGTTACGGAT-1,stroma with high immune infiltration
+GATACGATGGGAGTCA-1,stroma with high immune infiltration
+TCGGCGTACTGCACAA-1,suspected tumor
+CCGCTTACCTCACTCT-1,Tumor
+TTACCCTAGGGATTGG-1,normal tissue
+GCCGCATTAGTCCGGC-1,Stroma
+CGTTGTAAGATTGATT-1,normal tissue
+CCAAGAAAGTGGGCGA-1,stroma with high immune infiltration
+AGGACATCGGCACACT-1,Stroma
+ACTCCAATATCATCAT-1,blood vessel
+TTGATCTAACTTTGTC-1,Stroma
+CCACACTGAGATATTA-1,stroma with high immune infiltration
+CAACTGCTCATCCGAT-1,normal tissue
+TTAGTAAACCTGCTCT-1,Stroma
+GAGGGTAGTAACAAAG-1,stroma with high immune infiltration
+GGCACTCCACTGGGCA-1,interlobular bile duct
+GGCTGAAATAGCAAAG-1,normal tissue
+AGTTAAGTCAACCGCT-1,
+TCTGGGTAGCGCTCAT-1,Tumor
+CTCGAGACATACGATA-1,suspected tumor
+TTAGCTAATACGATCT-1,stroma with high immune infiltration
+TACACAGCCGTGGTGC-1,
+TCCGGCCTAGCGTACA-1,normal tissue
+CGCACGTGCGCTATCA-1,normal tissue
+CGTAGAGAGTAATTAT-1,Stroma
+AGATAACTTCAGGGCC-1,Stroma
+TTCTCTTACAGGTGAT-1,suspected tumor
+GTGAGGAGCGGTTGAG-1,stroma with high immune infiltration
+GGGAAGGGCTTTCTCA-1,Stroma
+GGGAAGGGCTTTCTCA-1,blood vessel
+CTCTAATGCATTGATC-1,normal tissue
+ACGCATTCGTGAGTAC-1,stroma with high immune infiltration
+AATAGAACAGAGTGGC-1,stroma with high immune infiltration
+TAGACGCCCGTACCGG-1,normal tissue
+GCATTGTAATTCATAT-1,Tumor
+CCTGCGTTCTACGCTT-1,Stroma
+AAGGAGCGGTTGGTGC-1,blood vessel
+GTGACCGCACACTACG-1,normal tissue
+TCGTGTATTGGTCACG-1,normal tissue
+GAATGCGAATCGGTTC-1,Stroma
+GCATGGGTACTGACGC-1,Stroma
+ATGTACATGCGGTGAG-1,Stroma
+CCAGTCTTGTCATAGA-1,normal tissue
+CCAGAAAGCAACTCAT-1,Tumor
+ACAGCGACATTCTCAT-1,Stroma
+CCGCATGTGGTACGAT-1,stroma with high immune infiltration
+TGGCAATGGGACGGCG-1,normal tissue
+GATGTAACGAACCACC-1,suspected tumor
+GAAGCCACTGATTATG-1,Stroma
+CCAACCTTATGTAACT-1,normal tissue
+GCTTAATGTAACTAAC-1,normal tissue
+ACCCATCTTGAGGGTA-1,Tumor
+ATCTGGGCTGTTCTTG-1,Stroma
+AGATTCACAACCGATA-1,suspected tumor
+TCCTAAAGATTCAGAC-1,Stroma
+ACTCTGACCTAATAGA-1,Stroma
+GTATCAAACGTTAGCT-1,normal tissue
+TATCTACAGAGGTAAT-1,Stroma
+GGTAACCGGGAGGATA-1,suspected tumor
+TACCATGTATTGATTT-1,normal tissue
+AAATTAATAAGCGCGA-1,Stroma
+AAGTAGTGACGCGAGG-1,Stroma
+AGTGATTCAAGCAGGA-1,
+CTGATAGTGTATCTCA-1,Stroma
+CCTCTCTCCCATCTAG-1,Stroma
+CCACGTAAATTAGACT-1,normal tissue
+GAGAAACTGGATCCCA-1,Stroma
+TACTTGTTAGTAGTCC-1,stroma with high immune infiltration
+CTATCGACGAAATACA-1,normal tissue
+TGAATTTCACTTGCCT-1,Stroma
+GTGGTATAGTCTGCCG-1,stroma with high immune infiltration
+AATTCATTGTCATGCA-1,Stroma
+CCGTAGGAAATCCCTG-1,Stroma
+TGTCCACGGCTCAACT-1,Stroma
+AACTGATATTAGGCCT-1,Stroma
+ATCGCTTTACGTCTCA-1,normal tissue
+CCCGTTTCGCAGATGT-1,normal tissue
+CCTGGTCGAATGTGGG-1,
+AATGTGCTAATCTGAG-1,normal tissue
+TCCAACTCAGCTATCT-1,Stroma
+GTCGCCGTTGTGTGTT-1,stroma with high immune infiltration
+TCCACAATGGTTTACG-1,Stroma
+CATACGGCGTCTGGGC-1,normal tissue
+TGGCATGAAGTTTGGG-1,suspected tumor
+GCCCGAGAGTCTAAAT-1,suspected tumor
+TACGGCATGGACGCTA-1,Stroma
+CATTGCGGGTCAATTC-1,normal tissue
+CGGAGCAATTTAATCG-1,
+TTCGTTCAACGAAGTT-1,normal tissue
+TACGAGAACTTCACGT-1,Stroma
+TGAGTAAATTAGCGTA-1,normal tissue
+CCTCACGTCAGCTAAT-1,Stroma
+TCGGAGAGTATCGGGA-1,Tumor
+GTCGTACCATCTCGGG-1,normal tissue
+CTCATCACTTAGTGAT-1,normal tissue
+TTGCCTTCTCGCCGGG-1,Stroma
+TGGGTGCACAAGCCAT-1,Stroma
+GACTACAAAGCGGTGG-1,suspected tumor
+TGTTTCTGAAGCGTGC-1,Stroma
+CATAGTCCACAAGAAC-1,Tumor
+ACGTAGGAGAGTCGCT-1,Stroma
+CACCCTAACAAGATCT-1,stroma with high immune infiltration
+TAGCCATTTCAAAGTC-1,normal tissue
+GTCAACCAGGCCTATA-1,Stroma
+AGGCAGATGCGTAAAC-1,normal tissue
+CATAGTACATTGAGAG-1,stroma with high immune infiltration
+TTATGTTTGCGATAGA-1,Stroma
+CCCGTAGCTGGGAAGA-1,stroma with high immune infiltration
+TATCTACCACAGCGGG-1,normal tissue
+TGCCGTGGATCGTCCT-1,stroma with high immune infiltration
+AGCTCCTTCGCACATC-1,normal tissue
+GCCTATAGTGTCAGGG-1,normal tissue
+TTCCGGTATCTGTGTC-1,stroma with high immune infiltration
+TTCGCTAGGAAGTTGT-1,stroma with high immune infiltration
+AGCGGCGGTTAGCGGT-1,suspected tumor
+TTGCGTAGTTTGAGGA-1,Stroma
+TGAACAAGCAGGGACT-1,normal tissue
+TATGGCCCGGCCTCGC-1,Stroma
+CCTCGCGCTGTGCGAT-1,normal tissue
+TATTAACACCAAAGCA-1,suspected tumor
+AGGATAAAGTCGGGAT-1,
+TGTTCCGCTTCCATGA-1,stroma with high immune infiltration
+AACGAAAGTCGTCCCA-1,suspected tumor
+GGACAAGTTGCAGTGA-1,Stroma
+CTTTGCTGTCATGGAT-1,normal tissue
+AGCCGCAAATTCAAAT-1,Stroma
+TAATTCCAATGCTTCA-1,Stroma
+GCTAGCGATAGGTCTT-1,normal tissue
+ATAGTTCCACCCACTC-1,normal tissue
+AGCTTCTTCTCGAGCA-1,Stroma
+ACATGGCGCCAAAGTA-1,
+GCAGCACACAGCCCAG-1,stroma with high immune infiltration
+ACCACCAATGTAACAA-1,normal tissue
+CTGCTTGGCGATAGCT-1,normal tissue
+TACATCCCTATCCCTG-1,suspected tumor
+ATGTGAAAGCCTAATG-1,
+TTAGTTCAAGTGTTCG-1,normal tissue
+CGTCGGATAGTGTTGA-1,normal tissue
+CAGCTTAGTAGGTAGC-1,Stroma
+CCTTCTCAGCGTTCCT-1,suspected tumor
+TAGTAGCTTATACCAG-1,normal tissue
+CCGAACACTGGGCCTC-1,suspected tumor
+CGCCGTTCAGCATAGT-1,Stroma
+AGCCCGGTAGCCTGTA-1,normal tissue
+CTATGCCCGAATGCAA-1,normal tissue
+TCTGACGGGCTAACCC-1,normal tissue
+CCATACTCGCCTCTCC-1,Stroma
+ACGATACCTATCCTGA-1,Stroma
+AGAGCAGTTATGAGAC-1,Stroma
+TTAAGGCCCGTACTTT-1,suspected tumor
+GGGCTCATCGAACCCA-1,normal tissue
+AGAGCCGCCGAGATTT-1,Stroma
+CTCGCACCTATATAGT-1,
+TCTTGCTCCCGATACT-1,Stroma
+TCTTGCTCCCGATACT-1,blood vessel
+CCTATACCGTCCTGTC-1,stroma with high immune infiltration
+CTCTTCTATTGACTGG-1,normal tissue
+CTCTTCTATTGACTGG-1,blood vessel
+CATACGAACTAGCTGG-1,
+ATTACCACACTGCCTG-1,normal tissue
+AAGGGACAGATTCTGT-1,normal tissue
+CGCAATTCTACAATAA-1,Stroma
+AAGCCGGAGAGCAGGA-1,Stroma
+TTGGATATCGTCTACG-1,stroma with high immune infiltration
+AACGCGACCTTGGGCG-1,normal tissue
+GCAAATATTACGCTTT-1,Stroma
+TGGTCGTGCAAGGCAA-1,Stroma
+TTCAGCTGGCGTGCCC-1,normal tissue
+AAGTGCGTTAGAATCT-1,Tumor
+TAAATGGGCTACTGAG-1,Stroma
+CCGTCAACCTCTGGCG-1,normal tissue
+CGCGACCGCGACAGAT-1,Stroma
+AAACGAAGATGGAGTA-1,suspected tumor
+AATCGCCTCAGCGCCA-1,stroma with high immune infiltration
+GATTCGACGGTTCACG-1,normal tissue
+CAGCCTCCTGCAGAGG-1,normal tissue
+GGAACGGCCTGCAGCC-1,Stroma
+GTTGGATTGAGAACAC-1,normal tissue
+ACCAACGCTTATTTAT-1,stroma with high immune infiltration
+GATCCCTTTATACTGC-1,stroma with high immune infiltration
+ATCGGCAAGCAGTCCA-1,stroma with high immune infiltration
+GCGCAAGAGCGCGCTG-1,normal tissue
+ATGGCAGCATTACGAT-1,Stroma
+CATGCCAACTCGCAAA-1,Tumor
+TCCCGGGTGTGCTGCT-1,Stroma
+AGTCTAAAGTATACTC-1,normal tissue
+CGCCGCCCATGCCTGT-1,
+ACCATCGTATATGGTA-1,Tumor
+TATTCCACTCAGCTCG-1,normal tissue
+ACTCTTGTATAGTAAC-1,stroma with high immune infiltration
+TCAACTGCAGAGTCAG-1,normal tissue
+AAATGATTCGATCAGC-1,normal tissue
+GGGTCACCGTGACGGT-1,stroma with high immune infiltration
+TGTGTCGAAGTCGAGG-1,Stroma
+TGCGTAAGAACCTGAT-1,
+CCATTAGCGATAATCC-1,Stroma
+GGGCCGGCCGAAGTAC-1,stroma with high immune infiltration
+ACTTATTTATGTGCCA-1,normal tissue
+AGGGAGACATACTTCG-1,normal tissue
+ATTAATACTACGCGGG-1,stroma with high immune infiltration
+TCGGCTTGTATCGACG-1,Stroma
+CTCCCTCCTTTCGATC-1,suspected tumor
+CATGCGACCAGTTTAA-1,normal tissue
+CTATGTGAGTCACGGC-1,suspected tumor
+GGTCGTAAGCTCGCAC-1,suspected tumor
+ATTTGGAGATTGCGGT-1,suspected tumor
+GGGAACGGGAGGTTAG-1,Tumor
+AATGTATGGCACTGTA-1,blood vessel
+ATTACGCGCTGGCAGG-1,Tumor
+TATAGGGTACTCATGA-1,Stroma
+GTAAGTCCACACTCTA-1,normal tissue
+CAATAAACCTTGGCCC-1,stroma with high immune infiltration
+AGCCTAATACCCACGT-1,suspected tumor
+CGCAATTAGGGTAATA-1,blood vessel
+GTGGGTACTGAGCGTA-1,suspected tumor
+AGGTCGCGGAGTTACT-1,normal tissue
+CATCTTACACCACCTC-1,normal tissue
+GTTAGGCTACCCGTTT-1,suspected tumor
+TAATACTAGAACAGAC-1,Stroma
+GTTCGGATCGGGAACA-1,normal tissue
+TTCAGGCGTCAAAGCC-1,Tumor
+GACTGCACCAGCCCAG-1,normal tissue
+TACCTGCTGCACTGTG-1,Stroma
+CTGTGGTCGGGAGATA-1,normal tissue
+TCTGATGTATTCTGTC-1,normal tissue
+ATTTGCGCGAGTAGCT-1,Tumor
+GTGGACGCATTTGTCC-1,stroma with high immune infiltration
+CGTGACATTGGGTCGT-1,stroma with high immune infiltration
+TTGTAATCCGTACTCG-1,stroma with high immune infiltration
+TTCCGCAGAGAAATAT-1,stroma with high immune infiltration
+GTGATCCTTGTCATGA-1,Stroma
+AGACGACGATGCCGCT-1,Tumor
+AATTCGATTCGAGGAT-1,Stroma
+CGCGGTAAGTCTAGCT-1,normal tissue
+GGGATGGACCCGCGTC-1,
+ACTCGCGATCTGACGC-1,stroma with high immune infiltration
+CATGAGATGCACTCTC-1,Stroma
+ACAGGCTTGCCCGACT-1,normal tissue
+ACCCGGAGCACCACAA-1,Stroma
+CCTGACCACCGATGGT-1,normal tissue
+TTCCACACAGATTTGA-1,stroma with high immune infiltration
+GGCGAAATCTAACTTG-1,normal tissue
+ACCGTCCACTGGGCCC-1,
+ATTGCCTATTAGACCG-1,normal tissue
+AGATCTCAGGTGTGAT-1,stroma with high immune infiltration
+TGAATACCGACGCGTA-1,Stroma
+CCAAGGTTGCCCTTTC-1,Stroma
+TACCTCCACACCAATG-1,
+GTGCGTGTATATGAGC-1,stroma with high immune infiltration
+CACAAGCTAAGAAAGG-1,normal tissue
+CTAGATGTGAGTGTAA-1,normal tissue
+TGTAGCCATCCCATTC-1,Stroma
+ACATCGATCGTTTACC-1,normal tissue
+CGGCCCAGGTATATCC-1,normal tissue
+CGAACGGCCGGACAAC-1,suspected tumor
+CAGATATGAAGATGAC-1,normal tissue
+ATCTAATATCCTACGG-1,stroma with high immune infiltration
+CTTACTGACTCCTCTG-1,Stroma
+CTGAAAGAGATCCGAC-1,blood vessel
+TTGCGGCATCAGAAAG-1,stroma with high immune infiltration
+GTGACGAGGGTGACCC-1,normal tissue
+ATAGGCGGCTATAGAA-1,Tumor
+CGATCCTCGCAACATA-1,normal tissue
+CTACACTCGCAGATGG-1,Stroma
+ACGTTTAGTTGTGATC-1,Stroma
+CTCACATTTACTAAAT-1,Stroma
+GAGCGCAAATACTCCG-1,normal tissue
+ACTCGTCAGTAATCCC-1,stroma with high immune infiltration
+ATGCATGATCCAGGAT-1,stroma with high immune infiltration
+GCCCTAGCCGTCGCGA-1,suspected tumor
+ATCGACTCTTTCCGTT-1,Stroma
+CACCTAATCAGTTTAC-1,stroma with high immune infiltration
+CCTGAATATTTACATA-1,stroma with high immune infiltration
+ATGCCGGTCTTGCATA-1,stroma with high immune infiltration
+AAAGTGCCATCAATTA-1,Stroma
+TCGCAAAGATGCATTT-1,normal tissue
+TGACAACGCATGTCGC-1,normal tissue
+ACCGATATTTAATCAT-1,normal tissue
+TTACAACTACGCATCC-1,Stroma
+CATAGCGTTGCCCACC-1,stroma with high immune infiltration
+CTGTTACCCAATCTAG-1,normal tissue
+TTGGCCTAGAATTTCG-1,normal tissue
+ATGTTGATTAGAGACT-1,Stroma
+TAGTCTGTGACGTTGC-1,normal tissue
+GAGTCTTGTAAAGGAC-1,suspected tumor
+CACTTAATCAGACGGA-1,interlobular bile duct
+AGCCACTCCCGTGCTT-1,normal tissue
+ACGGCCAACATGGACT-1,normal tissue
+ATTATGCCATAGGGAG-1,Stroma
+CGAGTTCTGTCCCACC-1,normal tissue
+GAAGAAACGATATTGT-1,Stroma
+CATGATGCACAATTCT-1,stroma with high immune infiltration
+CTAGGTCTGAAGGAAT-1,stroma with high immune infiltration
+AGAGCGGGCTAATCAT-1,Stroma
+GAACACACATCAACCA-1,blood vessel
+CGTCGGGTCTAAGCGC-1,suspected tumor
+GGATGTCCTTACCGCA-1,stroma with high immune infiltration
+CTTCTATTAATGCTAG-1,stroma with high immune infiltration
+GTGGCCTAATATCATT-1,Stroma
+GTTAAGTTAGAGTGGG-1,normal tissue
+TTACCCATTGCCGGGT-1,normal tissue
+GCGATTGTTAACGTTA-1,stroma with high immune infiltration
+AGTGAGCCTCGCCGCC-1,normal tissue
+AGGCAGGGAGCGTACT-1,normal tissue
+TGCAGGATCGGCAAAG-1,blood vessel
+TTATCCGGGATCTATA-1,normal tissue
+ATCAATGCCGTGGCTG-1,suspected tumor
+GATGCTGTATTTCATC-1,normal tissue
+CAGATCCTGGTTTGAA-1,suspected tumor
+TTCGGGACTAATCGCG-1,stroma with high immune infiltration
+GGTACGTTGCGGCCGG-1,Stroma
+ACCAGACCATAACAAC-1,Stroma
+TAACATACAATGTGGG-1,normal tissue
+CCCTAGGCAACAAGAG-1,suspected tumor
+CGCTGGTGACTACCCT-1,normal tissue
+CGCTGGTGACTACCCT-1,blood vessel
+GCAGAAGGTAATCTCC-1,smooth muscle
+GCGTCTCTGCATTGGG-1,Tumor
+TGACCAAATCTTAAAC-1,Stroma
+CACTACGGGAGCTGCC-1,Stroma
+TAGCGTCGAATATTGA-1,Stroma
+GAAAGAACAGCGTTAT-1,stroma with high immune infiltration
+GGCAGCAAACCTATGC-1,normal tissue
+ACTCCCATTCCTAAAG-1,suspected tumor
+TTATCGCCTGCGAAGC-1,Stroma
+GAGTATGCCCGCCTTG-1,
+AGTCTTCTCCTCAAAT-1,blood vessel
+AGGTAGGTACAAAGCT-1,Tumor
+TAATCAACCAAATGGG-1,smooth muscle
+GGTACAAACATGCTAT-1,normal tissue
+TTCGTACTCCAGAACG-1,Stroma
+GATCTTGGAGGGCATA-1,normal tissue
+TATATCCCTGGGAGGA-1,stroma with high immune infiltration
+TAATTACGTCAGTAGA-1,Stroma
+GCTGAACTCTCCAGGG-1,
+TAAAGCGTTAGGAGAA-1,normal tissue
+TAGAAATTCACGTATA-1,Stroma
+CGGAGCATGGCGATCC-1,normal tissue
+CGATACCTCGCGGACA-1,stroma with high immune infiltration
+AAATCCGATACACGCC-1,Stroma
+GCCGATTGGCCAAGCT-1,normal tissue
+ATTGATGAGTCCTAAC-1,normal tissue
+TCTTTCATCCGTCCTT-1,Stroma
+AGGGTCTGGACGCAGT-1,Stroma
+CAGTCTGTATACTGGG-1,normal tissue
+ATGTTCGTCGACCCAC-1,Stroma
+ACTTGTAGTCCCTTCA-1,suspected tumor
+TGCCTTGGCCAGGCAA-1,normal tissue
+CATCTAGTGAAGGGAA-1,normal tissue
+GTTATATTATCTCCCT-1,normal tissue
+CCTGTTTGAAGACACG-1,Stroma
+TTAGAGGGATATACAG-1,suspected tumor
+GTATCAAGGTACTTCC-1,
+GGTTTGTGACCTGAGG-1,Stroma
+TGTGTAGTAGCACGTG-1,Stroma
+GAGTAAACCGGAAAGT-1,normal tissue
+CTGGAAATGGATGCTT-1,
+AGAGCGTACAAGCTCG-1,Stroma
+AAGGATCGATCGCTTG-1,stroma with high immune infiltration
+ATCATAGCCCTATGTA-1,Stroma
+CATGGTCTAGATACCG-1,stroma with high immune infiltration
+TGCCACACTAGAGGAA-1,Stroma
+ACGACTGGTCATACTC-1,normal tissue
+AACGCATGATCTGGGT-1,normal tissue
+AGAGTATAGTGTTACG-1,normal tissue
+ATAGACAACGGGACCT-1,normal tissue
+GAAATATCACCATCAG-1,Stroma
+ACATCCCGGCCATACG-1,normal tissue
+TACCTCAGTTGTCTGT-1,normal tissue
+TATTCGTGCCAGAATA-1,stroma with high immune infiltration
+CCAATGTCACAGCAAG-1,stroma with high immune infiltration
+TTATATTTGGCAATCC-1,stroma with high immune infiltration
+TCCGGTTCGTCCGGTC-1,stroma with high immune infiltration
+ACATAAGTCGTGGTGA-1,suspected tumor
+CAACGTGGTGGAGTCT-1,normal tissue
+GAGCGGAATGCGGTGT-1,normal tissue
+GCGACATGTAAACATC-1,stroma with high immune infiltration
+CCTTCAGTTAAAGTGA-1,normal tissue
+ATTACTTACTGGGCAT-1,stroma with high immune infiltration
+CGAGAGCTTTCACTAC-1,Stroma
+AATCTAGGTTTACTTG-1,suspected tumor
+ATATTGGAGAGGCCTT-1,Stroma
+GTCGGGAAGCAGAAAC-1,normal tissue
+AGTCGACGGTCTCAAG-1,normal tissue
+GCAGACCCAGCACGTA-1,normal tissue
+TAGGTGCTCGCCTAGC-1,normal tissue
+GTGTATATCAGCGGGC-1,Stroma
+CACAGCACCCACGGCA-1,stroma with high immune infiltration
+AAAGGCTCTCGCGCCG-1,normal tissue
+TCTGAACTCGTACCCG-1,normal tissue
+GTGAAGCCGTATAGTC-1,normal tissue
+GCGGGCATTACGATGC-1,normal tissue
+CTTAGGTATAGACCAG-1,Stroma
+CCGTGAGGCATTCATG-1,normal tissue
+CAAACGAGTATCGCAG-1,stroma with high immune infiltration
+TTAATTGCTTTGGGTG-1,Stroma
+GGGTGCATATGAAAGC-1,normal tissue
+ACGATCATCTTGTAAA-1,stroma with high immune infiltration
+TGAAAGGACCTGACTC-1,stroma with high immune infiltration
+CAATGGATCTCTACCA-1,normal tissue
+GTGGCAAACAGCGGCA-1,suspected tumor
+TTGGAAGAATACAGTC-1,
+TCCGCGGCCCAATGAA-1,normal tissue
+TCACGTGCCCGATTCA-1,normal tissue
+AGATGCAAGACGTGCA-1,suspected tumor
+GTGCCGCTTCAAAGGT-1,stroma with high immune infiltration
+TACCTACTCCCAGTAT-1,stroma with high immune infiltration
+GTCAGTTTGGTAGTCG-1,Stroma
+GGGCGTACATTTATAT-1,Stroma
+CTATCGCGTAGAGAAC-1,Stroma
+GTGGCCGGTTTCTCGG-1,normal tissue
+CATACTTAGGCAATAC-1,normal tissue
+AGGTATAATTGATAGT-1,normal tissue
+GCGGACCGCGTTGTGG-1,stroma with high immune infiltration
+CCATGGCCCTTGTACC-1,Stroma
+AGTACGGGCACCTGGC-1,normal tissue
+AGGGTGGATAGTGCAT-1,Stroma
+CAGTGTCGGCTGGCCC-1,normal tissue
+ATCCAATGGTACCGAA-1,Stroma
+AATAGTCCGTCCCGAC-1,normal tissue
+ATACGGAACGTCGTTT-1,suspected tumor
+TTGCACGGAGCAGCAC-1,Stroma
+TTGGGCGGCGGTTGCC-1,stroma with high immune infiltration
+GAGAGGTGCATTCTGG-1,Tumor
+TCCGAACGTTGCCGCT-1,normal tissue
+GATCGCTATATCTCAG-1,Stroma
+CACAGGGCCGTTGTCA-1,normal tissue
+ACAAGCAGTGCCTAGC-1,Stroma
+GCAGATTAGGGATATC-1,normal tissue
+TGGAATTAGACGCTTT-1,Stroma
+GCAGATCCATAAGACT-1,normal tissue
+GGCGGTAGGATCATTG-1,interlobular bile duct
+TCTAACTGTATGTAAA-1,Stroma
+CCAAGACTTCTGCGAA-1,Stroma
+TCTCATGAGATAGGGT-1,normal tissue
+GGACAAGCCATGATCG-1,Stroma
+CCATAAACAACCCGAC-1,stroma with high immune infiltration
+GGCGGAGTAATATTAG-1,interlobular bile duct
+TCTCGAGGAGGTTCGC-1,normal tissue
+CGCAGGCGATCCAAAC-1,normal tissue
+TTGCATGCTGATCACG-1,Tumor
+GCTGGCATATTCACCT-1,Stroma
+CAGTCGGCCTAGATAT-1,suspected tumor
+TCTTCCCATGGGCACA-1,normal tissue
+GTTATATCAGGAGCCA-1,normal tissue
+ACGGCGACGATGGGAA-1,normal tissue
+ATAGGGATATCCTTGA-1,stroma with high immune infiltration
+CAGAGCATGAGCTTGC-1,stroma with high immune infiltration
+ACATCGTATGCAATGG-1,stroma with high immune infiltration
+TTAACACCTCGAACAT-1,Stroma
+GCGAGCGCATGCTCCC-1,stroma with high immune infiltration
+ATGGGACCTGCTGAAC-1,stroma with high immune infiltration
+CCTCCTAGCTAGAGTC-1,normal tissue
+ATAGACGAAGAGAAAG-1,interlobular bile duct
+CTCACTGTGATACTTA-1,Stroma
+AAGAGGATGTACGCGA-1,Tumor
+GCGAGAGTTGCGTCCA-1,stroma with high immune infiltration
+TGCTAAGTGTCTATTT-1,normal tissue
+GTATGAAATTTCACTC-1,suspected tumor
+CGCGCCCGACTTAATA-1,blood vessel
+TGACGATGCACTAGAA-1,normal tissue
+TAACATACACGCGATC-1,suspected tumor
+GGCTCGCGTTGAGGTA-1,normal tissue
+TCCTTACGACGGTCCG-1,normal tissue
+CCTCCGACAATTCAAG-1,Stroma
+AAATGGCCCGTGCCCT-1,suspected tumor
+CGCTATTCTTAGGCTC-1,normal tissue
+AACCCGACAACCCGTG-1,normal tissue
+AAGCACCCTGCGTATC-1,Stroma
+TATATCATTGATCAGT-1,Stroma
+AAGGATGAGGGACCTC-1,normal tissue
+AAACTTAATTGCACGC-1,blood vessel
+GCACCTTCCCGAAGGT-1,Stroma
+GGTATAGTGACACATA-1,normal tissue
+TGGTTCGTAGCAAAGG-1,Stroma
+CTGGGATACGCTACCC-1,normal tissue
+TCGTCACACTGTTAGC-1,Stroma
+TATGGTCTGAGTAACA-1,normal tissue
+GTGAGTGGTACAACGC-1,stroma with high immune infiltration
+CTGGTAACGAGCTCTT-1,normal tissue
+GCCGAAATTCCTACGT-1,stroma with high immune infiltration
+AACCTGTCACGGAATT-1,normal tissue
+CCTATGTCCACTCCAC-1,Stroma
+TGCCAATGGGTACTCT-1,stroma with high immune infiltration
+TTGCTCATAGTACGTG-1,Stroma
+CTTCAACTCCACTTGG-1,Stroma
+ACAATTTAGGAGGCTC-1,Stroma
+TCCTCTACGAGATGGC-1,Stroma
+CGATAGTCGTACTGCA-1,Stroma
+TCGTATTACCCATTGC-1,Tumor
+GATAGGTGTCCCGGGC-1,normal tissue
+TGGCTTATGTATAATG-1,suspected tumor
+TCGCTCGGCACCAGCG-1,normal tissue
+AGGATTGCTTACGACA-1,normal tissue
+CCGCCGGAACTTCTCG-1,suspected tumor
+AGAACGTGGTACATTC-1,stroma with high immune infiltration
+AAGACCCAACTGAACA-1,normal tissue
+CCAATTACGGGTCGAG-1,stroma with high immune infiltration
+TACGGGATGCTAGCAG-1,normal tissue
+TTATCTGTATCATAAC-1,Stroma
+TAAGTAACATCTTGAC-1,Tumor
+AGTTAAACACTTGCGA-1,stroma with high immune infiltration
+TGCAGCTACGTACTTC-1,Tumor
+AGATACTCAAGATCGA-1,stroma with high immune infiltration
+CCTCAACGATCGCTGT-1,suspected tumor
+CCTTTAAGGGAGCACT-1,stroma with high immune infiltration
+GATAACTCGCACTGTG-1,normal tissue
+AGCGACCAACGATATT-1,Stroma
+CCGGCCGCGAGCATAT-1,suspected tumor
+TCCCTGGCGTATTAAC-1,suspected tumor
+CCGCCTTGCGATGTCG-1,
+ATATCGTTCCTCGAAC-1,Stroma
+AAATAACCATACGGGA-1,stroma with high immune infiltration
+AAGCATACTCTCCTGA-1,normal tissue
+CCATAGGTTGGCGTGG-1,Stroma
+TTAATTTCAGACGCGG-1,Stroma
+GGACACAAGTTTACAC-1,normal tissue
+TCACAGGAGAATAAGA-1,stroma with high immune infiltration
+GGGTAATGCTGTGTTT-1,
+TGCGACACCCTAGTGC-1,stroma with high immune infiltration
+AGAGAAGGAGTACAAT-1,stroma with high immune infiltration
+TCACAAACCGAGGTAC-1,Stroma
+TCCCTAGATCAATAGG-1,normal tissue
+CCCAAGTCATTACACT-1,Stroma
+GTGAGGACACTTAAGG-1,normal tissue
+TGGCCAAACTGAAGTA-1,stroma with high immune infiltration
+CTTTGGCGCTTTATAC-1,Stroma
+ACATCAGCTGGGACGC-1,Stroma
+GCAACGGCTAGTTATG-1,normal tissue
+ATGGGCCTCGGCCTCT-1,normal tissue
+TACCCTCGGTAACCCT-1,Stroma
+CCGCGTAGGTAAGGGC-1,Stroma
+TCCAAGCCTAGACACA-1,Stroma
+ATGGATTGACCAAACG-1,stroma with high immune infiltration
+GCTAGCTTGAATAGCT-1,stroma with high immune infiltration
+GTCAAAGAAGTGGTGT-1,suspected tumor
+CAGATCATTTAAAGTC-1,normal tissue
+TCGCTGGGCGGATTGT-1,stroma with high immune infiltration
+CCGTTCCGAATCTCGG-1,Tumor
+GGGAGAACTCACAGTA-1,stroma with high immune infiltration
+GGATTAATCATGGACC-1,Stroma
+GTTGCAGTCGACAACA-1,Stroma
+AAACACCAATAACTGC-1,suspected tumor
+GCTGTATTACTGGCCC-1,Tumor
+TGTCGTTATCACATAT-1,suspected tumor
+TCCGCTGTCATCCCGG-1,normal tissue
+CAGCGATTCCCTTCAA-1,stroma with high immune infiltration
+TCGGGAACGTGCCTAG-1,normal tissue
+TTACCATTGATTACCC-1,Stroma
+TAGCGTCCCTCGATTG-1,normal tissue
+GAGATGGGAGTCGACA-1,normal tissue
+CAGGCGCCATGCTAGG-1,normal tissue
+ACACCTTAAGTAGGGC-1,Stroma
+CCGATCTCAACCTTAT-1,normal tissue
+TTCCATCGACAGCGTG-1,Stroma
+GAAGCCTGCACATTCC-1,normal tissue
+GCTAGACCGTCTACTG-1,normal tissue
+TTGTACACCTCGAACA-1,suspected tumor
+AATATCCTAGCAAACT-1,suspected tumor
+ATGATGCAATGGTACA-1,stroma with high immune infiltration
+CTAGGTTCGGACGTGA-1,stroma with high immune infiltration
+CCTGTCCCTCACGTTA-1,normal tissue
+TAAAGCGGTATTTCCA-1,normal tissue
+CGAGCTGGGCTTTAGG-1,
+TTAACGAACAAGCAGT-1,normal tissue
+TAGGCATGTTACGCCA-1,normal tissue
+CGAAGTTGCTCTGTGT-1,Stroma
+CGTCAAGGCTATAAAT-1,Stroma
+CTTCATTGTCAGTGGA-1,normal tissue
+CATTTGAGTGGTACGT-1,stroma with high immune infiltration
+CTACATATCGCGGGAC-1,normal tissue
+CTAGCATAGTATAATG-1,stroma with high immune infiltration
+GGGTGACACCTTAACT-1,normal tissue
+CGAGATTTCGCTCGGG-1,normal tissue
+AGGTTTCACACACCTT-1,normal tissue
+CGAAACGCAATTCATG-1,Tumor
+CCGAGAAGTCGCATAA-1,normal tissue
+AAACATTTCCCGGATT-1,Stroma
+TGGGCCCATACTAATT-1,normal tissue
+AGCGTGGTATTCTACT-1,normal tissue
+GATTCCCTTGTCGCAG-1,stroma with high immune infiltration
+GTTTGGGTTTCGCCCG-1,Stroma
+GACAGCCAGACCTGAC-1,normal tissue
+CATGTAAGAGACATTT-1,normal tissue
+TTGGCGATCCGAATAT-1,normal tissue
+TACGACGCTTGCTGCG-1,normal tissue
+TCAACCATGTTCGGGC-1,blood vessel
+GTCGGATGTAGCGCGC-1,stroma with high immune infiltration
+CATGACTTCGCTGAAT-1,normal tissue
+GAAACCTATACAAATG-1,normal tissue
+ACACCGGTCTGACCGC-1,normal tissue
+GAGATGACAATCCTTA-1,normal tissue
+TAGCTGATGTGAAGCG-1,Stroma
+TGCCAAAGTCAGACTT-1,suspected tumor
+CAGTACCAGTTTACGT-1,suspected tumor
+AGTCACTAGCTCTCGA-1,normal tissue
+GGCCCGGAGCATGTCT-1,normal tissue
+CTCTGGACGCCTGGTG-1,stroma with high immune infiltration
+GGGCTGCCTAGGGCGA-1,
+CGACAGTTCGCGTTAT-1,stroma with high immune infiltration
+TTGCCCTGATCACGGG-1,Tumor
+GAGCGCGCACGAGTAG-1,normal tissue
+AAGTTCGGCCAACAGG-1,Tumor
+ATGAGGAGTGTTAATC-1,Stroma
+TACCGGTCGTTTCCAT-1,Tumor
+GGCAGAGAGATCGGGA-1,Stroma
+TGGACGCAATCCAGCC-1,suspected tumor
+TTATTAGAGCGTGTTC-1,normal tissue
+GTCTATTGCATGCTCG-1,Stroma
+TGGCTCTTGTCGCGTA-1,Stroma
+AGCCAAGCTTTGTGTC-1,normal tissue
+GGTACCATTAAGACGG-1,normal tissue
+AGCTGTAACCTCAATC-1,suspected tumor
+TTGTGAGGCATGACGC-1,suspected tumor
+AAATTTGCGGGTGTGG-1,Tumor
+TAAGGGCTGGGAGAGG-1,Stroma
+AGCCCTGTCGCACCGT-1,stroma with high immune infiltration
+ATTCCCGAAGGTACAG-1,suspected tumor
+CCCATATAGGTCGATT-1,Stroma
+ATATCTTAGGGCCTTC-1,stroma with high immune infiltration
+GAGTAAATTAAGAACC-1,Stroma
+ATATCGGTAGGGAGAT-1,stroma with high immune infiltration
+CTCGTCGAGGGCTCAT-1,suspected tumor
+ACTGCCGTCGTAACTC-1,Stroma
+CACGTTCGTGCTCTAG-1,
+CACATGATTCAGCAAC-1,normal tissue
+AGCACTACCGGCCTGT-1,Stroma
+GCGGAGAGGGAGAACG-1,normal tissue
+AATACCGGAGGGCTGT-1,normal tissue
+ACCGCGGTGGAAGTCG-1,normal tissue
+CCCGCAGCGCGAACTA-1,normal tissue
+GGCGCTTCATTCCCTG-1,Stroma
+GAGTGTGCGGTACCCA-1,normal tissue
+CTGAGAGTAGAAATAC-1,Stroma
+ATTATTATGTCCGTCA-1,stroma with high immune infiltration
+TGGTTAAGGGCGCTGG-1,normal tissue
+TAGACGAAACGCCAAT-1,Stroma
+CACCCACGAGGCAATT-1,normal tissue
+TTGACGCTCCATGAGC-1,normal tissue
+CGGTCAGTCCATATTT-1,Stroma
+TACCGTAGGTTAACTA-1,normal tissue
+ATTAGATTCCTCAGCA-1,normal tissue
+TTACACGATCTGCGAC-1,Stroma
+CAAACCAGGTCTGCAT-1,Stroma
+GGATCTTGACTCAACC-1,suspected tumor
+TCACAGGTTATTGGGC-1,interlobular bile duct
+CCAGCTGATGGTACTT-1,Tumor
+ACAGGTGTGTTGTTGC-1,Stroma
+CCGAACCTTCCCGGCC-1,normal tissue
+TTACATGCCACAACTA-1,normal tissue
+AAAGGGATGTAGCAAG-1,blood vessel
+TAGTCCGCAGAGAATG-1,
+AACCCTACTGTCAATA-1,normal tissue
+TTCTAACCGAAGCTTA-1,stroma with high immune infiltration
+AGTCAACACCACCATC-1,stroma with high immune infiltration
+AAATCGTGTACCACAA-1,normal tissue
+CGGTGCGCGTTGGTCC-1,Tumor
+GACTGCAAATCGAGCT-1,Stroma
+TCTTCGAATAGACGTT-1,normal tissue
+CGCTTGGACGGATAGA-1,Stroma
+GAGTTGTCACCAGTCT-1,normal tissue
+AGTCGTATAAAGCAGA-1,Stroma
+CTGAGAAAGTTCGGCG-1,normal tissue
+CATTACATAGATTGTG-1,normal tissue
+ATCACATTAGAATATC-1,normal tissue
+AAACTCGTGATATAAG-1,normal tissue
+TGCATGTGGTAATCTA-1,normal tissue
+GTGTGAATAACTTAGG-1,stroma with high immune infiltration
+ACCGGGCCTTTGTTGA-1,normal tissue
+ACCGGGCCTTTGTTGA-1,blood vessel
+GGAACCTTGACTCTGC-1,suspected tumor
+GGGAAGACGGTCTGTC-1,Stroma
+CAAGCAACGTCGGAGT-1,Stroma
+AGAGAACCGTCTAGGA-1,normal tissue
+TTGAAGGATGGGCGCC-1,suspected tumor
+TACCGGCTCACTGCCC-1,normal tissue
+GGATCTTACTGCCCTT-1,normal tissue
+AATGCAACCGGGTACC-1,Stroma
+ACTAGTTGCGATCGTC-1,normal tissue
+GTTAGCCGTAAATCAA-1,normal tissue
+TACGCCGAGGGTACCC-1,stroma with high immune infiltration
+GATTAACCGAAAGCCC-1,normal tissue
+CTATTCATGTGTCCCA-1,stroma with high immune infiltration
+GGTTTACAATCTCAAT-1,stroma with high immune infiltration
+AAACCTAAGCAGCCGG-1,Stroma
+TGCAACTACTGGTTGA-1,Stroma
+CGGAAAGAATCAAACG-1,
+CACGTCGGCAACCTCT-1,Tumor
+AGCACTACCTCACCAG-1,normal tissue
+GGAGGGTCAAGTAAGA-1,Stroma
+AGTTGACGGTCCTTGC-1,Stroma
+TCAGTACTGACCCGCG-1,Stroma
+TTCACGAAAGGATCAC-1,normal tissue
+CGAGGGACTGCGGTCG-1,blood vessel
+AGGTACGATATTGCCA-1,
+CTGAATTTATTGCCAG-1,normal tissue
+CTGCCTCATATGCAAC-1,normal tissue
+CTTTAATATTGGTCGA-1,normal tissue
+GTTCCCGTAAACATAT-1,Stroma
+CAGATGTTTGTCCCAA-1,suspected tumor
+GCCCAGATGCTGGAGA-1,normal tissue
+GAGATCGATCTTACTC-1,Stroma
+CTAGCCGATGTTATGA-1,normal tissue
+ACCGACTGAGTCCCAC-1,stroma with high immune infiltration
+TAGTCTTTCCGAATTG-1,normal tissue
+CAACACATCTCCTGCC-1,normal tissue
+TGTGTGACCATGAATC-1,suspected tumor
+CAGACACCGATCGCTG-1,stroma with high immune infiltration
+CGTTGAATACCGCGCT-1,stroma with high immune infiltration
+TCTCGTGTTACGAGGA-1,suspected tumor
+AAGTGTTTGGAGACGG-1,normal tissue
+ATTATTCAGAGTCACT-1,Stroma
+CGCCAAGAAGCCGAGT-1,Tumor
+CACTAAAGTTGCCTAT-1,stroma with high immune infiltration
+ACTCTCTGACTTAGGT-1,normal tissue
+GTCAGAATAGTCTATG-1,Stroma
+GTTCACAGGAGTCTAG-1,Stroma
+ACTGAATGGCGAAAGT-1,stroma with high immune infiltration
+TGTCCTAAGTCACCGC-1,Stroma
+GTGGAGTCGGCGGTTG-1,
+AACTCTCAGTGTGCTC-1,stroma with high immune infiltration
+GCCATCGATGCTGCAT-1,normal tissue
+GGAGCGAGGCCTACTT-1,Stroma
+GGAGCGAGGCCTACTT-1,blood vessel
+ATTTGTTCCAGGGCTC-1,stroma with high immune infiltration
+CACGCGGAACTGTTGC-1,normal tissue
+AACACGAGACGCGGCC-1,suspected tumor
+GGGAGTTAATGAGGCG-1,interlobular bile duct
+GACGGTCAATAGAAGC-1,normal tissue
+TCTCGACGTATCGCCG-1,normal tissue
+TGGACTGTTCGCTCAA-1,stroma with high immune infiltration
+GCATTTCCAAGGCTCC-1,normal tissue
+CAGGATATATCGTTGT-1,normal tissue
+GGGCAGACGTCACTGC-1,suspected tumor
+GTAACATCTAAGATAA-1,normal tissue
+TCAAATTGTTGTGCCG-1,Stroma
+GCGTTCGGAGACCGGG-1,stroma with high immune infiltration
+TCTCCAACGTAGGTTA-1,normal tissue
+TTAATCAGTACGTCAG-1,stroma with high immune infiltration
+ATACGGGTTTCGATTG-1,normal tissue
+TGGCCGTATATTGACC-1,Stroma
+TCGTCTTAGGCGTTAA-1,normal tissue
+GAACAGATTACTAAAT-1,stroma with high immune infiltration
+TACTTAAACATGTACA-1,Stroma
+GAGATGGCTTTAATCA-1,Stroma
+CGTGACCAGTCCTCTG-1,normal tissue
+TTCGCACTGTACGACA-1,normal tissue
+TGATCTCCGGCGCCAG-1,blood vessel
+CGAGACCCTAGAGTGT-1,normal tissue
+TACAGAAACGGTGGGC-1,Stroma
+TTCGGGCGCTAGTCTT-1,stroma with high immune infiltration
+AGAACCCAGCGTGACA-1,stroma with high immune infiltration
+CAAACGGTCGCACTTT-1,Stroma
+TCGAGACCAACACCGT-1,normal tissue
+CTAGCCACAGGCGAGC-1,Stroma
+TTACAGACCTAAATGA-1,normal tissue
+TCTGATCGGGTGCTAG-1,normal tissue
+CCGAAGCATTGACCAA-1,suspected tumor
+GGTATGAAAGAACTGA-1,Stroma
+GCCCGTAATACCTTCT-1,normal tissue
+TTCGCGCGCCATACGA-1,normal tissue
+ACTTTGTCGACGCACT-1,
+CTACTCAAGGTATAGT-1,normal tissue
+TTGTTTCATTAGTCTA-1,stroma with high immune infiltration
+ACTACGCGTTAGAATT-1,normal tissue
+GCAACCCAAGTTGTTT-1,Stroma
+ATGGCAGCCGAGAAAC-1,Stroma
+CCTGGCTAGACCCGCC-1,blood vessel
+CCTGGCTAGACCCGCC-1,Stroma
+ATCCGGACCAGCCTGA-1,Stroma
+CTTGTGCTCACCGATT-1,stroma with high immune infiltration
+TGGAACCACTGACACA-1,normal tissue
+GTGCACCAGCTTCAAC-1,normal tissue
+TATGATCTTCTCTTTA-1,Stroma
+ATGTAAGGCTGCTCTT-1,normal tissue
+CCTATTATTCCGGCCG-1,Stroma
+AGGTTGAGGCACGCTT-1,blood vessel
+AGGGACCGGCTGCGTT-1,normal tissue
+GAGTTGATGGCAATTT-1,suspected tumor
+GGTAAACTCTGCGCTG-1,Stroma
+TCCCGCGTACTCCTGG-1,stroma with high immune infiltration
+TTAGAAGAACATGACT-1,normal tissue
+GGATGGCTTGAAGTAT-1,Stroma
+TAATACACAGTAGTAT-1,Stroma
+CTGACATAGAAATAGA-1,normal tissue
+GACGCTTGCTTCTAAA-1,Tumor
+TGCGGACTTGACTCCG-1,Stroma
+TAAGGCAACATAAGAT-1,stroma with high immune infiltration
+GGCGCGTTCGAGTTTA-1,normal tissue
+TCCTACATCCACGGCC-1,stroma with high immune infiltration
+AGATGCATCCTGTGTC-1,suspected tumor
+CCTCACCTTAGCATCG-1,normal tissue
+CCTCACCTGAGGGAGC-1,normal tissue
+ATTATACTTTGCTCGT-1,stroma with high immune infiltration
+ATAATTAGCTAAGTAG-1,Stroma
+TCATCCTCAGCTGCTT-1,Stroma
+GAGTCAGACCAGAATC-1,stroma with high immune infiltration
+TTGACCATGTTCTCCG-1,normal tissue
+CGAATCTGCTCGACGC-1,
+GCATTGACTTGCGGAA-1,suspected tumor
+TACAAGTCTCGTGCAT-1,Stroma
+CGGGTGTACCCATTTA-1,normal tissue
+GCACGCCTACTTAGAT-1,stroma with high immune infiltration
+CCCGTGAGGGCGGTGA-1,suspected tumor
+TCCAGCGCTATAAGCG-1,normal tissue
+CTACCCTAAGGTCATA-1,normal tissue
+TCTGAATTCCGTACAA-1,normal tissue
+ACTTGGGACCCGGTGG-1,stroma with high immune infiltration
+TCCCAAAGACGAAGGA-1,stroma with high immune infiltration
+ACGATACATAGAACTA-1,normal tissue
+TCGAAGAACCGAGCAC-1,normal tissue
+TCGAAGAACCGAGCAC-1,blood vessel
+AGACGCCCACTTCGCC-1,Stroma
+ATCTTATCGCACACCC-1,Stroma
+TCTTGGTAACACCAAA-1,Stroma
+CCTTTCAATGAAGAAA-1,normal tissue
+GTACGCTTCATTGCAC-1,normal tissue
+ACCTCGAACTTATGCT-1,Stroma
+TTGCCAAGCAGAACCC-1,normal tissue
+TCCGCTTATCCCATTA-1,normal tissue
+ATTGTTCAACGATCCG-1,smooth muscle
+AAAGCTTGCCTACATA-1,normal tissue
+AGGGTTTAGTTCGGGA-1,stroma with high immune infiltration
+TGAGCTTTAATGACGC-1,normal tissue
+TAGCGTTGGGTCTTAC-1,normal tissue
+TCTCTCGCCGCACATA-1,normal tissue
+AACCTCGCTTTAGCCC-1,Stroma
+GCTTGGATCGATTAGG-1,normal tissue
+AGAAGGTACACTTCAC-1,suspected tumor
+CCTCTGTACTATTCTA-1,stroma with high immune infiltration
+TCAAACAACCGCGTCG-1,Stroma
+CCAGCGGGATCACCAG-1,normal tissue
+CGACAATTTGATCTAA-1,normal tissue
+GGTGGACTGCTCTGGC-1,normal tissue
+CTCGGTACCACTGCTC-1,stroma with high immune infiltration
+AGTTCCTATTTATGTT-1,normal tissue
+TTGAGTCCCGCTGCTG-1,normal tissue
+TACTCTTTCGTCTTCA-1,normal tissue
+CGCCTTTAGCATGCTC-1,normal tissue
+CTTGCCCAGGCTCTAC-1,normal tissue
+CCGGTTTGTAATTGTG-1,stroma with high immune infiltration
+AGCGGGTCTGACACTC-1,Stroma
+AGCGGGTCTGACACTC-1,blood vessel
+AGCTCCATATATGTTC-1,Stroma
+TCTAGCAATCTCCGCC-1,Tumor
+TTCTTGAGCCGCGCTA-1,Tumor
+GTTTCAAACGAGTTGT-1,Stroma
+GGATTTCACTTCTATA-1,normal tissue
+TACCAGAAGTAGGTTC-1,stroma with high immune infiltration
+TTCCCGGCGCCAATAG-1,suspected tumor
+AGGTCGCCTCCCAACA-1,Stroma
+ATCCAGAGCAACAACC-1,stroma with high immune infiltration
+AGTGATAACCTGCGCG-1,Stroma
+TTCACTTCCTAGAACG-1,normal tissue
+CAATTAAGGGTGATGA-1,stroma with high immune infiltration
+CTGCTGTCTAACGAGC-1,normal tissue
+CTCAGTCACGACAAAT-1,stroma with high immune infiltration
+TACTGAGGGAAGAAAG-1,
+CCCTGGCTGTTCCTTC-1,suspected tumor
+GGACTCGAAGCTTTCA-1,Stroma
+CGTTTCACTTCGGGCG-1,stroma with high immune infiltration
+TGGTTTAAACGTGGGT-1,normal tissue
+ACGGATGGTGCGGATA-1,
+CTTTACCGAATAGTAG-1,normal tissue
+TGTGGTAGGGTGCCTT-1,smooth muscle
+GAGGGCGCAGCTCTGC-1,normal tissue
+GTAGCGGCTATACACT-1,normal tissue
+GGGCTACTATTTCGTG-1,suspected tumor
+CACCCTTGGTGAGACC-1,suspected tumor
+TTGCGTGTGTAGGCAT-1,Stroma
+GTGATCATAGATCTGC-1,normal tissue
+TCGTGTCACGCTGACA-1,Tumor
+GATATCAAGCAGGAGC-1,suspected tumor
+GAGAGGGCGCGAGGTT-1,Tumor
+ATCAAACACTGTTCCA-1,normal tissue
+TCTTAGAGTGAACTCT-1,normal tissue
+GTCTACTCAATTACAA-1,Stroma
+AGTGACTGTGACACAA-1,normal tissue
+TTGGTTCGCTCAAAGG-1,normal tissue
+ATCTCGTGAGCGAAAC-1,normal tissue
+ATACGTACTTAGCCAC-1,stroma with high immune infiltration
+CCCAAACATGCTGCTC-1,stroma with high immune infiltration
+CCTGTCGCCCGTAAAT-1,normal tissue
+GTCGGGAACATGGTAG-1,Stroma
+ATAAGTAGGATTCAGA-1,stroma with high immune infiltration
+CCGGTAATGGCTAGTC-1,stroma with high immune infiltration
+ACTTTCCTATAGCTTC-1,stroma with high immune infiltration
+GTAAGTAACAGTCTGG-1,stroma with high immune infiltration
+GTGATCACTAACGCCT-1,normal tissue
+GTGATCACTAACGCCT-1,blood vessel
+CGTGCCCTCCCGAAGA-1,normal tissue
+GGTGATGAAGGAAGTG-1,Stroma
+ACTGTACGATACACAT-1,stroma with high immune infiltration
+TCTCCACAAGTTGAAT-1,Stroma
+GTGCGAAATCGAACAC-1,stroma with high immune infiltration
+CGTTCAGACCCGCGAA-1,Stroma
+CCTCGGATGCTACCTG-1,Stroma
+GAAGCTTGCTGACCGC-1,Stroma
+CGCTTAGTATTGATAC-1,normal tissue
+AATAACAACGCTCGGC-1,Tumor
+ATCCTACCTAAGCTCT-1,stroma with high immune infiltration
+TATTCAATTCTAATCC-1,
+ACAACAGCATGAGCTA-1,interlobular bile duct
+ACAAAGCATGACCTAG-1,Stroma
+TCCCTTGTCTGAAACT-1,Stroma
+GGGCAGTCAACGCCAA-1,Stroma
+CGCCGACTATTCGCTA-1,Stroma
+CGCACATGTCCACTAC-1,normal tissue
+ACAGGTGGAGGTGAGG-1,Tumor
+TGCTCTTGAGAGTTTG-1,Stroma
+AACGATATGTCAACTG-1,
+TTCAGCCCTGGTCCAC-1,stroma with high immune infiltration
+GCCTTTGTCAGTGGAC-1,blood vessel
+CGTCACGTCCATTGGT-1,stroma with high immune infiltration
+CAATATTCTTGACCTA-1,stroma with high immune infiltration
+TCTAAAGAACAGTCTC-1,suspected tumor
+GCCAGGAGTAACCGAT-1,normal tissue
+ACCCGGTTACACTTCC-1,stroma with high immune infiltration
+TCACAGCAAACTCGAA-1,stroma with high immune infiltration
+ACTGCTCGGAAGGATG-1,suspected tumor
+AAATACCTATAAGCAT-1,normal tissue
+TGTGAGACTAGCCCAA-1,normal tissue
+GAGCATCAACAACTTG-1,blood vessel
+ATCATTGTACCGCATT-1,suspected tumor
+ATGACTATGCGACATT-1,normal tissue
+TCGGGCCGTCGTGGTA-1,normal tissue
+CCTCTGGCCTAGACGG-1,blood vessel
+ACCAACCGCACTCCAC-1,Stroma
+GTCATTGCATTGACCC-1,Stroma
+TGACGAATATTTCCCT-1,Tumor
+CGACTTTGTATAGCCT-1,normal tissue
+CACCTCGATGGTGGAC-1,blood vessel
+GAACGTCTCATGGTCG-1,normal tissue
+TACTGCAATCAATTAC-1,normal tissue
+TGTTGCCGTCGTCCCA-1,normal tissue
+TCTATTACTAGAGGAT-1,Tumor
+CCTTCTTGATCCAGTG-1,stroma with high immune infiltration
+ACTCCCGAATTCGTTT-1,normal tissue
+CTCTCTAACTGCCTAG-1,suspected tumor
+ATCGCTGCGTGCAGCA-1,normal tissue
+GGATGCTGGCGTTCCT-1,Tumor
+ACTATGTCCAGCTGCC-1,
+AAAGTCGACCCTCAGT-1,Stroma
+GAATGGGCTTATCGAC-1,Stroma
+TTAGGTCATAACCGAC-1,stroma with high immune infiltration
+AGTATTTGGCACGACC-1,normal tissue
+ATGCGACAGTCCCATT-1,blood vessel
+TGCCAGTACGTGGAGA-1,normal tissue
+GAGAATCTCACGATCA-1,Stroma
+AACTTGCCCGTATGCA-1,Stroma
+GATCCGGGAATTAACA-1,normal tissue
+GAAACCATGGTGCGCT-1,normal tissue
+CCCGAAGTTTCGCGAA-1,
+AGCATCATTTCGAAAG-1,suspected tumor
+ATCAAACGAAGGTTTG-1,Tumor
+TATACACAGACGCCTT-1,stroma with high immune infiltration
+CCACTGTTTGGATTAA-1,Stroma
+AGATACCGGTGTTCAC-1,Tumor
+CGAGGAGCTTCCATAT-1,normal tissue
+TTGGACCATCTGGCAA-1,normal tissue
+ATATCAATTCCAGCCT-1,suspected tumor
+CCGGGCTGCTCCATAC-1,stroma with high immune infiltration
+GTTTGGGCTTGTGAGC-1,normal tissue
+AGTTTGCACCTGCCTC-1,
+CTGTTGTTCAGTCGTA-1,normal tissue
+GAAGTCAGTTGCACTA-1,stroma with high immune infiltration
+GTTGAACCGGTTCCAT-1,Tumor
+CTAGTAGAAAGGGATT-1,Stroma
+TTCTATGCCTTTCGCA-1,normal tissue
+TCCTCTCCAGTTGTCC-1,Stroma
+GGCGAGCGAAACGGCA-1,suspected tumor
+TCCCACTCTCTTCCGG-1,normal tissue
+TCACCCTCTTAAGATT-1,normal tissue
+ATAACGGAGTCCAACG-1,stroma with high immune infiltration
+CTTCGATTGCGCAAGC-1,Stroma
+TTAGACGAGTCACCTC-1,normal tissue
+TAAGTCGCCGAGTATC-1,stroma with high immune infiltration
+TTAATGTAGACCAGGT-1,stroma with high immune infiltration
+GGCAAATTACTTTACT-1,
+TCCGATGACTGAGCTC-1,stroma with high immune infiltration
+TGCCTGATCAAACGAT-1,stroma with high immune infiltration
+GAATCGACATGGTCAC-1,blood vessel
+CCCGGGTCGTTCAGGG-1,normal tissue
+AATTAAAGGTCGGCGT-1,stroma with high immune infiltration
+TAGTCGATCACGGGTT-1,normal tissue
+GAGACTGATGGGTAGA-1,blood vessel
+GGCGCGGAGATCTTTC-1,Stroma
+TTATATACGCTGTCAC-1,stroma with high immune infiltration
+CACTCCTATGTAAGAT-1,stroma with high immune infiltration
+ATAGGCTAGCTTCGCA-1,
+GCCTCATCTGGAAATA-1,normal tissue
+CATATAGGTACAGTCA-1,normal tissue
+AGGGACTCTACGCGAC-1,stroma with high immune infiltration
+AATCGTGAGCCGAGCA-1,Stroma
+AGTCAAGATGACACTT-1,normal tissue
+GACATCCGTCGAACTG-1,Stroma
+TAATAGAACAGAGTTA-1,Tumor
+TCCATCAATACTAATC-1,blood vessel
+TACGCTATAGAAACCT-1,normal tissue
+ACTTGTGGATGGAACG-1,normal tissue
+AGCCACAGGTTACCCG-1,Stroma
+AGCCACAGGTTACCCG-1,blood vessel
+CGCAGATCTTCACCCG-1,normal tissue
+ATATTCCACATAGTGA-1,normal tissue
+GGGTATGTATGCACTT-1,Stroma
+CTCACCAGTACAAGTG-1,Stroma
+AGCACCAGTACTCACG-1,stroma with high immune infiltration
+CTAACTGATAATCGCC-1,Stroma
+ACTTCCATGCGGGACA-1,Stroma
+ACGGCACTTGCTTGGG-1,stroma with high immune infiltration
+CCACCAACTTTACTGT-1,
+CTGGCGACATAAGTCC-1,normal tissue
+GTCGTGTCTGGTCATC-1,normal tissue
+CCAGTCTAGACGGCGC-1,normal tissue
+GGCCCAGCTGGTTTGC-1,Stroma
+AGGCGGTTTGTCCCGC-1,suspected tumor
+ATTGTCGCAATACCTT-1,normal tissue
+GGGTGTTTCAGCTATG-1,Stroma
+CTCAGATTGTGATAAG-1,Stroma
+CTTGTTGCTGAGTCAA-1,blood vessel
+TTCCTCTGCCCGAATA-1,Stroma
+TTCCTCGGACTAACCA-1,normal tissue
+GGTCTTGAGCGCTCTT-1,Stroma
+GGTCTTGAGCGCTCTT-1,blood vessel
+CGCTGTGACGCCGCAC-1,blood vessel
+TAGCTAAGTCCGGGAG-1,stroma with high immune infiltration
+CATAGTCAAATACATA-1,Stroma
+TAACCTACCGTCCGAG-1,normal tissue
+ATTCAACCATTTAAGG-1,Stroma
+CCACCCAAGGAAAGTG-1,stroma with high immune infiltration
+CCCTTTGACAGGTCTT-1,stroma with high immune infiltration
+ATGCCGGTTGATGGGA-1,normal tissue
+TGTGCCGGTGCCGGAA-1,normal tissue
+CAGATACTAACATAGT-1,blood vessel
+GGCCGTTTGGGTTTCA-1,normal tissue
+GATAGGATTAATTACA-1,normal tissue
+GCGGCTTTAGCAAGTT-1,Stroma
+TCCAGGCGAGTACGGT-1,stroma with high immune infiltration
+GTGAAGATTTCAAGTG-1,normal tissue
+CATACCCGTACCCAGT-1,Tumor
+CGCTGTGTGGATGTTG-1,normal tissue
+TAGCTAGTGATGATGG-1,normal tissue
+TCCCGCCTATGTGCGT-1,normal tissue
+CTCATTTGATGGGCGG-1,Stroma
+TTGACCGTGTTAATGA-1,Tumor
+ATATTCAGTTAAACCT-1,Tumor
+GTCTCCTGCCAGTATG-1,suspected tumor
+GACTCGCGGGAATGAC-1,normal tissue
+GCATCGGCCGTGTAGG-1,normal tissue
+TACTCTTACTTTACTG-1,Stroma
+CTTCGGCCAATTGTTT-1,normal tissue
+AGATGACTCGCCCACG-1,Stroma
+GGTGTTGGGCGTCTTA-1,smooth muscle
+ATCTAGCTTGTGAGGG-1,Stroma
+GCTCTTTCCGCTAGTG-1,normal tissue
+TGTAATGACCACAATA-1,Stroma
+ACTGCGGACACACCGT-1,normal tissue
+GCCCGACTTCTTCCCG-1,Tumor
+CTTTAACTTTCAAAGG-1,stroma with high immune infiltration
+AGCTAGAAGCAGAAGT-1,stroma with high immune infiltration
+GATGCCTTCTGCGGCA-1,suspected tumor
+AGACCCACCGCTGATC-1,normal tissue
+GTAGACACGCCTGACT-1,Stroma
+ATAGAGTTATCAACTT-1,normal tissue
+CTATAAGAGCCAATCG-1,
+TTATCTGACATTAGGA-1,suspected tumor
+TCGAATATCCCGCAGG-1,stroma with high immune infiltration
+ATAGGTTGGGCAGATG-1,stroma with high immune infiltration
+TAGGCTAAAGTGGCAC-1,Stroma
+ATCCTTCTGAAAGAAC-1,normal tissue
+GTAATAAAGGGCTCCC-1,normal tissue
+ACGTTCTGTACAAGTC-1,Stroma
+TCCTAAATTGGGAAGC-1,stroma with high immune infiltration
+AGACCGCTCCGCGGTT-1,normal tissue
+GAAACCGAATTACCTT-1,stroma with high immune infiltration
+TCTGAGCAATTGACTG-1,normal tissue
+TAGCAGTATGACTAAA-1,Stroma
+CGAGTGAAGGTACCAG-1,suspected tumor
+TTCCGCGTGAGGCGAT-1,normal tissue
+GCAAGTGCACAGAGAA-1,Stroma
+AATTCATAAGGGATCT-1,normal tissue
+CGTTGAGCGACCGTCG-1,normal tissue
+AAAGTAGCATTGCTCA-1,Tumor
+TATGATCCGGCACGCC-1,normal tissue
+CCTCTATCGATTAGCA-1,Tumor
+TTATAGGTAATTGTCT-1,Stroma
+GGACTCGACAGCGCAT-1,
+CTGGCATCCGAATGAG-1,Tumor
+AGGCTTCCCGAAGAAG-1,Tumor
+GCACACACTGGTAGCC-1,normal tissue
+AGTATGCTGGAGACCA-1,suspected tumor
+TTCTGCGGGTTAGCGG-1,stroma with high immune infiltration
+TTCTTGCTAGCATCTC-1,normal tissue
+ACTTCGCTAGCGAGTG-1,normal tissue
+TACATTTCTAACGTGC-1,normal tissue
+TATGGATGTGCTACGC-1,blood vessel
+TCGTCAAGTACGCGCA-1,stroma with high immune infiltration
+CATGGTAAGTAGCGTT-1,normal tissue
+AACTACCCGTTTGTCA-1,normal tissue
+GCTGCTAAGTAGTCGA-1,normal tissue
+TACTCGGCACGCCGGG-1,Stroma
+CGCCGTCTACCCATCG-1,normal tissue
+CCGGCACGACCGTTTC-1,normal tissue
+CCATGTTCATCTATAT-1,normal tissue
+TTAGTTATTCGTGGCA-1,normal tissue
+GACAGATTTCTGGCTC-1,suspected tumor
+TCAAGGTTACTACACC-1,normal tissue
+ACACCCAGCATGCAGC-1,blood vessel
+GGTCTCCGTCCAGGTT-1,Stroma
+TGACCCACGTTAGACA-1,interlobular bile duct
+CGGCAATAAGATCGCC-1,normal tissue
+GGTGACTGATAGAGAG-1,Stroma
+TCGCTAAACCGCTATC-1,normal tissue
+ACGGGAGTGTCGGCCC-1,Tumor
+CCACATACTGCACCCA-1,normal tissue
+GGGTCAGGAGCTAGAT-1,normal tissue
+ACGCGCTACACAGGGT-1,Tumor
+TCGTGTACTATGGATG-1,normal tissue
+GCTAGGCACCACGGAG-1,normal tissue
+AAGCCGCCGTGAAATC-1,normal tissue
+CTGGTTTCGAGCAAGA-1,normal tissue
+ATTACGGGCTACGGTT-1,Stroma
+TGCCATTACTAAAGAA-1,normal tissue
+TGCGGAGTAAAGGTGC-1,stroma with high immune infiltration
+CCTGGAAACGTTCTGC-1,stroma with high immune infiltration
+ACCACGTGCAGCTATA-1,normal tissue
+GTAAGCGGGCAGTCAG-1,blood vessel
+GAATCTGAACATTCTC-1,normal tissue
+ACCAGTGCGGGAGACG-1,normal tissue
+TGCTTAGAGAGAATGC-1,blood vessel
+CTCGGTTGTCGGCCCT-1,suspected tumor
+TCTGCTTAGAACAAGC-1,smooth muscle
+CTGGGTTGAGTTAAAG-1,suspected tumor
+GCGCTGCTTTGCATTT-1,normal tissue
+GTGCCATCACACGGTG-1,Tumor
+TCAGCAGTAGGCCCTG-1,stroma with high immune infiltration
+ATTGAAGATCTTAGTG-1,interlobular bile duct
+AGTTGGCAAGGCTAGA-1,Stroma
+CGATCTGTTGGAGGAC-1,Tumor
+CTGCAGAGAATCAGAG-1,Stroma
+CCGCTATCAGCACCAG-1,normal tissue
+TCAACTAACGTATAAC-1,Stroma
+TTGAGAAGTTTAGCAT-1,normal tissue
+TAGGTCGCCGGAACTG-1,normal tissue
+TGAGAGATTTACCACG-1,normal tissue
+CTAGTTACAACCCGGT-1,normal tissue
+AAATTCCAGGTCCAAA-1,normal tissue
+AATAGAATCTGTTTCA-1,normal tissue
+GTACACTTACCTGAAG-1,normal tissue
+AGACTAGCCTTCCAGA-1,blood vessel
+GACCGTGCTGACGGTG-1,stroma with high immune infiltration
+AGCATCGTCGATAATT-1,Stroma
+ATCCCATCCACAGCGC-1,suspected tumor
+CCTAAAGGCTGACGCT-1,stroma with high immune infiltration
+TGTAGTGATCTATAAT-1,Tumor
+CGGACGTTACTTGAAG-1,Stroma
+GGAGCAACATTTCAAG-1,Stroma
+AGTCGGTTGCGTGAGA-1,stroma with high immune infiltration
+ACTGTCTTCTTTAGAA-1,stroma with high immune infiltration
+ACTTTGACTGCATCCT-1,Stroma
+CTGTAGCCATCTCACT-1,stroma with high immune infiltration
+TTGTGTATGCCACCAA-1,normal tissue
+GCGGCAAAGTATTGCC-1,suspected tumor
+GCAAACGTCGCCAGGT-1,normal tissue
+CACGTCAATCAATGGA-1,Stroma
+TAGGTCCAAGTAAGGA-1,Stroma
+GTGGAGCATGTCGGCC-1,normal tissue
+TTCTTTGGTCGCGACG-1,normal tissue
+TGCCCGTACCGTTAAA-1,normal tissue
+GACCAAACGTTGACTG-1,Stroma
+ACCGTGACCACGTGGG-1,
+AATGATGATACGCTAT-1,stroma with high immune infiltration
+GTCGTACCTACGATTG-1,Stroma
+CCACTGGTGGCTGGTT-1,Tumor
+AACAGCTGTGTGGCAA-1,stroma with high immune infiltration
+ATACGAAGGCTTTCCA-1,normal tissue
+AACTCAAGTTAATTGC-1,stroma with high immune infiltration
+CAAATCTCTCACAAGG-1,Tumor
+GGCTCCTCCACCTGTT-1,stroma with high immune infiltration
+GCGAAGCCATACCCGT-1,stroma with high immune infiltration
+TCCGATAATTGCCATA-1,Stroma
+GAAGTGATTTATCGTG-1,stroma with high immune infiltration
+CCTATGGGTTACCGTC-1,stroma with high immune infiltration
+CAGTTCCGCGGGTCGA-1,Stroma
+CATCATTACCCTGAGG-1,normal tissue
+GAACCCTCTGTGTTCT-1,normal tissue
+TTCGCTATCTGACGTG-1,stroma with high immune infiltration
+AAGTGCAAAGGTAGAC-1,Stroma
+CCCGATAGCCTCGCCT-1,normal tissue
+ATGACGCGTTCTATCC-1,Tumor
+CCACATGGCTCTTTAT-1,suspected tumor
+GACACAAGGGAAGAAA-1,stroma with high immune infiltration
+GCTCAATCCGTTTATT-1,Tumor
+CACACGCGCTGTCTTA-1,normal tissue
+CGACCTACTAGACAAT-1,suspected tumor
+AGTGCGTAGCTCGTAA-1,Tumor
+CCGCGATTTGGTAGGT-1,Stroma
+CACTCAAGAGCTATGG-1,normal tissue
+AATTCTAGAGTTAGGC-1,normal tissue
+GCGACCCAACCATCTG-1,stroma with high immune infiltration
+ATATACATGTATGGTA-1,suspected tumor
+TCCGATGGTGCGACAT-1,blood vessel
+GCGAAGAATCTGACGG-1,Stroma
+CCGTTACGTTAGAACA-1,normal tissue
+CGCCCAGCGTTTCACG-1,Stroma
+ACGTGACAAAGTAAGT-1,suspected tumor
+TGAGGCATGTACTGTG-1,suspected tumor
+TATGGGACCGAGCAGG-1,
+CTATGTCACTAGCCCA-1,stroma with high immune infiltration
+CACTCGAGCTGAACAA-1,normal tissue
+TACGTTTACCGGCAAT-1,Tumor
+AGTCTCACAAGACTAC-1,stroma with high immune infiltration
+TTGTGCGGAAGCGGAT-1,suspected tumor
+GCGGAGAAACTTCGCA-1,stroma with high immune infiltration
+TCATATGAGCTTTGTT-1,Stroma
+GTCCTACGAATAGTCT-1,normal tissue
+ACTATTCGTCCGTGGT-1,
+AAGGGACTATGCATTC-1,Stroma
+GGGCTGGTTAGTCGCG-1,stroma with high immune infiltration
+GGCATATCGGTTCTGC-1,normal tissue
+TACTGAACAGATTTAG-1,stroma with high immune infiltration
+CTCTTGTCCCGCTTGG-1,normal tissue
+AAACATGGTGAGAGGA-1,suspected tumor
+GGCCCTCACCCACTTA-1,Tumor
+GACAACGACCATTGAA-1,normal tissue
+CTCGTCTGTGCCTTCG-1,Stroma
+AGTACGGCCCGTATCG-1,Stroma
+GGGCTATGATCGATGG-1,stroma with high immune infiltration
+AGTAATTTGCAAGCGT-1,normal tissue
+TCTGATTGGAAATGGA-1,normal tissue
+TTAAGTATTGTTATCC-1,Stroma
+AAGACTGCAAGCTACT-1,stroma with high immune infiltration
+ACACCTTACTACTTGC-1,normal tissue
+CCTAACTAAGGCTCTA-1,stroma with high immune infiltration
+GTGGACCAACCCGATT-1,Tumor
+AGTTAAGCGGTCCCGG-1,stroma with high immune infiltration
+TAGCTAGAAGGCATGA-1,stroma with high immune infiltration
+CTGGACGCAGTCCGGC-1,suspected tumor
+GCAACCACGGCCGCGT-1,Tumor
+GAACGATAAGTTAAAG-1,normal tissue
+TGCAATCTAACACGGT-1,Stroma
+GGTTTAATTGAGCAGG-1,normal tissue
+TTGGACATGTGGCTTA-1,Tumor
+TCCTTCAGTGGTCGAA-1,Stroma
+GGCCTTTGCAACTGGC-1,Stroma
+GTTAATGTCTATCTTA-1,Stroma
+CAGAGGCGATGCATGA-1,stroma with high immune infiltration
+GTTCGGAGCACTCAAC-1,Stroma
+ATGGCGGAATAGTCGC-1,normal tissue
+AATTGCAGCAATCGAC-1,Stroma
+AATGGTCCACCGTTCA-1,Stroma
+AGTCTTTAAAGTGTCC-1,Stroma
+GTTACTTTGGGCCTAG-1,stroma with high immune infiltration
+TCTATCGGTCGCAACA-1,Stroma
+GTAGAGGGAGACAAGT-1,Tumor
+CTGCACTCCAGTACAG-1,
+ACAAGGAAATCCGCCC-1,normal tissue
+TACCTTAAGATTTCCC-1,Tumor
+AATGACAGCAATGTCT-1,Tumor
+ATGGTATTTACTGATT-1,normal tissue
+GCCATTAGCCTCAAAC-1,suspected tumor
+CGGTAGAGGTGCAGGT-1,stroma with high immune infiltration
+AGGGTTCCCTTTGGTT-1,normal tissue
+AGAACCCTCAATTGGG-1,suspected tumor
+GGCTCTGCTCCAACGC-1,stroma with high immune infiltration
+CAGACGAACCTGATAC-1,stroma with high immune infiltration
+AGGGCCCTAATGTTCT-1,Stroma
+ATAAGTAGGGCGACTC-1,stroma with high immune infiltration
+CTTTCTGTGCGGGCTT-1,stroma with high immune infiltration
+CAACCTACCGAGCAGT-1,Stroma
+TCCCAAACAGACAACG-1,normal tissue
+TAAGCGCGAATCAAAT-1,normal tissue
+GGGATGGTCGTAACCG-1,stroma with high immune infiltration
+GTCGGATATCTCAGAC-1,Stroma
+GGTAGTGCTCGCACCA-1,
+CTCGCATTGCATAGCC-1,suspected tumor
+GAAGTTTCCACTCAAT-1,stroma with high immune infiltration
+TATCAGTGGCGTAGTC-1,suspected tumor
+ATTCAGGACCTATTTC-1,stroma with high immune infiltration
+TCCAATAAAGGCTACC-1,normal tissue
+AGCGCATAATGAATCG-1,normal tissue
+TGCATGGATCGGATCT-1,
+GGGCCCGTCTTAAACA-1,stroma with high immune infiltration
+ACACTGGGACAGTCGT-1,Stroma
+CGGGCGATGGATCACG-1,Stroma
+CGCACGTCTGTTTATG-1,normal tissue
+GACTAAGATCATGCAC-1,Stroma
+CTAACCGCGCGCCCGT-1,Tumor
+TGCTCGGCGAAACCCA-1,normal tissue
+TGACTCTAACTGGTAA-1,Stroma
+AGGCATTGTCGTAGGG-1,normal tissue
+AGTCGAAACGATTCAG-1,
+GGGCAACCGCACGTGC-1,suspected tumor
+TTGCCATAGCCCGCTC-1,suspected tumor
+TCGTTGCTATCCGGTC-1,stroma with high immune infiltration
+GTCTGGGCGGTCGAGA-1,stroma with high immune infiltration
+TATACGCGTCATCACT-1,Stroma
+GGTCTCTGAATGGACT-1,Tumor
+ATCATCCAATATTTGT-1,normal tissue
+ATCCTGCGTGGAATGG-1,stroma with high immune infiltration
+CTCGCCGAATGTAGGG-1,normal tissue
+TTAGCTCTGTAATCCG-1,Stroma
+TTAGCTCTGTAATCCG-1,blood vessel
+GAGTGTCAACCAGAAA-1,Stroma
+CTAGTTGGGCCCGGTA-1,stroma with high immune infiltration
+ATGTGCATCCGACGCA-1,Stroma
+AACGTACTGTGGGTAC-1,Tumor
+TAGCGTCCGGTGTGGT-1,normal tissue
+CATCCAATATAGTTTG-1,normal tissue
+CGGCGCCATCAATCCC-1,Stroma
+TTAAGCGCCTGACCCA-1,Stroma
+TAGGGAGCTTGGGATG-1,stroma with high immune infiltration
+TGCGTCATGACTGAGC-1,suspected tumor
+GGCGTAGGGAAAGCTG-1,Stroma
+GAGGCCTGTTGATACA-1,Stroma
+GACACTGAGTTCAGTG-1,stroma with high immune infiltration
+TCCGCCTGTCTACAAG-1,stroma with high immune infiltration
+TAGGGTGTTTCAAGAG-1,Stroma
+ATGGAAATTTAAGGAG-1,suspected tumor
+ACGCCGCTAGACGACC-1,normal tissue
+CGATGTTGTTATCTAC-1,suspected tumor
+GATCGCTACCCGATTT-1,normal tissue
+CGATAATACTCAGGTT-1,normal tissue
+CGTGGAAGCCTCGTAC-1,normal tissue
+TGATGTCAATTAAGTG-1,Stroma
+GTGCTCAAGTACTGTC-1,stroma with high immune infiltration
+AACCGAGCTTGGTCAT-1,stroma with high immune infiltration
+GACCGACGTGAAAGCA-1,stroma with high immune infiltration
+GCTAGAGTAGAGATGT-1,normal tissue
+GTGACGCAGGTTTCAT-1,Stroma
+TAGAGATCATGCAACT-1,Tumor
+CCCACTCCACGGTATC-1,suspected tumor
+TCCCTTAGATTACTCG-1,normal tissue

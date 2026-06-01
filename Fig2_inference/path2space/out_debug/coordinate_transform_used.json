@@ -1,0 +1,9 @@
+{
+  "coord_transform_tag": "scale1p0_swap0_flipx1_flipy1_basisimage",
+  "test_coord_scale": 1.0,
+  "swap_xy": false,
+  "flip_x": true,
+  "flip_y": true,
+  "flip_basis": "image",
+  "note": "Coordinates are transformed before tile grouping, patch extraction, and h5/csv saving."
+}

@@ -1,0 +1,21 @@
+{
+  "test_dir": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/aligned_from_adata_for_path2space/CC_all_new_aligned",
+  "out_dir": "outputs/Path2Space_OV_to_CC_tilelevel_predict_only_aligned",
+  "trained_out_dir": "outputs/Path2Space_OV_to_Xenium_tilelevel_original_setting",
+  "path2space_feature_dir": "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/scripts/1.ST_prediction/1.1.Feature_extraction",
+  "ctranspath_weight": "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/ctranspath.pth",
+  "tile_size": 224,
+  "tile_stride": 224,
+  "min_spots_per_tile": 1,
+  "test_coord_scale": 1.0,
+  "batch_size": 128,
+  "feature_batch_size": 128,
+  "num_workers": 4,
+  "no_macenko": false,
+  "max_test_tiles": 0,
+  "force_recompute_features": true,
+  "save_csv": false,
+  "save_each_model_pred": false,
+  "seed": 42,
+  "swap_xy": false
+}
