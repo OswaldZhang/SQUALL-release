@@ -6,9 +6,9 @@ import gzip
 
 # === 参数 ===
 tile_size = 224
-input_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript/OV/OV1/OV1_1"
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript/OV/OV1/OV1_1"
-output_dir = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript/OV/OV1"
+input_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript/OV/OV1/OV1_1"
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript/OV/OV1/OV1_1"
+output_dir = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript/OV/OV1"
 
 os.makedirs(output_dir, exist_ok=True)
 

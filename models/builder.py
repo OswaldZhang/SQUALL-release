@@ -415,16 +415,16 @@ def load_model(base_model, ckpt_path, logger=None):
 
     incompatible = base_model.load_state_dict(base_ckpt, strict=False)
     if incompatible.missing_keys:
-        print_log('missing_keys', logger='STORM')
+        print_log('missing_keys', logger='SQUALL')
         print_log(
             get_missing_parameters_message(incompatible.missing_keys),
-            logger='STORM'
+            logger='SQUALL'
         )
     if incompatible.unexpected_keys:
-        print_log('unexpected_keys', logger='STORM')
+        print_log('unexpected_keys', logger='SQUALL')
         print_log(
             get_unexpected_parameters_message(incompatible.unexpected_keys),
-            logger='STORM'
+            logger='SQUALL'
         )
 
     epoch = -1

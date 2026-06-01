@@ -3,12 +3,12 @@
 
 """
 Fast metric-only version with 7 models:
-    STNET | iSTAR | EGNv1 | Path2Space | Hist2ST | DeepPT | STORM
+    STNET | iSTAR | EGNv1 | Path2Space | Hist2ST | DeepPT | SQUALL
 
 Preserved original metric logic:
     - quantile_normalize()
     - STNET original processing
-    - iSTAR/STORM original load_model_output processing
+    - iSTAR/SQUALL original load_model_output processing
     - compute_metrics(): Pearson + full-image SSIM + RMSD
 
 Added:
@@ -19,7 +19,7 @@ Added:
         3) coords -> tile grid by tile_size/coord_scale/offset
 
 Example:
-python plot_Xenium_STORM_ISTAR_STNET_wsi_all_v11_add_path2space_metrice_only_fast.py \
+python plot_Xenium_SQUALL_ISTAR_STNET_wsi_all_v11_add_path2space_metrice_only_fast.py \
   --out_csv gene_metrics_summary_7models_no_EGNv2_add_Hist2ST_DeepPT.csv \
   --overall_csv gene_metrics_summary_7models_no_EGNv2_add_Hist2ST_DeepPT_overall.csv \
   --num_workers 6 \
@@ -50,14 +50,14 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 # ======================================================
 
 DEFAULT_STNET_DIR = "STNET"
-DEFAULT_STORM_DIR = "geneplot_v3_tumor_all"
-DEFAULT_ISTAR_DIR = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_Xenium_all_new/cnts-super"
+DEFAULT_SQUALL_DIR = "geneplot_v3_tumor_all"
+DEFAULT_ISTAR_DIR = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_Xenium_all_new/cnts-super"
 
-DEFAULT_EGNV1_H5 = "/lustre1/zxzeng/bwqin/STORM_main/clustering/EGNv1/outputs/EGNv1_HD_original_OV_to_OVXenium/xenium_predicted_expression.h5"
+DEFAULT_EGNV1_H5 = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/EGNv1/outputs/EGNv1_HD_original_OV_to_OVXenium/xenium_predicted_expression.h5"
 
-DEFAULT_PATH2SPACE_H5 = "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_OV_to_Xenium_tilelevel_original_setting/OV_Xenium_all_new/path2space_tilelevel_predicted_expression_ensemble.h5"
-DEFAULT_HIST2ST_H5 = "/lustre1/zxzeng/bwqin/STORM_main/clustering/Hist2ST/outputs/Hist2ST_HD_native_OV_to_OVXenium_coordzero/xenium_predicted_expression.h5"
-DEFAULT_DEEPPT_H5 = "/lustre1/zxzeng/bwqin/STORM_main/clustering/DeepPT/outputs/DeepPT_fold0_OVmodel_predict_OVXenium_ensemble5/OV_Xenium_all_new_predicted_expression_ensemble5_fold0.h5"
+DEFAULT_PATH2SPACE_H5 = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_OV_to_Xenium_tilelevel_original_setting/OV_Xenium_all_new/path2space_tilelevel_predicted_expression_ensemble.h5"
+DEFAULT_HIST2ST_H5 = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/Hist2ST/outputs/Hist2ST_HD_native_OV_to_OVXenium_coordzero/xenium_predicted_expression.h5"
+DEFAULT_DEEPPT_H5 = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/DeepPT/outputs/DeepPT_fold0_OVmodel_predict_OVXenium_ensemble5/OV_Xenium_all_new_predicted_expression_ensemble5_fold0.h5"
 
 DEFAULT_GT_DIR = "expression_all"
 DEFAULT_VALID_GENES_PATH = "valid_genes_all.json"
@@ -409,7 +409,7 @@ def load_istar_processed_original(gene, istar_dir, gt_shape, gt_mask, cache_dir=
 
 
 def load_storm_processed_original(gene, storm_dir, gt_shape, gt_mask, cache_dir=None, use_cache=False):
-    cached = maybe_load_cache(cache_dir, "STORM", gene, gt_shape, use_cache)
+    cached = maybe_load_cache(cache_dir, "SQUALL", gene, gt_shape, use_cache)
     if cached is not None:
         return cached, "cache"
 
@@ -420,13 +420,13 @@ def load_storm_processed_original(gene, storm_dir, gt_shape, gt_mask, cache_dir=
 
     arr = load_model_output_original(storm_path, gt_shape, mask=gt_mask)
 
-    maybe_save_cache(cache_dir, "STORM", gene, arr, use_cache)
+    maybe_save_cache(cache_dir, "SQUALL", gene, arr, use_cache)
 
     return arr, storm_path
 
 
 # ======================================================
-# Parallel worker for STNET/iSTAR/STORM
+# Parallel worker for STNET/iSTAR/SQUALL
 # ======================================================
 
 def compute_one_gene_file_models_worker(args_tuple):
@@ -451,7 +451,7 @@ def compute_one_gene_file_models_worker(args_tuple):
         "_gene_idx": gene_idx,
     }
 
-    for model_name in ["STNET", "ISTAR", "STORM"]:
+    for model_name in ["STNET", "ISTAR", "SQUALL"]:
         metrics[f"{model_name}_Pearson"] = np.nan
         metrics[f"{model_name}_SSIM"] = np.nan
         metrics[f"{model_name}_RMSD"] = np.nan
@@ -490,13 +490,13 @@ def compute_one_gene_file_models_worker(args_tuple):
         )
         if storm_arr is not None:
             p, s, r = compute_metrics(storm_arr, gt_arr)
-            metrics["STORM_Pearson"] = p
-            metrics["STORM_SSIM"] = s
-            metrics["STORM_RMSD"] = r
+            metrics["SQUALL_Pearson"] = p
+            metrics["SQUALL_SSIM"] = s
+            metrics["SQUALL_RMSD"] = r
         else:
-            metrics["STORM_status"] = status
+            metrics["SQUALL_status"] = status
     except Exception as e:
-        metrics["STORM_status"] = f"error:{repr(e)}"
+        metrics["SQUALL_status"] = f"error:{repr(e)}"
 
     return metrics
 
@@ -534,12 +534,12 @@ def compute_file_models_metrics_parallel(
     rows = []
 
     if num_workers <= 1:
-        for t in tqdm(tasks, desc="File models STNET/iSTAR/STORM"):
+        for t in tqdm(tasks, desc="File models STNET/iSTAR/SQUALL"):
             rows.append(compute_one_gene_file_models_worker(t))
     else:
         with ProcessPoolExecutor(max_workers=num_workers) as ex:
             futures = [ex.submit(compute_one_gene_file_models_worker, t) for t in tasks]
-            for fut in tqdm(as_completed(futures), total=len(futures), desc="File models STNET/iSTAR/STORM parallel"):
+            for fut in tqdm(as_completed(futures), total=len(futures), desc="File models STNET/iSTAR/SQUALL parallel"):
                 rows.append(fut.result())
 
     df = pd.DataFrame(rows)
@@ -1039,7 +1039,7 @@ def compute_h5_tile_model_metrics_fast(
 def build_overall_summary(metrics_df):
     rows = []
 
-    models = ["STNET", "ISTAR", "EGNv1", "Path2Space", "Hist2ST", "DeepPT", "STORM"]
+    models = ["STNET", "ISTAR", "EGNv1", "Path2Space", "Hist2ST", "DeepPT", "SQUALL"]
     metrics = ["Pearson", "SSIM", "RMSD"]
 
     for model in models:
@@ -1076,7 +1076,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--stnet_dir", type=str, default=DEFAULT_STNET_DIR)
-    parser.add_argument("--storm_dir", type=str, default=DEFAULT_STORM_DIR)
+    parser.add_argument("--storm_dir", type=str, default=DEFAULT_SQUALL_DIR)
     parser.add_argument("--istar_dir", type=str, default=DEFAULT_ISTAR_DIR)
 
     parser.add_argument("--egnv1_h5", type=str, default=DEFAULT_EGNV1_H5)
@@ -1124,7 +1124,7 @@ def main():
         "--use_cache",
         type=int,
         default=1,
-        help="1: cache processed STNET/ISTAR/STORM arrays; 0: no cache",
+        help="1: cache processed STNET/ISTAR/SQUALL arrays; 0: no cache",
     )
 
     parser.add_argument(
@@ -1191,7 +1191,7 @@ def main():
     )
 
     # --------------------------------------------------
-    # File models: STNET / ISTAR / STORM in parallel
+    # File models: STNET / ISTAR / SQUALL in parallel
     # --------------------------------------------------
     file_df = compute_file_models_metrics_parallel(
         genes=genes,
@@ -1274,7 +1274,7 @@ def main():
 
     preferred_cols = ["Gene"]
 
-    for model in ["STNET", "ISTAR", "EGNv1", "Path2Space", "Hist2ST", "DeepPT", "STORM"]:
+    for model in ["STNET", "ISTAR", "EGNv1", "Path2Space", "Hist2ST", "DeepPT", "SQUALL"]:
         for metric in ["Pearson", "SSIM", "RMSD"]:
             col = f"{model}_{metric}"
             if col in metrics_df.columns:
@@ -1301,7 +1301,7 @@ def main():
     print(f"Overall CSV : {args.overall_csv}")
     if use_cache:
         print(f"Cache dir   : {args.cache_dir}")
-    print("Models      : STNET | ISTAR | EGNv1 | Path2Space | Hist2ST | DeepPT | STORM")
+    print("Models      : STNET | ISTAR | EGNv1 | Path2Space | Hist2ST | DeepPT | SQUALL")
     print("====================================")
 
 

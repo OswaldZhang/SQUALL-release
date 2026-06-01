@@ -18,8 +18,8 @@ warnings.filterwarnings("ignore")
 # Config
 # =====================================================
 
-INPUT_CSV = "STORM_better_risk_score_patientwise_all_COX_all_robust_0322.csv"
-OUTDIR = "multivariate_cox_CESC_best_STORM_fold"
+INPUT_CSV = "SQUALL_better_risk_score_patientwise_all_COX_all_robust_0322.csv"
+OUTDIR = "multivariate_cox_CESC_best_SQUALL_fold"
 
 CANCER_TYPE = "CESC"
 
@@ -33,9 +33,9 @@ FOLD_COL = "Fold"
 # cancer type 列
 CANCER_COL = "CancerType"
 
-# STORM 用来选择最佳 fold 的 risk 列
-# 如果你的表里有 STORM_riskscore，也可以改成 "STORM_riskscore"
-STORM_RISK_COL = "STORM_risk"
+# SQUALL 用来选择最佳 fold 的 risk 列
+# 如果你的表里有 SQUALL_riskscore，也可以改成 "SQUALL_riskscore"
+SQUALL_RISK_COL = "SQUALL_risk"
 
 # 多模型 risk 列
 # 顺序会影响 forest plot 中“其他模型”的展示顺序
@@ -43,7 +43,7 @@ MODEL_RISK_COLS = [
     "UNI_risk_norm",
     "plip_risk_norm",
     "virchow_risk_norm",
-    "STORM_risk_norm",
+    "SQUALL_risk_norm",
 ]
 
 # 临床变量候选
@@ -245,7 +245,7 @@ def prepare_clinical_features(df):
 
 def fit_univariate_cox_for_fold(df_fold, risk_col):
     """
-    Evaluate STORM performance for one fold.
+    Evaluate SQUALL performance for one fold.
 
     Returns:
         c_index, coef, HR, p_value, n_samples, n_events
@@ -310,7 +310,7 @@ def choose_best_storm_fold(df):
     records = []
 
     for fold, df_fold in df.groupby(FOLD_COL):
-        res = fit_univariate_cox_for_fold(df_fold, STORM_RISK_COL)
+        res = fit_univariate_cox_for_fold(df_fold, SQUALL_RISK_COL)
         if res is None:
             continue
 
@@ -320,12 +320,12 @@ def choose_best_storm_fold(df):
     if len(records) == 0:
         raise RuntimeError(
             "No valid fold can be evaluated. "
-            "Please check TIME_COL, EVENT_COL, FOLD_COL and STORM_RISK_COL."
+            "Please check TIME_COL, EVENT_COL, FOLD_COL and SQUALL_RISK_COL."
         )
 
     perf = pd.DataFrame(records)
 
-    # 选择 STORM C-index 最大的 fold
+    # 选择 SQUALL C-index 最大的 fold
     # 如果你更想按 p-value 最小选择，可以改成：
     # best_row = perf.sort_values(["p_value", "c_index"], ascending=[True, False]).iloc[0]
     best_row = perf.sort_values(
@@ -350,8 +350,8 @@ def build_multivariate_dataframe(df_best):
     clinical_df, used_clinical_cols = prepare_clinical_features(df_best)
 
     existing_model_cols = find_existing_columns(df_best, MODEL_RISK_COLS)
-    if STORM_RISK_COL not in existing_model_cols:
-        raise ValueError(f"{STORM_RISK_COL} not found in dataframe.")
+    if SQUALL_RISK_COL not in existing_model_cols:
+        raise ValueError(f"{SQUALL_RISK_COL} not found in dataframe.")
 
     risk_df = pd.DataFrame(index=df_best.index)
 
@@ -416,11 +416,11 @@ def variable_label(var):
         "UNI_risk": "UNI",
         "plip_risk": "PLIP",
         "virchow_risk": "Virchow",
-        "STORM_risk": "STORM",
+        "SQUALL_risk": "SQUALL",
         "UNI_riskscore": "UNI",
         "plip_riskscore": "PLIP",
         "virchow_riskscore": "Virchow",
-        "STORM_riskscore": "STORM",
+        "SQUALL_riskscore": "SQUALL",
     }
     return label_map.get(var, var)
 
@@ -430,7 +430,7 @@ def order_forest_rows(result_df, clinical_cols, model_cols):
     Desired order from top to bottom:
         clinical features
         other models
-        STORM
+        SQUALL
     """
     vars_present = result_df["variable"].tolist()
 
@@ -438,10 +438,10 @@ def order_forest_rows(result_df, clinical_cols, model_cols):
 
     other_models = [
         c for c in model_cols
-        if c in vars_present and c != STORM_RISK_COL
+        if c in vars_present and c != SQUALL_RISK_COL
     ]
 
-    storm = [STORM_RISK_COL] if STORM_RISK_COL in vars_present else []
+    storm = [SQUALL_RISK_COL] if SQUALL_RISK_COL in vars_present else []
 
     final_order = clinical_order + other_models + storm
 
@@ -544,7 +544,7 @@ def main():
         FOLD_COL,
         TIME_COL,
         EVENT_COL,
-        STORM_RISK_COL,
+        SQUALL_RISK_COL,
     ]
 
     missing = [c for c in required_cols if c not in df.columns]
@@ -561,26 +561,26 @@ def main():
     print("[INFO] Fold counts:")
     print(df_cesc[FOLD_COL].value_counts(dropna=False))
 
-    # 选择 STORM 表现最好的 fold
+    # 选择 SQUALL 表现最好的 fold
     best_fold, fold_perf = choose_best_storm_fold(df_cesc)
 
     fold_perf_path = os.path.join(
         OUTDIR,
-        f"{CANCER_TYPE}_STORM_fold_performance.csv",
+        f"{CANCER_TYPE}_SQUALL_fold_performance.csv",
     )
     fold_perf.to_csv(fold_perf_path, index=False)
 
     print("[INFO] Fold performance:")
     print(fold_perf.sort_values("c_index", ascending=False))
 
-    print(f"[INFO] Best STORM fold = {best_fold}")
+    print(f"[INFO] Best SQUALL fold = {best_fold}")
 
     # 取最佳 fold
     df_best = df_cesc[df_cesc[FOLD_COL] == best_fold].copy()
 
     best_fold_data_path = os.path.join(
         OUTDIR,
-        f"{CANCER_TYPE}_best_STORM_fold_raw_data.csv",
+        f"{CANCER_TYPE}_best_SQUALL_fold_raw_data.csv",
     )
     df_best.to_csv(best_fold_data_path, index=False)
 
@@ -611,7 +611,7 @@ def main():
     # multivariate Cox
     result_df, cph = fit_multivariate_cox(cox_df)
 
-    # 排序：临床特征 -> 其他模型 -> STORM
+    # 排序：临床特征 -> 其他模型 -> SQUALL
     result_df = order_forest_rows(
         result_df,
         clinical_cols=used_clinical_cols,
@@ -620,7 +620,7 @@ def main():
 
     result_path = os.path.join(
         OUTDIR,
-        f"{CANCER_TYPE}_best_STORM_fold_multivariate_cox_results.csv",
+        f"{CANCER_TYPE}_best_SQUALL_fold_multivariate_cox_results.csv",
     )
     result_df.to_csv(result_path, index=False)
 
@@ -630,11 +630,11 @@ def main():
     # forest plot
     output_png = os.path.join(
         OUTDIR,
-        f"{CANCER_TYPE}_best_STORM_fold_multivariate_cox_forest.png",
+        f"{CANCER_TYPE}_best_SQUALL_fold_multivariate_cox_forest.png",
     )
     output_pdf = os.path.join(
         OUTDIR,
-        f"{CANCER_TYPE}_best_STORM_fold_multivariate_cox_forest.pdf",
+        f"{CANCER_TYPE}_best_SQUALL_fold_multivariate_cox_forest.pdf",
     )
 
     plot_forest(result_df, output_png, output_pdf)

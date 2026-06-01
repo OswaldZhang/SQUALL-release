@@ -15,10 +15,10 @@ Image.MAX_IMAGE_PIXELS = None
 # ======================================================
 
 SAMPLE_DIRS = {
-    "OV_Xenium_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_Xenium_all_new",
-    "HCC_Xenium_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/HCC_Xenium_all_new",
-    "OC_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OC_all_new",
-    "CC_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/CC_all_new",
+    "OV_Xenium_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_Xenium_all_new",
+    "HCC_Xenium_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/HCC_Xenium_all_new",
+    "OC_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OC_all_new",
+    "CC_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/CC_all_new",
 }
 
 OUT_DIR = "check_xenium_locs_on_HE_4samples"

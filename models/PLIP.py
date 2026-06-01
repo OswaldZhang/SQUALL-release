@@ -19,8 +19,8 @@ class PLIP_ABMIL(ABMIL):
         )
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.model = CLIPModel.from_pretrained("/lustre1/zxzeng/bwqin/STORM_main/ckpt_others/plip_model/", local_files_only=True)  # no download
-        self.processor = CLIPProcessor.from_pretrained("/lustre1/zxzeng/bwqin/STORM_main/ckpt_others/plip_model/", local_files_only=True)
+        self.model = CLIPModel.from_pretrained("/lustre1/zxzeng/bwqin/SQUALL_main/ckpt_others/plip_model/", local_files_only=True)  # no download
+        self.processor = CLIPProcessor.from_pretrained("/lustre1/zxzeng/bwqin/SQUALL_main/ckpt_others/plip_model/", local_files_only=True)
         self.model = self.model.to(self.device)
         #CLIP training
         for param in self.model.parameters():
@@ -71,8 +71,8 @@ class PLIP_getembedding(nn.Module):
     def __init__(self,config ,local_ckpt_path=None):
         super().__init__()
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.model = CLIPModel.from_pretrained("/lustre1/zxzeng/bwqin/STORM_main/ckpt_others/plip_model/", local_files_only=True)  # no download
-        self.processor = CLIPProcessor.from_pretrained("/lustre1/zxzeng/bwqin/STORM_main/ckpt_others/plip_model/", local_files_only=True)
+        self.model = CLIPModel.from_pretrained("/lustre1/zxzeng/bwqin/SQUALL_main/ckpt_others/plip_model/", local_files_only=True)  # no download
+        self.processor = CLIPProcessor.from_pretrained("/lustre1/zxzeng/bwqin/SQUALL_main/ckpt_others/plip_model/", local_files_only=True)
         self.model = self.model.to(self.device)
         for name, param in self.named_parameters():
             print(f"{name}: {param.requires_grad}")

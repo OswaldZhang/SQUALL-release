@@ -11,10 +11,10 @@ from lifelines import CoxPHFitter
 # =====================================================
 # Paths
 # =====================================================
-BASE_DIR = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
-SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/Survival_TCGA_CESC.json"
-GENE_MAP = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
-TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/STORM/yf_TCGA_label/tile_masks"
+BASE_DIR = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
+SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/Survival_TCGA_CESC.json"
+GENE_MAP = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
+TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/SQUALL/yf_TCGA_label/tile_masks"
 
 OUT_PB = "cox_gene_pseudobulk.csv"
 OUT_TR = "cox_gene_within_tumor_rank.csv"

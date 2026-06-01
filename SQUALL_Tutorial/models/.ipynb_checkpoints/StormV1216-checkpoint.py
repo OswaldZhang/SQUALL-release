@@ -462,20 +462,20 @@ class StormClassification(nn.Module):
             incompatible = self.load_state_dict(base_ckpt, strict=False)
             if log:
                 if incompatible.missing_keys:
-                    print_log('missing_keys', logger='STORM')
+                    print_log('missing_keys', logger='SQUALL')
                     print_log(
                         get_missing_parameters_message(incompatible.missing_keys),
-                        logger='STORM'
+                        logger='SQUALL'
                     )
                 if incompatible.unexpected_keys:
-                    print_log('unexpected_keys', logger='STORM')
+                    print_log('unexpected_keys', logger='SQUALL')
                     print_log(
                         get_unexpected_parameters_message(incompatible.unexpected_keys),
-                        logger='STORM'
+                        logger='SQUALL'
                     )
-                print_log(f'[Transformer] Successful Loading the ckpt from {ckpt_path}', logger='STORM')
+                print_log(f'[Transformer] Successful Loading the ckpt from {ckpt_path}', logger='SQUALL')
         else:
-            print_log('Training from scratch!!!', logger='STORM')
+            print_log('Training from scratch!!!', logger='SQUALL')
 
     def _init_weights(self, m):
         if isinstance(m, nn.Linear):
@@ -822,21 +822,21 @@ class ABMIL(nn.Module):
             incompatible = self.load_state_dict(base_ckpt, strict=False)
             if log:
                 if incompatible.missing_keys:
-                    print_log('missing_keys', logger='STORM')
+                    print_log('missing_keys', logger='SQUALL')
                     print_log(
                         get_missing_parameters_message(incompatible.missing_keys),
-                        logger='STORM'
+                        logger='SQUALL'
                     )
                 if incompatible.unexpected_keys:
-                    print_log('unexpected_keys', logger='STORM')
+                    print_log('unexpected_keys', logger='SQUALL')
                     print_log(
                         get_unexpected_parameters_message(incompatible.unexpected_keys),
-                        logger='STORM'
+                        logger='SQUALL'
                     )
 
-                print_log(f'[Transformer] Successful Loading the ckpt from {ckpt_path}', logger='STORM')
+                print_log(f'[Transformer] Successful Loading the ckpt from {ckpt_path}', logger='SQUALL')
         else:
-            print_log('Training from scratch!!!', logger='STORM')
+            print_log('Training from scratch!!!', logger='SQUALL')
 
 
 

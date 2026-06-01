@@ -5,12 +5,12 @@ from scipy import io
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 # ==== 路径设置 ====
-prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_VisiumHD/"  # 路径末尾务必带 /
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/OV_VisiumHD/OV1"    # 输出文件前缀
+prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_VisiumHD/"  # 路径末尾务必带 /
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/OV_VisiumHD/OV1"    # 输出文件前缀
 tif_path = f"{prefix}20240709-LC_cut.tif"
 
-prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_Xenium/"  # 路径末尾务必带 /
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/OV_Xenium/OVXenium_1"    # 输出文件前缀
+prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_Xenium/"  # 路径末尾务必带 /
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/OV_Xenium/OVXenium_1"    # 输出文件前缀
 tif_path = f"{prefix}HE_registered.tif"
 
 

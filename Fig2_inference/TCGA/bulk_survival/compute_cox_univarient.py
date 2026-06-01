@@ -12,10 +12,10 @@ from statsmodels.stats.multitest import multipletests
 # =====================================================
 # Config
 # =====================================================
-BASE_DIR = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
-TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/STORM/yf_TCGA_label/tile_masks"
-SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/Survival_TCGA_CESC.json"
-GENE_MAP = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
+BASE_DIR = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
+TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/SQUALL/yf_TCGA_label/tile_masks"
+SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/Survival_TCGA_CESC.json"
+GENE_MAP = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
 
 OUT_PB = "cox_univariate_pseudobulk_FDR.csv"
 OUT_TR = "cox_univariate_within_tumor_rank_FDR.csv"

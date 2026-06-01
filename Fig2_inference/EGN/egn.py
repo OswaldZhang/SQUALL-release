@@ -167,13 +167,13 @@ class EB(nn.Module):
         self.to_x = nn.Sequential(
             nn.LayerNorm(dim),
             nn.Linear(dim, inner_dim),
-            Rearrange('b (h w) (n c) -> b n c h w ', n = heads, h=7, w = 7),#change for STORM
+            Rearrange('b (h w) (n c) -> b n c h w ', n = heads, h=7, w = 7),#change for SQUALL
             )
         
         self.to_k = nn.Sequential(
             nn.LayerNorm(dim),
-            nn.Linear(dim, 7 * 7 * heads),#change for STORM
-            Rearrange('b l (n h w) -> b n l h w ', n = heads, h=7, w = 7),#change for STORM
+            nn.Linear(dim, 7 * 7 * heads),#change for SQUALL
+            Rearrange('b l (n h w) -> b n l h w ', n = heads, h=7, w = 7),#change for SQUALL
             ) 
             
         self.to_v = nn.Sequential(

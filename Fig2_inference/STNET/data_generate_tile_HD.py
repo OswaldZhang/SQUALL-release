@@ -7,10 +7,10 @@ from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 
 # ==== 路径设置 ====
-prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/HCC_VisiumHD_all/"
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_HCC/HCC/HCCVisiumHD/HCCVisiumHD_1"
-tif_path = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/HCC_VisiumHD_all/HE_rescaled_0.5mpp.tiff"
-gene_list_path = "/lustre1/zxzeng/bwqin/STORM_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
+prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/HCC_VisiumHD_all/"
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_HCC/HCC/HCCVisiumHD/HCCVisiumHD_1"
+tif_path = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/HCC_VisiumHD_all/HE_rescaled_0.5mpp.tiff"
+gene_list_path = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
 
 print("📥 加载目标基因列表...", flush=True)
 selected_genes = pd.read_csv(gene_list_path)["HGNC_symbol"].dropna().unique().tolist()

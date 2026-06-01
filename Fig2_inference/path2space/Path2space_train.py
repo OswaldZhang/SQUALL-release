@@ -1130,7 +1130,7 @@ def main():
 
     parser.add_argument(
         "--ctranspath_weight",
-        default="/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/ctranspath.pth",
+        default="/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/ctranspath.pth",
         help="Path to ctranspath.pth",
     )
 

@@ -47,13 +47,13 @@ Image.MAX_IMAGE_PIXELS = None
 
 
 DEFAULT_SAMPLES = {
-    "OV_VisiumHD_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_VisiumHD_all_new",
-    "HCC_VisiumHD_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/HCC_VisiumHD_all_new",
+    "OV_VisiumHD_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_VisiumHD_all_new",
+    "HCC_VisiumHD_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/HCC_VisiumHD_all_new",
 
-    "OC_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/aligned_from_adata_for_path2space/OC_all_new_aligned",
-    "CC_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/aligned_from_adata_for_path2space/CC_all_new_aligned",
-    "HCC_Xenium_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/HCC_Xenium_all_new",
-    "OV_Xenium_all_new": "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OV_Xenium_all_new",
+    "OC_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/aligned_from_adata_for_path2space/OC_all_new_aligned",
+    "CC_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/aligned_from_adata_for_path2space/CC_all_new_aligned",
+    "HCC_Xenium_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/HCC_Xenium_all_new",
+    "OV_Xenium_all_new": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OV_Xenium_all_new",
 }
 
 
@@ -267,7 +267,7 @@ def main():
         default=None,
         help=(
             "Optional custom samples in format name=path. "
-            "If not given, use the six hard-coded STORM paths."
+            "If not given, use the six hard-coded SQUALL paths."
         ),
     )
     args = parser.parse_args()

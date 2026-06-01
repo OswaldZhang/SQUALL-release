@@ -25,16 +25,16 @@ Image.MAX_IMAGE_PIXELS = None
 
 SAMPLES = {
     "OC_all_new_aligned": {
-        "adata": "/lustre1/zxzeng/bwqin/STORM/Xenium/OC_Xenium_public/adata.h5ad",
-        "public_dir": "/lustre1/zxzeng/bwqin/STORM/Xenium/OC_Xenium_public",
+        "adata": "/lustre1/zxzeng/bwqin/SQUALL/Xenium/OC_Xenium_public/adata.h5ad",
+        "public_dir": "/lustre1/zxzeng/bwqin/SQUALL/Xenium/OC_Xenium_public",
     },
     "CC_all_new_aligned": {
-        "adata": "/lustre1/zxzeng/bwqin/STORM/Xenium/CC_Xenium_public/adata.h5ad",
-        "public_dir": "/lustre1/zxzeng/bwqin/STORM/Xenium/CC_Xenium_public",
+        "adata": "/lustre1/zxzeng/bwqin/SQUALL/Xenium/CC_Xenium_public/adata.h5ad",
+        "public_dir": "/lustre1/zxzeng/bwqin/SQUALL/Xenium/CC_Xenium_public",
     },
 }
 
-OUT_ROOT = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/aligned_from_adata_for_path2space"
+OUT_ROOT = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/aligned_from_adata_for_path2space"
 
 TARGET_MPP = 0.5
 TILE_SIZE = 224

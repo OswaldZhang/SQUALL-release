@@ -285,8 +285,8 @@ def get_embeddings_ours(prefix):
     mask_img = load_image(f'{prefix}mask-small.png')
     H_target, W_target = mask_img.shape[:2]
     print("H_target, W_target",H_target, W_target)
-    #data = torch.load("/lustre1/zxzeng/bwqin/STORM/Xenium/Breast_Xenium_public/breast_embeddings_all.pt",map_location=torch.device('cpu'))
-    data = torch.load("/lustre1/zxzeng/bwqin/STORM/Xenium/Breast_Xenium_public/breast_embeddings_all_rgb_only.pt",map_location=torch.device('cpu'))
+    #data = torch.load("/lustre1/zxzeng/bwqin/SQUALL/Xenium/Breast_Xenium_public/breast_embeddings_all.pt",map_location=torch.device('cpu'))
+    data = torch.load("/lustre1/zxzeng/bwqin/SQUALL/Xenium/Breast_Xenium_public/breast_embeddings_all_rgb_only.pt",map_location=torch.device('cpu'))
     #embs = torch.concat(data["expr_embedding"],data["rgb_embedding"])#.permute(1, 0, 2) #HWC
     #embs = torch.cat([data["expr_embedding"], data["rgb_embedding"]], dim=0)
     embs = data["rgb_embedding"]

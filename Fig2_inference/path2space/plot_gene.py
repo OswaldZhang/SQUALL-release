@@ -15,24 +15,24 @@ import matplotlib.pyplot as plt
 
 TASKS = {
     "HCC": {
-        "out_dir": "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_HCC_to_Xenium_tilelevel_original_setting",
+        "out_dir": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_HCC_to_Xenium_tilelevel_original_setting",
         "genes": ["CDK3", "VEGFA"],
     },
     "OV": {
-        "out_dir": "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_OV_to_Xenium_tilelevel_original_setting",
+        "out_dir": "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_OV_to_Xenium_tilelevel_original_setting",
         "genes": ["EPCAM", "AKT1", "CDK1"],
     },
     "OC":{
-        "out_dir":"/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_OV_to_OC_tilelevel_predict_only_aligned/OC_all_new_aligned",
+        "out_dir":"/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_OV_to_OC_tilelevel_predict_only_aligned/OC_all_new_aligned",
         "genes": ["IFNGR1","STAT1"],
     },
     "CC":{
-        "out_dir":"/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_OV_to_CC_tilelevel_predict_only_aligned/CC_all_new_aligned",
+        "out_dir":"/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_OV_to_CC_tilelevel_predict_only_aligned/CC_all_new_aligned",
         "genes": ["CD8A", "MTOR"],
     }
     }
 
-OUT_PLOT_DIR = "/lustre1/zxzeng/bwqin/STORM_main/clustering/path2space/outputs/Path2Space_gene_sample_final"
+OUT_PLOT_DIR = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/path2space/outputs/Path2Space_gene_sample_final"
 
 POINT_SIZE = 8
 ALPHA = 0.95

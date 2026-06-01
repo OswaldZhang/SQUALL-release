@@ -18,8 +18,8 @@ warnings.filterwarnings("ignore")
 # Config
 # =====================================================
 
-INPUT_CSV = "STORM_better_risk_score_patientwise_all_COX_withstage_robust_recurrence_new.csv"
-INPUT_CSV = "STORM_better_risk_score_patientwise_all_COX_all_robust_0322.csv"
+INPUT_CSV = "SQUALL_better_risk_score_patientwise_all_COX_withstage_robust_recurrence_new.csv"
+INPUT_CSV = "SQUALL_better_risk_score_patientwise_all_COX_all_robust_0322.csv"
 CLINICAL_CSV = "outcome_stage.csv"
 
 OUTDIR = "multivariate_cox_301_cutoff_forest_with_clinical"
@@ -62,17 +62,17 @@ MODEL_RISK_COLS = [
     "UNI_risk_norm",
     "plip_risk_norm",
     "virchow_risk_norm",
-    "STORM_risk_norm",
+    "SQUALL_risk_norm",
 ]
 
 MODEL_LABEL_MAP = {
     "UNI_risk_norm": "UNI",
     "plip_risk_norm": "PLIP",
     "virchow_risk_norm": "Virchow",
-    "STORM_risk_norm": "STORM",
+    "SQUALL_risk_norm": "SQUALL",
 }
 
-MODEL_VARS = ["UNI", "PLIP", "Virchow", "STORM"]
+MODEL_VARS = ["UNI", "PLIP", "Virchow", "SQUALL"]
 
 # optimal cutoff setting, follow surv_cutpoint(minprop = 0.2)
 MINPROP = 0.2
@@ -547,8 +547,8 @@ def make_model_risk_groups(df_cancer):
 
     cutoff_df = pd.DataFrame(cutoff_records)
 
-    if "STORM" not in risk_group_df.columns:
-        raise RuntimeError("STORM risk group was not created. Please check STORM_risk_norm.")
+    if "SQUALL" not in risk_group_df.columns:
+        raise RuntimeError("SQUALL risk group was not created. Please check SQUALL_risk_norm.")
 
     return risk_group_df, cutoff_df
 
@@ -656,7 +656,7 @@ def variable_label(var):
         "UNI": "UNI",
         "PLIP": "PLIP",
         "Virchow": "Virchow",
-        "STORM": "STORM",
+        "SQUALL": "SQUALL",
     }
     return label_map.get(var, var)
 
@@ -666,7 +666,7 @@ def order_forest_rows(result_df):
     Desired top-to-bottom order:
         clinical
         other models
-        STORM
+        SQUALL
     """
     result_df = result_df.copy()
 
@@ -675,7 +675,7 @@ def order_forest_rows(result_df):
     clinical_order = [v for v in vars_present if v not in MODEL_VARS]
 
     other_models = [m for m in ["UNI", "PLIP", "Virchow"] if m in vars_present]
-    storm = ["STORM"] if "STORM" in vars_present else []
+    storm = ["SQUALL"] if "SQUALL" in vars_present else []
 
     final_order = clinical_order + other_models + storm
 
@@ -699,7 +699,7 @@ def pvalue_label(p):
 def plot_forest(result_df, output_pdf, output_png=None, title="Multivariate Cox Hazard Forest Plot"):
     """
     Color:
-        - STORM red
+        - SQUALL red
         - all others blue
 
     Annotation:
@@ -724,7 +724,7 @@ def plot_forest(result_df, output_pdf, output_png=None, title="Multivariate Cox 
         lower = row["CI_lower"]
         upper = row["CI_upper"]
 
-        color = RED if var == "STORM" else BLUE
+        color = RED if var == "SQUALL" else BLUE
 
         ax.plot([lower, upper], [i, i], color=color, lw=2)
         ax.scatter(hr, i, color=color, s=45, zorder=3)

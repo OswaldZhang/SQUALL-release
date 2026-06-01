@@ -14,8 +14,8 @@ CESC,2,54.4578,fold2_output_CESC_survival_UNI_redo.txt,UNI
 CESC,1,49.8818,fold1_output_CESC_survival_UNI_redo.txt,UNI
 CESC,3,37.0466,fold3_output_CESC_survival_UNI_redo.txt,UNI
 CESC,4,53.6269,fold4_output_CESC_survival_UNI_redo.txt,UNI
-CESC,2,55.4217,fold2_output_CESC_survival_STORM_redo.txt,STORM
-CESC,5,61.2091,fold5_output_CESC_survival_STORM_redo.txt,STORM
-CESC,4,56.7358,fold4_output_CESC_survival_STORM_redo.txt,STORM
-CESC,1,67.1395,fold1_output_CESC_survival_STORM_redo.txt,STORM
-CESC,3,57.772,fold3_output_CESC_survival_STORM_redo.txt,STORM
+CESC,2,55.4217,fold2_output_CESC_survival_SQUALL_redo.txt,SQUALL
+CESC,5,61.2091,fold5_output_CESC_survival_SQUALL_redo.txt,SQUALL
+CESC,4,56.7358,fold4_output_CESC_survival_SQUALL_redo.txt,SQUALL
+CESC,1,67.1395,fold1_output_CESC_survival_SQUALL_redo.txt,SQUALL
+CESC,3,57.772,fold3_output_CESC_survival_SQUALL_redo.txt,SQUALL

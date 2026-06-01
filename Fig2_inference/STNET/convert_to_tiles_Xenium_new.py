@@ -10,9 +10,9 @@ resolution = np.array([0.22073106, 0.22072619])  # 单位：µm/pixel
 tile_size_um_x = tile_pixel_size * resolution[0]
 tile_size_um_y = tile_pixel_size * resolution[1]
 
-input_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/OV_Xenium/OVXenium_1"
+input_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/OV_Xenium/OVXenium_1"
 output_prefix = input_prefix
-output_dir = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_new/OV/OVXenium/OVXenium_1"
+output_dir = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_new/OV/OVXenium/OVXenium_1"
 
 os.makedirs(output_dir, exist_ok=True)
 

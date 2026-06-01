@@ -8,17 +8,17 @@ Image.MAX_IMAGE_PIXELS = None
 
 # ==== 路径设置 ====
 '''
-prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/OC_all/"
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_OC/OV/OCXenium/OCXenium_1"
-#tif_path = "/lustre1/zxzeng/bwqin/STORM/Xenium/HCC/Xenium/HCC/HE_rescaled_0.5mpp.tiff"
-tif_path = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_OC/OV/OCXenium/Xenium_Prime_Ovarian_Cancer_FFPE_XRrun_he_image.ome.tif"
-gene_list_path = "/lustre1/zxzeng/bwqin/STORM_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
+prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/OC_all/"
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_OC/OV/OCXenium/OCXenium_1"
+#tif_path = "/lustre1/zxzeng/bwqin/SQUALL/Xenium/HCC/Xenium/HCC/HE_rescaled_0.5mpp.tiff"
+tif_path = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_OC/OV/OCXenium/Xenium_Prime_Ovarian_Cancer_FFPE_XRrun_he_image.ome.tif"
+gene_list_path = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
 '''
-prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/istar/data/CC_all/"
-output_prefix = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_CC/OV/CCXenium/CCXenium_1"
-#tif_path = "/lustre1/zxzeng/bwqin/STORM/Xenium/HCC/Xenium/HCC/HE_rescaled_0.5mpp.tiff"
-tif_path = "/lustre1/zxzeng/bwqin/STORM_main/clustering/ST-NET/data/hist2tscript_CC/OV/CCXenium/Xenium_Prime_Cervical_Cancer_FFPE_he_image.ome.tif"
-gene_list_path = "/lustre1/zxzeng/bwqin/STORM_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
+prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/istar/data/CC_all/"
+output_prefix = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_CC/OV/CCXenium/CCXenium_1"
+#tif_path = "/lustre1/zxzeng/bwqin/SQUALL/Xenium/HCC/Xenium/HCC/HE_rescaled_0.5mpp.tiff"
+tif_path = "/lustre1/zxzeng/bwqin/SQUALL_main/clustering/ST-NET/data/hist2tscript_CC/OV/CCXenium/Xenium_Prime_Cervical_Cancer_FFPE_he_image.ome.tif"
+gene_list_path = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/expr_get_embedding_Xenium_all.csv"
 
 
 

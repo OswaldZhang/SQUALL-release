@@ -1,4 +1,4 @@
-Patient_id,Status,Time,CancerType,Fold,STORM_risk,UNI_risk,plip_risk,virchow_risk,STORM_riskscore,UNI_riskscore,plip_riskscore,virchow_riskscore,fold,stage,STORM_risk_norm,UNI_risk_norm,plip_risk_norm,virchow_risk_norm,STORM_risk_group,UNI_risk_group,plip_risk_group,virchow_risk_group
+Patient_id,Status,Time,CancerType,Fold,SQUALL_risk,UNI_risk,plip_risk,virchow_risk,SQUALL_riskscore,UNI_riskscore,plip_riskscore,virchow_riskscore,fold,stage,SQUALL_risk_norm,UNI_risk_norm,plip_risk_norm,virchow_risk_norm,SQUALL_risk_group,UNI_risk_group,plip_risk_group,virchow_risk_group
 B0960178,1,1629.0,301,1,-0.4479250907897949,-2.2217142581939697,-0.1870218515396118,0.2154326438903808,Low Risk,High Risk,Low Risk,High Risk,,0,,,,,low,low,low,low
 B0967366,1,702.0,301,3,2.613643169403076,-0.1762112230062484,1.1587787866592407,-0.1318555623292923,High Risk,Low Risk,High Risk,High Risk,,0,,,,,low,low,low,low
 B0967366,1,702.0,301,5,0.7502251267433167,2.3494670391082764,0.9058039784431458,0.6792094707489014,High Risk,High Risk,High Risk,High Risk,,0,,,,,low,low,low,low

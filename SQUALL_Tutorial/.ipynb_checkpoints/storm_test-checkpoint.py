@@ -14,11 +14,11 @@ import yaml
 # ======================================================
 parser = argparse.ArgumentParser()
 parser.add_argument("--tile_dir", type=str,
-                    default="/lustre1/zxzeng/bwqin/STORM/TCGA_tiles_0_5/CESC")
+                    default="/lustre1/zxzeng/bwqin/SQUALL/TCGA_tiles_0_5/CESC")
 parser.add_argument("--output_dir", type=str,
                     default="CESC_inference_vector")
 parser.add_argument("--config", type=str, default="config.yaml")
-parser.add_argument("--ckpt", type=str, default="STORM_hires.pth")
+parser.add_argument("--ckpt", type=str, default="SQUALL_hires.pth")
 parser.add_argument("--batch_size", type=int, default=128)
 parser.add_argument("--device", type=str, default="cuda:0")
 parser.add_argument("--pool", type=str, choices=["sum", "mean"], default="sum")

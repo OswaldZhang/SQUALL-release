@@ -13,12 +13,12 @@ from statsmodels.stats.multitest import multipletests
 # =====================================================
 # Config
 # =====================================================
-BASE_DIR = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
-TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/STORM/yf_TCGA_label/tile_masks"
+BASE_DIR = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/CESC_inference_vector_lowres"
+TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/SQUALL/yf_TCGA_label/tile_masks"
 
-SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/STORM_main/downstream_labels/Survival_five_fold_DSS_COX_outs/Survival_TCGA_CESC.json"
+SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/Survival_five_fold_DSS_COX_outs/Survival_TCGA_CESC.json"
 CLINICAL_CSV = "outcome_stage.csv"
-GENE_MAP = "/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
+GENE_MAP = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
 
 # 输出
 OUT_PB = "cox_multivariate_PB_log1p_age_stage_tumorfrac_FDR.csv"
