@@ -35,7 +35,7 @@ class AccMetric:
         _dict['acc'] = self.acc
         return _dict
 def is_main_process(args):
-    """判断当前是否是主进程"""
+    """"""
     return not hasattr(args, 'local_rank') or args.local_rank == 0
 
 
@@ -46,7 +46,7 @@ def evaluate_svm(train_features, train_labels, test_features, test_labels):
     return np.sum(test_labels == pred) * 1. / pred.shape[0] * 100
 
 def setup_distributed(args):
-    args.rank = int(os.environ.get('RANK', 0))  # 默认值为 -1，防止没有设定的情况
+    args.rank = int(os.environ.get('RANK', 0))  #  -1
     args.local_rank = int(os.environ.get('LOCAL_RANK', 0))
     print("world_size",args.world_size)
     print("node_rank",args.rank)
@@ -116,14 +116,14 @@ def run_net(args, config, train_writer=None):
     base_model.zero_grad()
     '''
     with profile(activities=[
-        ProfilerActivity.CPU,  # 捕获CPU活动
-        ProfilerActivity.CUDA  # 捕获CUDA活动
+        ProfilerActivity.CPU,  # CPU
+        ProfilerActivity.CUDA  # CUDA
     ], 
         schedule=torch.profiler.schedule(wait=1, warmup=1, active=2, repeat=1), 
-        on_trace_ready=torch.profiler.tensorboard_trace_handler('./log_ddp_qbw_lowres_12_5_praameters'),  # 将结果保存到文件中以便在TensorBoard中查看
-        record_shapes=True,  # 记录输入张量的形状
-        profile_memory=True,  # 记录内存使用情况
-        with_stack=True  # 记录堆栈信息
+        on_trace_ready=torch.profiler.tensorboard_trace_handler('./log_ddp_qbw_lowres_12_5_praameters'),  # TensorBoard
+        record_shapes=True,  # 
+        profile_memory=True,  # 
+        with_stack=True  # 
     ) as prof:  
     '''
     for epoch in range(start_epoch, config.max_epoch + 1):
@@ -150,7 +150,7 @@ def run_net(args, config, train_writer=None):
         base_model.train()  # set model to training mode
         n_batches = len(pretrain_dataloader)
         batch_start_time = time.time()
-        for idx, (rgb, expr, res, _,_) in enumerate(pretrain_dataloader): #qbw 10.16 5-》4
+        for idx, (rgb, expr, res, _,_) in enumerate(pretrain_dataloader): #qbw 10.16 5-4
             #  # Start time for the batch processing
             data_loader_time.update(time.time() - batch_start_time)
 

@@ -8,7 +8,7 @@ from scipy.io import mmread
 prefix = Path(".")
 
 # =====================================================
-# 你要检查的 genes
+#  genes
 # =====================================================
 query_genes = [
     "ABCC6",
@@ -61,10 +61,10 @@ def load_gene_names_from_genes_tsv(path):
     print("shape:", genes_df.shape)
     print(genes_df.head())
 
-    # 常见格式：
-    # 1列: gene_name
-    # 2列: gene_id, gene_name
-    # 3列: gene_id, gene_name, feature_type
+    # 
+    # 1: gene_name
+    # 2: gene_id, gene_name
+    # 3: gene_id, gene_name, feature_type
     if genes_df.shape[1] >= 2:
         gene_names = genes_df.iloc[:, 1].astype(str).values
         gene_ids = genes_df.iloc[:, 0].astype(str).values
@@ -96,7 +96,7 @@ def calc_raw_gene_stats(X, gene_names, gene_ids, barcodes):
     print("shape:", X.shape)
     print("orientation:", orientation)
 
-    # 转 CSC 方便按 gene 取列；如果矩阵是 gene x barcode，则转 CSR 按行取
+    #  CSC  gene  gene x barcode CSR 
     rows = []
 
     name_to_indices = {}
@@ -123,7 +123,7 @@ def calc_raw_gene_stats(X, gene_names, gene_ids, barcodes):
 
         idxs = name_to_indices[g]
 
-        # 如果 genes.tsv 中同名 gene 重复，则把这些 entry 的表达合并
+        #  genes.tsv  gene  entry 
         if orientation == "barcodes_by_genes":
             sub = X[:, idxs]
             vec = np.asarray(sub.sum(axis=1)).ravel()
@@ -171,12 +171,12 @@ def check_gene_names_txt(path):
 
 def try_check_cnts_super(prefix):
     """
-    尝试检查 iStar 的 cnts-super 输出。
-    不同版本 iStar 输出格式可能不同：
-    1. cnts-super 是目录，里面每个 gene 一个文件
-    2. cnts-super 是 tsv/csv
-    3. cnts-super 下有若干 txt/tsv/csv 文件
-    这个函数尽量自动识别。
+     iStar  cnts-super 
+     iStar 
+    1. cnts-super  gene 
+    2. cnts-super  tsv/csv
+    3. cnts-super  txt/tsv/csv 
+    
     """
     super_path = prefix / "cnts-super"
 
@@ -193,14 +193,14 @@ def try_check_cnts_super(prefix):
         base["cnts_super_note"] = "cnts-super not found"
         return base
 
-    # 情况1：cnts-super 是目录
+    # 1cnts-super 
     if super_path.is_dir():
         files = sorted(glob.glob(str(super_path / "*")))
         file_names = [Path(f).name for f in files]
 
         rows = []
         for g in query_genes:
-            # 常见情况：文件名包含 gene
+            #  gene
             matched = []
             for f in files:
                 stem = Path(f).stem
@@ -219,7 +219,7 @@ def try_check_cnts_super(prefix):
                 })
                 continue
 
-            # 尝试读取 matched 文件中的数值
+            #  matched 
             vals_all = []
             note = []
             for f in matched:
@@ -258,13 +258,13 @@ def try_check_cnts_super(prefix):
 
         return pd.DataFrame(rows)
 
-    # 情况2：cnts-super 是文件
+    # 2cnts-super 
     else:
         try:
             df = pd.read_csv(super_path, sep=None, engine="python", nrows=5)
             cols = list(df.columns)
 
-            # 如果 gene 是列名
+            #  gene 
             rows = []
             if any(g in cols for g in query_genes):
                 full = pd.read_csv(super_path, sep=None, engine="python")
@@ -299,7 +299,7 @@ def try_check_cnts_super(prefix):
 
 
 # =====================================================
-# 1. 检查 raw cnts.mtx
+# 1.  raw cnts.mtx
 # =====================================================
 genes_df, gene_ids, gene_names = load_gene_names_from_genes_tsv(prefix / "genes.tsv")
 
@@ -312,22 +312,22 @@ X = mmread(prefix / "cnts.mtx").tocsr()
 raw_stats = calc_raw_gene_stats(X, gene_names, gene_ids, barcodes)
 
 # =====================================================
-# 2. 检查 gene-names.txt
+# 2.  gene-names.txt
 # =====================================================
 gene_names_stats = check_gene_names_txt(prefix / "gene-names.txt")
 
 # =====================================================
-# 3. 尝试检查 cnts-super
+# 3.  cnts-super
 # =====================================================
 super_stats = try_check_cnts_super(prefix)
 
 # =====================================================
-# 4. 合并结果
+# 4. 
 # =====================================================
 out = raw_stats.merge(gene_names_stats, on="gene", how="left")
 out = out.merge(super_stats, on="gene", how="left")
 
-# 排序：先显示 raw 中不存在或全0的
+#  raw 0
 out["sort_key"] = (
     (~out["in_raw_cnts"].fillna(False)).astype(int) * 100
     + (out["is_all_zero"].fillna(False)).astype(int) * 10
@@ -335,7 +335,7 @@ out["sort_key"] = (
 out = out.sort_values(["sort_key", "gene"], ascending=[False, True]).drop(columns=["sort_key"])
 
 # =====================================================
-# 5. 保存
+# 5. 
 # =====================================================
 out_path = prefix / "check_query_genes_expression.tsv"
 out.to_csv(out_path, sep="\t", index=False)

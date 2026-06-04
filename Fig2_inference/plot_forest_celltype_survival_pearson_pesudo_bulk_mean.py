@@ -36,7 +36,7 @@ def find_optimal_cutoff(values, time, event):
             continue
     return best_cutoff
 
-# === 文件路径 ===
+# ===  ===
 json_paths = {
     "Tumor": "CESC_gene_slide_mean_expression_treg_tumor_only.json",
     "Other": "CESC_gene_slide_mean_other_region.json",
@@ -49,7 +49,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 cd8_manual_markers = ["CD3G", "CD8A", "GZMK"]
 
-# === 读取临床数据 ===
+# ===  ===
 df_clinical = pd.read_csv(clinical_csv)
 df_clinical = df_clinical.rename(columns={"bcr_patient_barcode": "sample", "age_at_initial_pathologic_diagnosis": "age", "clinical_stage": "stage"})
 df_clinical["stage"] = df_clinical["stage"].str.replace("Stage ", "", regex=False).str.strip()
@@ -58,11 +58,11 @@ print(df_clinical["stage"])
 print("df_clinical stage",list(set(df_clinical["stage"].tolist())))
 df_clinical = df_clinical.dropna(subset=["age", "stage"])
 
-# === 读取生存数据 ===
+# ===  ===
 with open(survival_json) as f:
     survival_data = json.load(f)
 
-# === 读取表达数据 ===
+# ===  ===
 region_scores = {}
 valid_samples = None
 for region_key, path in json_paths.items():
@@ -87,7 +87,7 @@ for region_key, path in json_paths.items():
     else:
         valid_samples &= set(df_expr.index)
 
-# === 合并数据 ===
+# ===  ===
 final_df = pd.DataFrame(index=sorted(valid_samples))
 for region in region_scores:
     final_df = final_df.join(region_scores[region], how="left")
@@ -102,14 +102,14 @@ for region in ["Tumor", "Other", "All"]:
     cutoff = find_optimal_cutoff(final_df[score_col], final_df["time"], final_df["status"])
     final_df[score_col] = (final_df[score_col] > cutoff).astype(int)
 
-# === 其他二值化 ===
+# ===  ===
 final_df["age"] = (final_df["age"] > 65).astype(int)
 final_df["stage1"] = (final_df["stage"] == 1).astype(int)
 final_df["stage2"] = (final_df["stage"] == 2).astype(int)
 final_df["stage3"] = (final_df["stage"] == 3).astype(int)
 final_df["stage4"] = (final_df["stage"] == 4).astype(int)
 
-# === Cox 分析 ===
+# === Cox  ===
 binary_vars = ["Tumor_CD8_manual_score", "Other_CD8_manual_score", "All_CD8_manual_score", "age", "stage1", "stage2", "stage3","stage4"]
 rename_map = {
     "Tumor_CD8_manual_score": "Tumor CD8 score",
@@ -153,14 +153,14 @@ for var in binary_vars:
         "N": n_positive
     })
 
-# === 绘图准备 ===
+# ===  ===
 df_forest = pd.DataFrame(results).dropna()
 df_forest = df_forest.set_index("Variable").loc[desired_order].reset_index()
 
-# === 联合绘图 ===
+# ===  ===
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 6), gridspec_kw={'width_ratios': [2, 1]})
 
-# --- 森林图 ---
+# ---  ---
 y_pos = np.arange(len(df_forest))
 ax1.errorbar(
     df_forest["HR"], y_pos,
@@ -173,11 +173,11 @@ ax1.set_yticklabels(df_forest["Variable"])
 ax1.set_xlabel("Hazard Ratio (HR)")
 ax1.set_title("Univariable Cox Forest Plot")
 ax1.set_xscale("log")
-ax1.set_xticks([0.25, 0.5, 1, 2, 5, 10])  # 可根据 HR 范围自定义
+ax1.set_xticks([0.25, 0.5, 1, 2, 5, 10])  #  HR 
 ax1.get_xaxis().set_major_formatter(ScalarFormatter())
 ax1.tick_params(axis='x', which='major', labelsize=10)
 
-# --- 表格文本 ---
+# ---  ---
 hr_ci_text = [f"{hr:.2f} ({low:.2f}-{high:.2f})" for hr, low, high in zip(df_forest["HR"], df_forest["CI_lower"], df_forest["CI_upper"])]
 p_text = [f"{p:.3f}" for p in df_forest["p"]]
 n_text = [str(n) for n in df_forest["N"]]

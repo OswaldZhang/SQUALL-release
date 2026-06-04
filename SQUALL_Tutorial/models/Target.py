@@ -608,49 +608,49 @@ class SpatialTranscriptomicsCoCa(nn.Module):
         return x[:, 0]
 
 # =======================
-# 1. Attention Pool 模块
+# 1. Attention Pool 
 # =======================
 class AttentionPooling(nn.Module):
     """
-    将 (B, N, D) 池化为 (B, D) 的完整 Transformer Block 风格实现。
-    包含：
-      1) 可学习的 query token，用于多头注意力；
-      2) LayerNorm；
-      3) 多头注意力 (multi-head attention)；
-      4) 残差连接 + 投影；
-      5) 前馈网络 (FeedForward, FFN) + 残差连接；
+     (B, N, D)  (B, D)  Transformer Block 
+    
+      1)  query token
+      2) LayerNorm
+      3)  (multi-head attention)
+      4)  + 
+      5)  (FeedForward, FFN) + 
     """
 
     def __init__(
         self,
-        dim: int,            # 输入 token 的特征维度 D
-        heads: int = 8,      # 多头注意力的头数
-        dim_head: int = 64,  # 每个头的维度
-        ff_mult: int = 4,    # FFN 内部层放大的倍数
-        dropout: float = 0.2 # Dropout 比例
+        dim: int,            #  token  D
+        heads: int = 8,      # 
+        dim_head: int = 64,  # 
+        ff_mult: int = 4,    # FFN 
+        dropout: float = 0.2 # Dropout 
     ):
         """
         Args:
-            dim (int): 输入序列中 token 的维度 (D)
-            heads (int): 多头注意力的头数
-            dim_head (int): 每个注意力头的维度
-            ff_mult (int): FFN 的隐藏层放大倍数
-            dropout (float): 注意力和部分投影的 dropout 概率
+            dim (int):  token  (D)
+            heads (int): 
+            dim_head (int): 
+            ff_mult (int): FFN 
+            dropout (float):  dropout 
         """
         super().__init__()
         self.heads = heads
         self.dim_head = dim_head
         inner_dim = heads * dim_head
 
-        # 1) 可学习的单独 query token，相当于一个 learnable [CLS]
+        # 1)  query token learnable [CLS]
         self.query_token = nn.Parameter(torch.randn(1, 1, dim))
 
-        # 2) LayerNorm，用于在注意力前对输入序列做归一化
+        # 2) LayerNorm
         self.norm = nn.LayerNorm(dim)
 
-        # 3) 多头注意力需要的线性层
-        #    - to_q 只会作用在 query_token 上
-        #    - to_kv 作用在整段输入序列 x 上
+        # 3) 
+        #    - to_q  query_token 
+        #    - to_kv  x 
         self.to_q = nn.Linear(dim, inner_dim, bias=False)
         self.to_kv = nn.Linear(dim, inner_dim * 2, bias=False)
 
@@ -658,7 +658,7 @@ class AttentionPooling(nn.Module):
         self.proj_out = nn.Linear(inner_dim, dim, bias=False)
         self.dropout = nn.Dropout(dropout)
 
-        # 4) 前馈网络 (FeedForward, FFN)
+        # 4)  (FeedForward, FFN)
         ff_inner_dim = ff_mult * dim
         self.ff = nn.Sequential(
             nn.LayerNorm(dim),
@@ -670,21 +670,21 @@ class AttentionPooling(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Args:
-            x (torch.Tensor): 输入序列，形状为 (B, N, D)
+            x (torch.Tensor):  (B, N, D)
 
         Returns:
-            torch.Tensor: 聚合后的单向量，形状为 (B, D)
+            torch.Tensor:  (B, D)
         """
         b, n, d = x.shape
 
-        # 1) 先做 LayerNorm
+        # 1)  LayerNorm
         x_ln = self.norm(x)      # (B, N, D)
 
-        # 2) 准备 query、key、value
-        #    - query 仅来自 learnable 的 query_token
+        # 2)  querykeyvalue
+        #    - query  learnable  query_token
         q_token = self.query_token.expand(b, -1, -1)  # (B, 1, D)
 
-        #    - 线性投影到多头
+        #    - 
         q = self.to_q(q_token)   # (B, 1, heads*dim_head)
         kv = self.to_kv(x_ln)    # (B, N, 2*heads*dim_head)
         k, v = kv.chunk(2, dim=-1)
@@ -695,21 +695,21 @@ class AttentionPooling(nn.Module):
         k = k.view(b, n, h, self.dim_head).transpose(1, 2)  # (B, h, N, dim_head)
         v = v.view(b, n, h, self.dim_head).transpose(1, 2)  # (B, h, N, dim_head)
 
-        # 4) 注意力分数 + softmax
+        # 4)  + softmax
         scale = (self.dim_head ** -0.5)
         sim = torch.matmul(q, k.transpose(-1, -2)) * scale   # (B, h, 1, N)
         attn = sim.softmax(dim=-1)
         attn = self.attn_dropout(attn)
 
-        # 5) 注意力加权输出
+        # 5) 
         out = torch.matmul(attn, v)                          # (B, h, 1, dim_head)
         out = out.transpose(1, 2).reshape(b, 1, h*self.dim_head)  # (B, 1, inner_dim)
         out = self.proj_out(out)   # (B, 1, D)
 
-        # 6) 残差连接到 query_token
+        # 6)  query_token
         out = q_token + self.dropout(out)
 
-        # 7) 前馈网络 (FFN) + 残差
+        # 7)  (FFN) + 
         out = out + self.ff(out)   # (B, 1, D)
 
         return out.squeeze(1)      # (B, D)
@@ -741,7 +741,7 @@ class SpatialTranscriptomicsCLIP(nn.Module):
         drop_rate: float = 0,
         attn_drop_rate: float = 0,
         drop_path_rate: float = 0,
-        # 新增：对比学习特征维度
+        # 
         proj_dim: int = 1024, 
         image_pooling: bool = True
     ):
@@ -752,7 +752,7 @@ class SpatialTranscriptomicsCLIP(nn.Module):
         self.input_channels = input_channels
         # self.mask_ratio = mask_ratio
 
-        # 初始化 scGPT
+        #  scGPT
         self.scGPT = TransformerModel(
             ntoken=vocab_size,
             d_model=embsize,
@@ -762,7 +762,7 @@ class SpatialTranscriptomicsCLIP(nn.Module):
             dropout=0.2,
         )
 
-        # 初始化 Image Encoder (Vision Transformer)
+        #  Image Encoder (Vision Transformer)
         self.encoder = TimmVisionTransformer(
             img_size=img_size,
             patch_size=patch_size,
@@ -779,18 +779,18 @@ class SpatialTranscriptomicsCLIP(nn.Module):
             init_values=1.0
         )
 
-        # 池化到 (B, 512)，作为表达数据的“CLS”表征
+        #  (B, 512)“CLS”
         self.expr_pool = AttentionPooling(dim=embsize)
 
-        # 可以选择是否对图像也做 Attention Pool
+        #  Attention Pool
         self.image_pooling = image_pooling
         self.img_pool = AttentionPooling(dim=embed_dim)
 
-        # CLIP风格：将图像和表达投影到同一隐空间
+        # CLIP
         self.img_proj  = nn.Linear(embed_dim, proj_dim, bias=False)
         self.expr_proj = nn.Linear(embsize, proj_dim, bias=False)
 
-        # CLIP风格里常见的可学习尺度 logit_scale
+        # CLIP logit_scale
         self.logit_scale = nn.Parameter(torch.ones([]) * torch.log(torch.tensor(1 / 0.07)))
 
     def load_checkpoint_and_freeze(self, encoder_ckpt, scgpt_ckpt):
@@ -826,56 +826,56 @@ class SpatialTranscriptomicsCLIP(nn.Module):
 
     def forward(self, image, expr):
         """
-        CLIP风格对比学习的 forward：
-        1. 编码 image => (B, N, embed_dim) => attention pool => (B, embed_dim)
-        2. 编码 expr  => (B, cell_num, embsize) => attention pool => (B, embsize)
-        3. 分别投影到 CLIP 空间 => (B, proj_dim)
-        4. 计算 InfoNCE / CLIP 的对比学习损失
+        CLIP forward
+        1.  image => (B, N, embed_dim) => attention pool => (B, embed_dim)
+        2.  expr  => (B, cell_num, embsize) => attention pool => (B, embsize)
+        3.  CLIP  => (B, proj_dim)
+        4.  InfoNCE / CLIP 
         """
         # ========================
-        # 1. 处理图像，得到 (B, embed_dim)
+        # 1.  (B, embed_dim)
         # ========================
-        # 输入图像 => ViT => 全部 token (含CLS)
-        image_tokens = self.encoder.forward_features(image) # (B, N, embed_dim)，其中第0号是 cls token
+        #  => ViT =>  token (CLS)
+        image_tokens = self.encoder.forward_features(image) # (B, N, embed_dim)0 cls token
         
         if self.image_pooling:
-            # 方式B: 用 attention pool
+            # B:  attention pool
             img_cls = self.img_pool(image_tokens)  # (B, embed_dim)
         else:
-            # 方式A: 直接使用 cls token
+            # A:  cls token
             img_cls = image_tokens[:, 0, :]
 
         # ========================
-        # 2. 处理表达数据 => scGPT => (B, cell_num, embsize)
+        # 2.  => scGPT => (B, cell_num, embsize)
         # ========================
-        # 假设 expr 的 shape = (B, cell_num, gene_num)
+        #  expr  shape = (B, cell_num, gene_num)
         batch_size, cell_num, gene_num = expr["genes"].shape  # (B, cell_num, gene_num)
 
-        # **1. reshape 合并 batch 维度和 cell 维度**
+        # **1. reshape  batch  cell **
         flat_gene_ids = expr["genes"].reshape(batch_size * cell_num, gene_num)  # (B * cell_num, gene_num)
         flat_gene_values = expr["values"].reshape(batch_size * cell_num, gene_num)  # (B * cell_num, gene_num)
         src_key_padding_mask = flat_gene_ids.eq(60694)  # (B * cell_num, gene_num)
 
-        # **2. 一次性处理整个 batch，消除 for 循环**
+        # **2.  batch for **
         output_dict = self.scGPT(flat_gene_ids, flat_gene_values, src_key_padding_mask=src_key_padding_mask)
         expr_tokens = output_dict['cell_emb']  # (B * cell_num, embed_dim)
-        # **3. reshape 回 (B, cell_num, embed_dim)**
+        # **3. reshape  (B, cell_num, embed_dim)**
         expr_tokens_batch = expr_tokens.view(batch_size, cell_num, -1)  # (B, cell_num, embed_dim)
 
-        # 用 AttentionPooling 得到 (B, embsize)
+        #  AttentionPooling  (B, embsize)
         expr_cls = self.expr_pool(expr_tokens_batch)
 
         # ========================
-        # 3. 投影到同一隐空间
+        # 3. 
         # ========================
         img_feat  = self.img_proj(img_cls)      # (B, proj_dim)
         expr_feat = self.expr_proj(expr_cls)    # (B, proj_dim)
                 
         # ========================
-        # 4. CLIP风格对比学习损失
+        # 4. CLIP
         # ========================
         # logit_scale = self.logit_scale.exp()
-        # # 计算相似度矩阵 (B, B)
+        # #  (B, B)
         # logits_per_image = logit_scale * img_feat @ expr_feat.t()  # (B, B)
         # logits_per_expr  = logits_per_image.t()                    # (B, B)
 
@@ -884,7 +884,7 @@ class SpatialTranscriptomicsCLIP(nn.Module):
         # loss_e = F.cross_entropy(logits_per_expr,  labels)
         # contrastive_loss = (loss_i + loss_e) * 0.5
 
-        # 返回对比学习损失，以及图像/表达特征，方便需要时做评测
+        # /
         return img_feat, expr_feat
     
     def forward_rgb(self, x,res):
@@ -1051,8 +1051,8 @@ class PathOmicsCOCA(nn.Module):
 
         mask = torch.zeros([B, N], device=x.device)
         mask[:, :len_keep] = 1
-        mask = torch.gather(mask, dim=1, index=ids_restore) # 1表示保留，0表示mask
-        # broadcast，mask.unsqueeze->(bs, 196, 1024)
+        mask = torch.gather(mask, dim=1, index=ids_restore) # 10mask
+        # broadcastmask.unsqueeze->(bs, 196, 1024)
         x_with_mask = x * mask.unsqueeze(-1) + self.mask_token * (1 - mask.unsqueeze(-1))
         
         return x_with_mask, mask, ids_restore

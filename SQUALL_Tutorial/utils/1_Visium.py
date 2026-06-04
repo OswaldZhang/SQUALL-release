@@ -130,17 +130,17 @@ def set_gene_token(adata,key,token_path):
 def adata_token(adata,gene_token,tkn_info,key):
     # Extract ID
     """
-    更健壮的 adata_token 实现，处理各种可能的错误情况
+     adata_token 
     """
 
     # Extract ID
     if key == 'id':
-        # 确保 gene_ids 存在，无论是作为列还是索引
+        #  gene_ids 
         if 'gene_ids' not in adata.var.columns and adata.var.index.name != 'gene_ids':
             print("Creating gene_ids from var_names")
             adata.var['gene_ids'] = pd.Series(adata.var_names).apply(split_gene_id).values
         
-        # 如果 gene_ids 是索引而不是列，重置索引使其成为列
+        #  gene_ids 
         if 'gene_ids' not in adata.var.columns and adata.var.index.name == 'gene_ids':
             adata.var = adata.var.reset_index()
         

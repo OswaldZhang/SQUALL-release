@@ -45,27 +45,27 @@ SAVE_PDF = True
 SAVE_PNG = True
 DPI = 300
 
-# 是否输出 4-panel 方向检查图
+#  4-panel 
 MAKE_ORIENTATION_CHECK = True
 
-# 是否输出正式单图
+# 
 MAKE_FINAL_PLOT = True
 
-# 正式单图使用哪个方向：
-# 可选: "normal", "flip_x", "flip_y", "flip_xy"
-# 如果你确认某个 task 左右翻转，就把对应 task 改成 "flip_x"
+# 
+# : "normal", "flip_x", "flip_y", "flip_xy"
+#  task  task  "flip_x"
 FINAL_ORIENTATION_BY_TASK = {
     "HCC": "normal",
     "OV": "normal",
     "OC": "normal",
     #"CC": "normal",
-    # 例如如果你确认 CC 左右反了，改成：
+    #  CC 
     "OC": "flip_x",
     "CC": "flip_x",
 }
 
-# 是否按照图像坐标系把 y 轴反过来。
-# 原始代码里用了 ax.invert_yaxis()，这里默认保留。
+#  y 
+#  ax.invert_yaxis()
 INVERT_Y_AXIS = True
 
 

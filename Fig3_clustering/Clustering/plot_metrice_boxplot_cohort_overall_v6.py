@@ -5,7 +5,7 @@ import seaborn as sns
 import numpy as np
 from scipy.stats import mannwhitneyu
 
-# === 配置 ===
+# ===  ===
 metric_csv = "clustering_comparison_metrics_summary_v2.csv"
 hmid_csv = "HMID_infer.csv"
 output_path = "overall_performance_boxplot_sig_fixed.png"
@@ -31,21 +31,21 @@ def get_stars(pval):
         return '*'
     return None
 
-# === 加载数据 ===
+# ===  ===
 df_metric = pd.read_csv(metric_csv)
 df_metric = df_metric[df_metric["SQUALL_NMI"] != 1]
 df_meta = pd.read_csv(hmid_csv)
 
-# === 映射 HMID → Collection ===
+# ===  HMID → Collection ===
 hmid_to_cohort = {str(row['hm_offset']): row['Collection'] for _, row in df_meta.iterrows()}
 df_metric['Collection'] = df_metric["HMID"].map(hmid_to_cohort)
 
-# === 保留数据集 ===
+# ===  ===
 opt_list = ['4195ab4c-20bd-4cd3-8b3d-65601277e731', 'GSE238264', 'E-MTAB-13530',
             'GSE200310', 'GSE212526', 'GSE224411', 'VISDP000144']
 df_metric = df_metric[df_metric['Collection'].isin(opt_list)]
 
-# === 转为长格式 ===
+# ===  ===
 long_data = []
 for metric in metrics:
     for model in models:
@@ -61,7 +61,7 @@ for metric in metrics:
 
 df_long = pd.DataFrame(long_data)
 
-# === 画图 ===
+# ===  ===
 sns.set(style="white")
 fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharey=True)
 
@@ -84,11 +84,11 @@ for i, metric in enumerate(metrics):
         ax.set_ylabel("")
     ax.tick_params(axis='x', rotation=45)
 
-    # === 去掉上右边框
+    # === 
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
-    # === 显著性标注 ===
+    # ===  ===
     counter_up, counter_down = 0, 0
     base_gap = 0.05
 

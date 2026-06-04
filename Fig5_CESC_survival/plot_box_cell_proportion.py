@@ -2,13 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import mannwhitneyu
 
-# === 读取数据 ===
+# ===  ===
 df = pd.read_csv("cluster_celltype_counts_from_cells_json.csv")
 df = df[df["cell_type"].isin(["Connective","Inflammatory", "Neoplastic", "Epithelial","Dead"])].copy()
 df["cluster"] = df["cluster"].astype(str)
 df["Group"] = df["cluster"].apply(lambda x: "Cluster 15" if x == "14" else "Other Clusters")
 
-# === 计算每个样本中每组细胞类型的占比 ===
+# ===  ===
 def compute_fraction(group):
     total = group["count"].sum()
     return group.groupby("cell_type")["count"].sum() / total
@@ -24,7 +24,7 @@ for pid in df["pathology_id"].unique():
 
 frac_df = pd.concat(fractions, ignore_index=True).rename(columns={"count": "Fraction"})
 
-# === 手动绘图 ===
+# ===  ===
 cell_types = ["Connective","Inflammatory", "Neoplastic", "Epithelial","Dead"]
 colors = {"Other Clusters": "gray", "Cluster 15": "#B22222"}
 
@@ -33,13 +33,13 @@ positions = [0, 1, 2,3,4]
 width = 0.3
 
 y_max = 0
-import numpy as np  # 确保顶部 import
+import numpy as np  #  import
 for i, ct in enumerate(cell_types):
     for j, group in enumerate(["Other Clusters", "Cluster 15"]):
         values = frac_df[(frac_df["cell_type"] == ct) & (frac_df["Group"] == group)]["Fraction"]
         pos = i - width/2 if group == "Other Clusters" else i + width/2
 
-        # 箱线图
+        # 
         bp = ax.boxplot(
             values,
             positions=[pos],
@@ -51,7 +51,7 @@ for i, ct in enumerate(cell_types):
             whiskerprops=dict(color="black"),
             capprops=dict(color="black")
         )
-        jittered_x = pos + np.random.normal(0, 0.05, size=len(values))  # 0.05 控制抖动幅度
+        jittered_x = pos + np.random.normal(0, 0.05, size=len(values))  # 0.05 
         ax.scatter(
                 jittered_x,
                 values,
@@ -62,7 +62,7 @@ for i, ct in enumerate(cell_types):
                 zorder=3
                 )
         '''
-        # 散点图（同色）
+        # 
         ax.scatter(
             [pos] * len(values),
             values,
@@ -75,7 +75,7 @@ for i, ct in enumerate(cell_types):
         '''
         y_max = max(y_max, values.max())
 
-# === MWU 显著性标注 ===
+# === MWU  ===
 for i, ct in enumerate(cell_types):
     g1 = frac_df[(frac_df["cell_type"] == ct) & (frac_df["Group"] == "Other Clusters")]["Fraction"]
     g2 = frac_df[(frac_df["cell_type"] == ct) & (frac_df["Group"] == "Cluster 15")]["Fraction"]
@@ -93,7 +93,7 @@ for i, ct in enumerate(cell_types):
     ax.plot([i - 0.2, i + 0.2], [y_max + 0.02] * 2, color="black", lw=1)
     ax.text(i, y_max + 0.03, stars, ha="center", fontsize=13)
 
-# === 美化图形 ===
+# ===  ===
 ax.set_xticks(positions)
 ax.set_xticklabels(cell_types, fontsize=12)
 ax.set_ylabel("Cell Fraction", fontsize=12)
@@ -102,14 +102,14 @@ ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 ax.tick_params(axis='x', rotation=15)
 
-# 自定义图例
+# 
 from matplotlib.patches import Patch
 legend_elements = [
     Patch(facecolor="gray", label="Other Clusters", edgecolor="black"),
     Patch(facecolor="#B22222", label="Cluster 15", edgecolor="black"),
 ]
 ax.legend(handles=legend_elements,title="", bbox_to_anchor=(1.02, 1), loc="upper left", borderaxespad=0)
-# === 保存图像 ===
+# ===  ===
 plt.tight_layout(rect=[0, 0, 0.85, 1])
 plt.savefig("cell_quantification_boxplot_color_corrected.pdf", dpi=300)
 plt.savefig("cell_quantification_boxplot_color_corrected.png", dpi=300)

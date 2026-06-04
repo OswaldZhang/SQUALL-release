@@ -30,7 +30,7 @@ TIME_COL = "Time"
 EVENT_COL = "Status"
 CANCER_COL = "CancerType"
 
-# 如果 INPUT_CSV 里 sample 列名不是这些，请手动改 SAMPLE_COL
+#  INPUT_CSV  sample  SAMPLE_COL
 SAMPLE_COL = None
 '''
 SAMPLE_COL_CANDIDATES = [
@@ -81,15 +81,15 @@ MINPROP = 0.2
 COX_PENALIZER = 0.05
 
 # p-value setting
-# 只对几个模型变量换算成单边 Wald p-value
+#  Wald p-value
 ONE_SIDED_MODEL_P = True
 
-# 单边方向：
+# 
 # "greater": H1: coef > 0, HR > 1
 # "less":    H1: coef < 0, HR < 1
 ONE_SIDED_ALTERNATIVE = "greater"
 
-# 如果 INPUT_CSV 或 CLINICAL_CSV 中存在 tumor_fraction，就自动加入 Cox
+#  INPUT_CSV  CLINICAL_CSV  tumor_fraction Cox
 USE_TUMOR_FRACTION_IF_AVAILABLE = True
 
 # plot
@@ -297,7 +297,7 @@ def merge_clinical_into_main(df, df_cli):
 
     before_n = df.shape[0]
 
-    # 如果 INPUT_CSV 里已有 tumor_fraction，先保留
+    #  INPUT_CSV  tumor_fraction
     input_has_tumor_frac = USE_TUMOR_FRACTION_IF_AVAILABLE and "tumor_fraction" in df.columns
 
     merge_cols = ["age", "stage_num"]
@@ -313,8 +313,8 @@ def merge_clinical_into_main(df, df_cli):
         suffixes=("", "_clinical"),
     )
 
-    # 如果 INPUT_CSV 里已有 tumor_fraction，而 clinical 里没有，就使用 INPUT_CSV 的
-    # 如果两边都有，优先使用 INPUT_CSV 原始 tumor_fraction
+    #  INPUT_CSV  tumor_fraction clinical  INPUT_CSV 
+    #  INPUT_CSV  tumor_fraction
     if USE_TUMOR_FRACTION_IF_AVAILABLE:
         if input_has_tumor_frac:
             df["tumor_fraction"] = safe_numeric(df["tumor_fraction"])

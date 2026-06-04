@@ -40,7 +40,7 @@ TARGET_MPP = 0.5
 TILE_SIZE = 224
 TILE_STRIDE = 224
 
-# 画 QC 图用
+#  QC 
 DOWNSAMPLE_FOR_PLOT = 6
 N_SHOW_POINTS = 200000
 RANDOM_SEED = 0
@@ -67,7 +67,7 @@ def find_he_ome_tif(public_dir):
     if len(hits) == 0:
         raise FileNotFoundError(f"No HE OME-TIFF found under {public_dir}")
 
-    # 优先 he_image
+    #  he_image
     he_hits = [x for x in hits if "he_image" in os.path.basename(x)]
     if len(he_hits) > 0:
         return he_hits[0]
@@ -78,11 +78,11 @@ def find_he_ome_tif(public_dir):
 def read_he_as_rgb(he_path):
     arr = tifffile.imread(he_path)
 
-    # 常见 OME-TIFF 有时候是 C,H,W
+    #  OME-TIFF  C,H,W
     if arr.ndim == 3 and arr.shape[0] in [1, 3, 4] and arr.shape[-1] not in [3, 4]:
         arr = np.moveaxis(arr, 0, -1)
 
-    # 如果多层，只取第一层
+    # 
     if arr.ndim > 3:
         arr = arr[0]
         if arr.ndim == 3 and arr.shape[0] in [1, 3, 4] and arr.shape[-1] not in [3, 4]:
@@ -112,14 +112,14 @@ def get_original_mpp(adata):
     if res.size == 1:
         return float(res[0])
 
-    # 一般 x/y 一样；这里取均值
+    #  x/y 
     return float(np.mean(res[:2]))
 
 
 def resize_he_to_target_mpp(he_np, original_mpp, target_mpp):
     """
-    如果原图 original_mpp 较小，比如 0.2125，
-    target_mpp=0.5 时，需要下采样：
+     original_mpp  0.2125
+    target_mpp=0.5 
         new_size = old_size / (target_mpp / original_mpp)
     """
     H, W = he_np.shape[:2]

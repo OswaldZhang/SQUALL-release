@@ -74,7 +74,7 @@ class RelativePositionBias(nn.Module):
         #print("coords[:, 1].shape",coords[:, 1].shape)
         if N != coords.shape[0]:
             k = N - coords.shape[0]
-            pad_coords = torch.cat([torch.zeros(k, 2, device=device), coords], dim=0)##放到后面
+            pad_coords = torch.cat([torch.zeros(k, 2, device=device), coords], dim=0)##
             relative_coords_x = pad_coords[:, 0].view(N, 1) - pad_coords[:, 0].view(1, N)
             relative_coords_y = pad_coords[:, 1].view(N, 1) - pad_coords[:, 1].view(1, N)
         else:
@@ -167,7 +167,7 @@ class MultiWayMLP(nn.Module):
 
     def forward(self, x, mask):
         if self.layer_index < self.merge_layer_depth:
-            z = torch.zeros_like(x, dtype=torch.float16)  # 将 z 的数据类型设置为 float16
+            z = torch.zeros_like(x, dtype=torch.float16)  #  z  float16
             #z = torch.zeros_like(x)
             z[mask] = self.mlp_rgb(self.norm_rgb(x[mask]))
             z[~mask] = self.mlp_expr(self.norm_expr(x[~mask]))

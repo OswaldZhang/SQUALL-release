@@ -236,7 +236,7 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
             print(list(set(label))[0],list(set(sample_id))[0],rgb.shape)
     '''
     
-    # Step 2: 仅第一次获取特征
+    # Step 2: 
     all_features = []
     all_labels = []
     all_sample_id = []
@@ -256,13 +256,13 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
         if args.use_gpu:
             rgb, res,label= rgb.to(args.local_rank), res.to(args.local_rank), label.to(args.local_rank)
 
-        # 转换数据类型
-        rgb = rgb  # .half() 如果需要支持混合精度训练，可以解注释
+        # 
+        rgb = rgb  # .half() 
         res = res  # .half()
         label = label.float()  # .half()
 
-        # 提取预训练特征
-        with torch.no_grad():  # 提取特征不需要计算梯度
+        # 
+        with torch.no_grad():  # 
             cls_feat = base_model.module.forward_rgb(rgb, res)
         all_features.append(cls_feat)
         all_labels.append(label)
@@ -277,13 +277,13 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
         if args.use_gpu:
             rgb, res,label= rgb.to(args.local_rank), res.to(args.local_rank), label.to(args.local_rank)
 
-        # 转换数据类型
-        rgb = rgb  # .half() 如果需要支持混合精度训练，可以解注释
+        # 
+        rgb = rgb  # .half() 
         res = res  # .half()
         label = label.float()  # .half()
 
-        # 提取预训练特征
-        with torch.no_grad():  # 提取特征不需要计算梯度
+        # 
+        with torch.no_grad():  # 
             cls_feat = base_model.module.forward_rgb(rgb, res)
             all_features_expr_test.append(cls_feat)
             all_labels_expr_test.append(label)
@@ -652,15 +652,15 @@ def get_embedding(args, config):
                 #print("cls_feat",cls_feat)
                 if idx % 100 == 0:
                     current_time = time.time()
-                    elapsed_time = current_time - start_time  # 计算总共花费的时间
-                    time_per_100 = elapsed_time / (idx // 100 + 1)  # 平均每 100 次花费时间
+                    elapsed_time = current_time - start_time  # 
+                    time_per_100 = elapsed_time / (idx // 100 + 1)  #  100 
                     remaining_batches = (len(dataloader) - idx) // 100
                     estimated_remaining_time = remaining_batches * time_per_100
                     
                     print(f"Processing batch {idx}, time for last 100: {time_per_100:.2f}s, "
                           f"estimated remaining time: {estimated_remaining_time:.2f}s")
                     
-                    # 重置时间计数器（如果只关心每 100 次的时间）
+                    #  100 
                     start_time = current_time
                 embedding_list.append(cls_feat.detach().cpu())
                 for poses in pos:
@@ -702,6 +702,6 @@ def get_embedding(args, config):
                     print(sample_path+".pt")
                     pkl_file_path = sample_path+"_pos.pkl"
                     print(pkl_file_path)
-                    # 将 label_list 保存为 .pkl 文件
+                    #  label_list  .pkl 
                     with open(pkl_file_path, 'wb') as f:
                         pickle.dump(label_list, f)

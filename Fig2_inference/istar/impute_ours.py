@@ -108,7 +108,7 @@ class SpotDataset(Dataset):
         isin = np.isfinite(x).all((-1, -2))
         self.x = x[isin]
         self.locs = new_locs[isin]
-        self.y = y[:len(self.x)]  # 或者自己对应删
+        self.y = y[:len(self.x)]  # 
         #self.y = y[isin]
         #self.locs = locs[isin]
         self.size = x_all.shape[:2]
@@ -157,7 +157,7 @@ def get_patches_flat(img, locs, mask):
         patch = img[
             s[0]+r[0][0]:s[0]+r[0][1],
             s[1]+r[1][0]:s[1]+r[1][1]]
-        # 防止超界，patch尺寸异常
+        # patch
         if patch.shape[0] != mask.shape[0] or patch.shape[1] != mask.shape[1]:
             continue
         
@@ -166,7 +166,7 @@ def get_patches_flat(img, locs, mask):
         else:
             x = patch[mask]
         
-        if x.size == 0:  # patch真的空了
+        if x.size == 0:  # patch
             continue
 
         x_list.append(x)
@@ -184,15 +184,15 @@ def get_patches_flat(img, locs, mask):
     center = shape // 2
     r = np.stack([-center, shape-center], -1)  # offset
     x_list = []
-    H, W = img.shape[:2]  # img大小
+    H, W = img.shape[:2]  # img
     print("locs",locs)
     for s in locs:
         i_start, i_end = s[0]+r[0][0], s[0]+r[0][1]
         j_start, j_end = s[1]+r[1][0], s[1]+r[1][1]
 
-        # 加边界判断！
+        # 
         if i_start < 0 or i_end > H or j_start < 0 or j_end > W:
-            continue  # 超出边界就跳过
+            continue  # 
         patch = img[
                 s[0]+r[0][0]:s[0]+r[0][1],
                 s[1]+r[1][0]:s[1]+r[1][1]]
@@ -245,16 +245,16 @@ def get_args():
     return args
 
 def save_embedding_heatmap(embs_upsampled_np, save_path="embedding_heatmap.png"):
-    # 对最后一维求和，得到 (H, W) 的热力图
+    #  (H, W) 
     heatmap = np.sum(embs_upsampled_np, axis=-1)
 
-    # 归一化到 0-1 之间
+    #  0-1 
     heatmap_min, heatmap_max = np.min(heatmap), np.max(heatmap)
     heatmap_norm = (heatmap - heatmap_min) / (heatmap_max - heatmap_min + 1e-8)
 
-    # 绘图并保存
+    # 
     plt.figure(figsize=(10, 10))
-    plt.imshow(heatmap_norm, cmap='hot',interpolation='none')  # 或 'viridis', 'jet', 'inferno' 等
+    plt.imshow(heatmap_norm, cmap='hot',interpolation='none')  #  'viridis', 'jet', 'inferno' 
     plt.axis('off')
     plt.tight_layout()
     plt.savefig(save_path, dpi=300, bbox_inches='tight', pad_inches=0)
@@ -264,20 +264,20 @@ def save_embedding_heatmap(embs_upsampled_np, save_path="embedding_heatmap.png")
 
 def compute_black_area(embeddings, threshold=1e-5):
     """
-    计算嵌入张量中所有通道都接近0的像素点数量（即“黑色区域”的面积）
+    0“”
     
     Args:
-        embeddings (np.ndarray): [H, W, C] 的 numpy 张量
-        threshold (float): 判断是否为“黑”的阈值（默认1e-5）
+        embeddings (np.ndarray): [H, W, C]  numpy 
+        threshold (float): “”1e-5
     
     Returns:
-        black_pixel_count (int): 黑色像素的数量
-        black_ratio (float): 黑色像素占总像素比例
+        black_pixel_count (int): 
+        black_ratio (float): 
     """
     is_black = np.all(np.abs(embeddings) < threshold, axis=-1)
     black_pixel_count = np.sum(is_black)
     black_ratio = black_pixel_count / is_black.size
-    print(f"🖤 黑色像素数量: {black_pixel_count} / {is_black.size} = {black_ratio:.4%}")
+    print(f"🖤 : {black_pixel_count} / {is_black.size} = {black_ratio:.4%}")
     return black_pixel_count, black_ratio
 
 def get_embeddings_ours(prefix):

@@ -19,7 +19,7 @@ TILE_LABEL_DIR = "/lustre1/zxzeng/bwqin/SQUALL/yf_TCGA_label/tile_masks"
 OUT_PB = "cox_gene_pseudobulk.csv"
 OUT_TR = "cox_gene_within_tumor_rank.csv"
 
-MIN_SAMPLES = 20   # 至少多少样本才跑 Cox
+MIN_SAMPLES = 20   #  Cox
 
 # =====================================================
 # Load survival

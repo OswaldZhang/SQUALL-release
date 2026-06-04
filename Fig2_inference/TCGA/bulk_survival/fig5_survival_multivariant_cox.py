@@ -23,22 +23,22 @@ OUTDIR = "multivariate_cox_CESC_best_SQUALL_fold"
 
 CANCER_TYPE = "CESC"
 
-# 生存列
+# 
 TIME_COL = "Time"
 EVENT_COL = "Status"
 
-# fold 列
+# fold 
 FOLD_COL = "Fold"
 
-# cancer type 列
+# cancer type 
 CANCER_COL = "CancerType"
 
-# SQUALL 用来选择最佳 fold 的 risk 列
-# 如果你的表里有 SQUALL_riskscore，也可以改成 "SQUALL_riskscore"
+# SQUALL  fold  risk 
+#  SQUALL_riskscore "SQUALL_riskscore"
 SQUALL_RISK_COL = "SQUALL_risk"
 
-# 多模型 risk 列
-# 顺序会影响 forest plot 中“其他模型”的展示顺序
+#  risk 
+#  forest plot “”
 MODEL_RISK_COLS = [
     "UNI_risk_norm",
     "plip_risk_norm",
@@ -46,8 +46,8 @@ MODEL_RISK_COLS = [
     "SQUALL_risk_norm",
 ]
 
-# 临床变量候选
-# 代码会自动保留表里存在的列
+# 
+# 
 CLINICAL_COLS_RAW = [
     "age",
     "Age",
@@ -60,17 +60,17 @@ CLINICAL_COLS_RAW = [
     "Sex",
 ]
 
-# 是否把 risk 做 z-score
-# 建议 True，因为不同模型 risk 尺度不同
+#  risk  z-score
+#  True risk 
 ZSCORE_RISK = True
 
-# 是否把连续临床变量做 z-score
+#  z-score
 ZSCORE_CONTINUOUS_CLINICAL = False
 
-# Cox 拟合时的 penalizer，样本少或变量多时建议 0.05 - 0.2
+# Cox  penalizer 0.05 - 0.2
 COX_PENALIZER = 0.05
 
-# forest plot 设置
+# forest plot 
 FIGSIZE = (7.5, 6.5)
 DPI = 300
 
@@ -284,8 +284,8 @@ def fit_univariate_cox_for_fold(df_fold, risk_col):
         hr = float(np.exp(coef))
         p = float(s["p"])
 
-        # lifelines concordance_index 默认越大预测生存时间越长。
-        # risk 越大通常代表风险越高、生存越短，所以这里用 -risk。
+        # lifelines concordance_index 
+        # risk  -risk
         c_index = float(concordance_index(
             tmp[TIME_COL],
             -tmp["risk_z"],
@@ -325,8 +325,8 @@ def choose_best_storm_fold(df):
 
     perf = pd.DataFrame(records)
 
-    # 选择 SQUALL C-index 最大的 fold
-    # 如果你更想按 p-value 最小选择，可以改成：
+    #  SQUALL C-index  fold
+    #  p-value 
     # best_row = perf.sort_values(["p_value", "c_index"], ascending=[True, False]).iloc[0]
     best_row = perf.sort_values(
         ["c_index", "p_value"],
@@ -362,7 +362,7 @@ def build_multivariate_dataframe(df_best):
 
     cox_df = pd.concat([base, clinical_df, risk_df], axis=1)
 
-    # 删除全 NA 或零方差列
+    #  NA 
     feature_cols = [c for c in cox_df.columns if c not in [TIME_COL, EVENT_COL]]
     valid_feature_cols = []
 
@@ -463,7 +463,7 @@ def plot_forest(result_df, output_png, output_pdf=None):
     plot_df = result_df.copy()
     plot_df["label"] = plot_df["variable"].apply(variable_label)
 
-    # matplotlib 画图时 y 从下往上，所以这里反转
+    # matplotlib  y 
     plot_df = plot_df.iloc[::-1].reset_index(drop=True)
 
     y = np.arange(plot_df.shape[0])
@@ -496,7 +496,7 @@ def plot_forest(result_df, output_png, output_pdf=None):
     ax.set_xlabel("Hazard Ratio, log scale")
     ax.set_title("Multivariate Cox Hazard Forest Plot")
 
-    # 右侧标注 HR 和 p-value
+    #  HR  p-value
     x_max = np.nanmax(upper)
     x_text = x_max * 1.15
 
@@ -551,7 +551,7 @@ def main():
     if missing:
         raise ValueError(f"Missing required columns: {missing}")
 
-    # 筛选 CESC
+    #  CESC
     df_cesc = df[df[CANCER_COL].astype(str) == CANCER_TYPE].copy()
 
     if df_cesc.empty:
@@ -561,7 +561,7 @@ def main():
     print("[INFO] Fold counts:")
     print(df_cesc[FOLD_COL].value_counts(dropna=False))
 
-    # 选择 SQUALL 表现最好的 fold
+    #  SQUALL  fold
     best_fold, fold_perf = choose_best_storm_fold(df_cesc)
 
     fold_perf_path = os.path.join(
@@ -575,7 +575,7 @@ def main():
 
     print(f"[INFO] Best SQUALL fold = {best_fold}")
 
-    # 取最佳 fold
+    #  fold
     df_best = df_cesc[df_cesc[FOLD_COL] == best_fold].copy()
 
     best_fold_data_path = os.path.join(
@@ -584,7 +584,7 @@ def main():
     )
     df_best.to_csv(best_fold_data_path, index=False)
 
-    # 构建 multivariate Cox 输入
+    #  multivariate Cox 
     cox_df, used_clinical_cols, existing_model_cols = build_multivariate_dataframe(df_best)
 
     print("[INFO] Used raw clinical columns:", used_clinical_cols)
@@ -611,7 +611,7 @@ def main():
     # multivariate Cox
     result_df, cph = fit_multivariate_cox(cox_df)
 
-    # 排序：临床特征 -> 其他模型 -> SQUALL
+    #  ->  -> SQUALL
     result_df = order_forest_rows(
         result_df,
         clinical_cols=used_clinical_cols,

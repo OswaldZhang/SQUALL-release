@@ -10,7 +10,7 @@ import collections
 import stnet
 import tqdm
 from PIL import Image
-Image.MAX_IMAGE_PIXELS = None  # 👈 加这行解除 Pillow 图像大小限制
+Image.MAX_IMAGE_PIXELS = None  # 👈  Pillow 
 
 def spatial(args):
     import skimage.io

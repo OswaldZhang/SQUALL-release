@@ -183,14 +183,14 @@ def get_gene_counts(prefix, reorder_genes=True):
 '''
 
 def get_gene_counts(prefix, reorder_genes=True):
-    # 读取稀疏矩阵
+    # 
     cnts = io.mmread(f"{prefix}cnts.mtx").tocsr()
 
-    # 读取基因名和细胞名
+    # 
     genes = pd.read_csv(f"{prefix}genes.tsv", header=None, sep="\t")[0].tolist()
     barcodes = pd.read_csv(f"{prefix}barcodes.tsv", header=None, sep="\t")[0].tolist()
 
-    # 转换成 DataFrame
+    #  DataFrame
     cnts_df = pd.DataFrame(cnts.toarray(), index=barcodes, columns=genes)
     #cnts_df = pd.DataFrame.sparse.from_spmatrix(cnts, index=barcodes, columns=genes)
 

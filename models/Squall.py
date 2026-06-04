@@ -664,29 +664,29 @@ class SquallClassification(nn.Module):
         self.loss_ce = nn.CrossEntropyLoss()
 
     def get_loss_acc(self, ret, gt):
-        # ret 是模型的 logits 输出，形状 [batch_size, num_classes]
-        # label 是实际标签，形状 [batch_size]
-        logits = ret.clone()  # logits 形状为 [batch_size, num_classes]
+        # ret  logits  [batch_size, num_classes]
+        # label  [batch_size]
+        logits = ret.clone()  # logits  [batch_size, num_classes]
         labels = gt.clone().view(-1).long()  # latten
         if logits.dim() == 3:
             logits = logits.squeeze(1)# for batch test
         loss = self.ce_loss(logits, labels)
 
         preds = logits.argmax(dim=-1)  # 
-        #Top-1, Top-3, 和 Top-5 accuracy
+        #Top-1, Top-3,  Top-5 accuracy
         top1_correct = preds.eq(labels).sum().item()  # Top-1 accuracy
         topk_correct = []
         top1_acc = top1_correct / logits.size(0)
-        if self.cls_dim > 2:  # 仅在类别数大于 2 时计算 Top-3
+        if self.cls_dim > 2:  #  2  Top-3
             for k in [3, 5]:
-                # 获取 logits 的 top-k 预测
+                #  logits  top-k 
                 topk_preds = torch.topk(logits, k=k, dim=1).indices
                 correct_k = topk_preds.eq(labels.view(-1, 1)).sum().item()
                 topk_correct.append(correct_k)
             top3_acc = topk_correct[0] / logits.size(0)
             top5_acc = topk_correct[1] / logits.size(0)
         else:
-            top3_acc = 0  # 二分类任务中 Top-3 无意义
+            top3_acc = 0  #  Top-3 
             top5_acc = 0
 
         # accuracy
@@ -840,18 +840,18 @@ class CoxSurvLoss(object):
         time: Survival times, shape [batch_size, 1]
         status: Event indicators, shape [batch_size, 1]
         '''
-        # 去掉多余的维度
+        # 
         lrisks = hazards.squeeze(1)  # [batch_size]
         survival_times = time  # [batch_size]
         event_indicators = status # [batch_size]
 
-        # 打印调试信息
+        # 
         #print("hazards (log risks):", lrisks)
         #print("survival_times:", survival_times)
         #print("event_indicators:", event_indicators)
 
-        # 调用 partial_ll_loss
-        # partial_ll_loss 会自动根据 event_indicators 筛选样本是否对损失有贡献
+        #  partial_ll_loss
+        # partial_ll_loss  event_indicators 
         loss = partial_ll_loss(lrisks, survival_times, event_indicators)
         return loss
 
@@ -1156,7 +1156,7 @@ class ABMIL(nn.Module):
     def get_loss_acc(self, ret, label):
         if self.config.loss == "COX":
             time,status = label
-            # NLL 生存损失函数
+            # NLL 
             loss = self.loss_abmil(ret,time, status)
             print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
@@ -1185,7 +1185,7 @@ class ABMIL(nn.Module):
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "NLL":
             time,status = label
-            # NLL 生存损失函数
+            # NLL 
             loss = self.loss_abmil(ret,None, time, status)
             #print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
@@ -1213,29 +1213,29 @@ class ABMIL(nn.Module):
                 dynamic_auc = 0
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "CE":
-            # ret :logits output，shape:[batch_size, num_classes]
+            # ret :logits outputshape:[batch_size, num_classes]
             # label : shape: batch_size
-            logits = ret.clone()  # logits 形状为 [batch_size, num_classes]
+            logits = ret.clone()  # logits  [batch_size, num_classes]
             labels = label.clone().view(-1).long()  # latten
             if logits.dim() == 3:
                 logits = logits.squeeze(1)# for batch test
             loss = self.ce_loss(logits, labels)
 
             preds = logits.argmax(dim=-1)  # 
-            #Top-1, Top-3, 和 Top-5 accuracy
+            #Top-1, Top-3,  Top-5 accuracy
             top1_correct = preds.eq(labels).sum().item()  # Top-1 accuracy
             topk_correct = []
             top1_acc = top1_correct / logits.size(0)
-            if self.cls_dim > 4:  # 仅在类别数大于 2 时计算 Top-3
+            if self.cls_dim > 4:  #  2  Top-3
                 for k in [3, 5]:
-                    # 获取 logits 的 top-k 预测
+                    #  logits  top-k 
                     topk_preds = torch.topk(logits, k=k, dim=1).indices
                     correct_k = topk_preds.eq(labels.view(-1, 1)).sum().item()
                     topk_correct.append(correct_k)
                 top3_acc = topk_correct[0] / logits.size(0)
                 top5_acc = topk_correct[1] / logits.size(0)
             else:
-                top3_acc = 0  # 二分类任务中 Top-3 无意义
+                top3_acc = 0  #  Top-3 
                 top5_acc = 0
 
             # accuracy
@@ -1261,21 +1261,21 @@ class ABMIL(nn.Module):
                 label_np = label[i].clone().detach().cpu().numpy()
                 ret_np = ret[i].clone().detach().cpu().numpy()
                 if np.all(label_np == 0) or np.all(ret_np == 0):
-                    continue  # 跳过当前样本
+                    continue  # 
                 corr, _ = pearsonr(label_np, ret_np)
                 pearson_corrs.append(corr)
                 r2 = r2_score(label_np, ret_np)
                 r2_scores.append(r2)
                 cos_sim = cosine_similarity(label_np.reshape(1, -1), ret_np.reshape(1, -1))[0][0]
                 cos_similarities.append(cos_sim)
-            mean_pearson_corr = np.mean(pearson_corrs) if pearson_corrs else 0  # 避免列表为空时报错
+            mean_pearson_corr = np.mean(pearson_corrs) if pearson_corrs else 0  # 
             mean_r2 = np.mean(r2_scores) if r2_scores else 0
             mean_cos_sim = np.mean(cos_similarities) if cos_similarities else 0
             return loss, ( mean_pearson_corr,mean_r2, mean_cos_sim)
 
 
     def forward_ddp(self,  rgb, res):
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+        rgb = rgb.permute(0, 3, 1, 2)  #  (B, C, H, W)
         cls = self.cls_token.expand(rgb.shape[0], -1, -1) + self.cls_pos
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)
@@ -1338,9 +1338,9 @@ class ABMIL(nn.Module):
         #old version, attention no gradient 
         A = F.softmax(A, dim=1)
         
-        bag_feature = A * x  # 元素级乘法，对 x 进行加权 => [batchsize, 1024]
+        bag_feature = A * x  #  x  => [batchsize, 1024]
         #print("bag_feature.shape",bag_feature.shape)
-        bag_feature = (x * A).sum(dim=0, keepdim=True)  # 在行上做求和，得到 1x1024 的结果
+        bag_feature = (x * A).sum(dim=0, keepdim=True)  #  1x1024 
         #print("bag_feature.shape",bag_feature.shape)
         attn_scores = A
         '''
@@ -1360,14 +1360,14 @@ class ABMIL(nn.Module):
         return output,attn_scores
 
     def gather_features(self, features):
-        """ 在 DataParallel (DP) 下，手动合并所有 GPU 计算的 features """
+        """  DataParallel (DP)  GPU  features """
         if isinstance(features, list):
-            # `DataParallel` 会让每张 GPU 计算不同部分的 batch，因此这里手动合并
-            features = torch.cat(features, dim=0)  # 拼接所有 GPU 计算的 features
+            # `DataParallel`  GPU  batch
+            features = torch.cat(features, dim=0)  #  GPU  features
         return features
 
     def forward(self,  rgb, res):
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+        rgb = rgb.permute(0, 3, 1, 2)  #  (B, C, H, W)
         cls = self.cls_token.expand(rgb.shape[0], -1, -1)# + self.cls_pos
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)
@@ -1395,9 +1395,9 @@ class ABMIL(nn.Module):
         #old version, attention no gradient 
         A = F.softmax(A, dim=1)
         
-        bag_feature = A * x  # 元素级乘法，对 x 进行加权 => [batchsize, 1024]
+        bag_feature = A * x  #  x  => [batchsize, 1024]
         #print("bag_feature.shape",bag_feature.shape)
-        bag_feature = (x * A).sum(dim=0, keepdim=True)  # 在行上做求和，得到 1x1024 的结果
+        bag_feature = (x * A).sum(dim=0, keepdim=True)  #  1x1024 
         #print("bag_feature.shape",bag_feature.shape)
         attn_scores = A
         '''
@@ -1406,8 +1406,8 @@ class ABMIL(nn.Module):
         output = self.classifier(bag_feature)#.clone()
         '''
         print("output.shape ",output.shape)
-        if isinstance(output, list):  # DP 模式会返回多个 GPU 的 output
-            output = torch.stack(output, dim=0).mean(dim=0)  # 对所有 GPU 的 output 求平均
+        if isinstance(output, list):  # DP  GPU  output
+            output = torch.stack(output, dim=0).mean(dim=0)  #  GPU  output 
         print("output_concat.shape ",output.shape)
         '''
         
@@ -1630,7 +1630,7 @@ class SQUALL_LoRA(nn.Module):
     def get_loss_acc(self, ret, label):
         if self.config.loss == "COX":
             time,status = label
-            # NLL 生存损失函数
+            # NLL 
             loss = self.loss_abmil(ret,time, status)
             print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
@@ -1659,7 +1659,7 @@ class SQUALL_LoRA(nn.Module):
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "NLL":
             time,status = label
-            # NLL 生存损失函数
+            # NLL 
             loss = self.loss_abmil(ret,None, time, status)
             #print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
@@ -1687,29 +1687,29 @@ class SQUALL_LoRA(nn.Module):
                 dynamic_auc = 0
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "CE":
-            # ret :logits output，shape:[batch_size, num_classes]
+            # ret :logits outputshape:[batch_size, num_classes]
             # label : shape: batch_size
-            logits = ret.clone()  # logits 形状为 [batch_size, num_classes]
+            logits = ret.clone()  # logits  [batch_size, num_classes]
             labels = label.clone().view(-1).long()  # latten
             if logits.dim() == 3:
                 logits = logits.squeeze(1)# for batch test
             loss = self.ce_loss(logits, labels)
 
             preds = logits.argmax(dim=-1)  # 
-            #Top-1, Top-3, 和 Top-5 accuracy
+            #Top-1, Top-3,  Top-5 accuracy
             top1_correct = preds.eq(labels).sum().item()  # Top-1 accuracy
             topk_correct = []
             top1_acc = top1_correct / logits.size(0)
-            if self.cls_dim > 2:  # 仅在类别数大于 2 时计算 Top-3
+            if self.cls_dim > 2:  #  2  Top-3
                 for k in [3, 5]:
-                    # 获取 logits 的 top-k 预测
+                    #  logits  top-k 
                     topk_preds = torch.topk(logits, k=k, dim=1).indices
                     correct_k = topk_preds.eq(labels.view(-1, 1)).sum().item()
                     topk_correct.append(correct_k)
                 top3_acc = topk_correct[0] / logits.size(0)
                 top5_acc = topk_correct[1] / logits.size(0)
             else:
-                top3_acc = 0  # 二分类任务中 Top-3 无意义
+                top3_acc = 0  #  Top-3 
                 top5_acc = 0
 
             # accuracy
@@ -1730,20 +1730,20 @@ class SQUALL_LoRA(nn.Module):
             batch_size = label.shape[0]
             pearson_corrs = []
             for i in range(batch_size):
-                corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的皮尔森相关系数
+                corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 
                 pearson_corrs.append(corr)
             mean_pearson_corr = np.mean(pearson_corrs)
 
             r2_scores = []
             for i in range(batch_size):
-                r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的R²
+                r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # R²
                 r2_scores.append(r2)
             mean_r2 = np.mean(r2_scores)
 
-            # 3. 计算平均余弦相似度
+            # 3. 
             cos_similarities = []
             for i in range(batch_size):
-                cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]  # 计算每个样本的余弦相似度
+                cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]  # 
                 cos_similarities.append(cos_sim)
             mean_cos_sim = np.mean(cos_similarities)
             return loss, ( mean_pearson_corr,mean_r2, mean_cos_sim)
@@ -1763,7 +1763,7 @@ class SQUALL_LoRA(nn.Module):
                 nn.init.constant_(m.bias, 0)
 
     def forward(self,  rgb, res):
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+        rgb = rgb.permute(0, 3, 1, 2)  #  (B, C, H, W)
         cls = self.cls_token.expand(rgb.shape[0], -1, -1)# + self.cls_pos
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)

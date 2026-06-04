@@ -23,7 +23,7 @@ class CustomDistributedBatchSamplerDDP(BatchSampler):
         self.num_samples = len(self.dataset)
         self.total_size = self.num_samples
 
-        # 计算每个GPU的批次大小
+        # GPU
         self.per_gpu_batch_size = self.batch_size // self.num_replicas
         self.epoch = 0
 
@@ -31,14 +31,14 @@ class CustomDistributedBatchSamplerDDP(BatchSampler):
         self.epoch = epoch
 
     def __iter__(self):
-        # 获取每个sample_id对应的所有tile的数量
+        # sample_idtile
         sample_id_to_tiles = {}
         for idx, sample_id in enumerate(self.sample_ids):
             if sample_id not in sample_id_to_tiles:
                 sample_id_to_tiles[sample_id] = []
             sample_id_to_tiles[sample_id].append(idx)
         
-        # 根据每个sample_id的tile数量来划分批次
+        # sample_idtile
         batches = []
         for sample_id, tiles in sample_id_to_tiles.items():
             num_tiles = len(tiles)
@@ -46,15 +46,15 @@ class CustomDistributedBatchSamplerDDP(BatchSampler):
                 #print("what the hell! there is some slide has no more than 8 tiles!!! ",sample_id)
                 continue
             if num_tiles < self.batch_size:
-                # 如果该sample_id的tile数小于batch_size，作为一个完整的批次
+                # sample_idtilebatch_size
                 batches.append(tiles)
             else:
-                # 如果tile数大于batch_size，先那前batch_size个
+                # tilebatch_sizebatch_size
                 batches.append(tiles[0:0 + self.batch_size])
         
-        # 现在有了每个批次的tile列表，根据rank和num_replicas划分mini-batch
+        # tileranknum_replicasmini-batch
         for batch in batches:
-            # 将批次平均分配给每个GPU
+            # GPU
             num_per_gpu = len(batch) // self.num_replicas
             start = self.rank * num_per_gpu
             end = start + num_per_gpu
@@ -63,7 +63,7 @@ class CustomDistributedBatchSamplerDDP(BatchSampler):
         print_log(f'Sampler ready', logger=logger)
 
     def __len__(self):
-        # 总的批次数量
+        # 
         return len(self.sample_ids) // self.batch_size
 
 from torch.utils.data import BatchSampler
@@ -77,28 +77,28 @@ class CustomBatchSamplerDP(BatchSampler):
         self.num_samples = len(self.dataset)
 
     def __iter__(self):
-        # 统计 sample_id -> tile 列表
+        #  sample_id -> tile 
         sample_id_to_tiles = {}
         for idx, sample_id in enumerate(self.sample_ids):
             if sample_id not in sample_id_to_tiles:
                 sample_id_to_tiles[sample_id] = []
             sample_id_to_tiles[sample_id].append(idx)
         
-        # 生成完整的 batch 列表
+        #  batch 
         batches = []
         for sample_id, tiles in sample_id_to_tiles.items():
             batches.append(tiles)
             '''
             num_tiles = len(tiles)
             if num_tiles < self.batch_size:
-                # 若该 sample_id 的 tile 数量小于 batch_size，作为一个完整的 batch
+                #  sample_id  tile  batch_size batch
                 batches.append(tiles)
             else:
-                # 如果 tile 数量多于 batch_size，按 batch_size 划分
+                #  tile  batch_size batch_size 
                 for i in range(0, num_tiles, self.batch_size):
                     batches.append(tiles[i:i + self.batch_size])
             '''
-        # 生成 batch
+        #  batch
         for batch in batches:
             yield batch
         #print_log(f'Sampler Finished', logger=logger)
@@ -120,15 +120,15 @@ def custom_collate_fn(batch):
         #if expr:
         if expr is not None and expr.numel() > 0:#qbw 11-17 change
             if expr.layout == torch.sparse_csr:
-                expr = expr.to_sparse_coo()  # 转换为 COO 格式
+                expr = expr.to_sparse_coo()  #  COO 
             if expr.is_sparse:
-                expr_batch.append(expr.coalesce())  # 确保稀疏张量被处理为可堆叠的格式
+                expr_batch.append(expr.coalesce())  # 
             else:
-                expr_batch.append(expr)  # 如果不稀疏或者就没有，也可以直接添加
+                expr_batch.append(expr)  # 
         else:
             expr_batch.append(expr)
         
-        # 处理 res 张量（sparse，直接收集）
+        #  res sparse
         res_batch.append(res)
         
         label_batch.append(other1)
@@ -136,7 +136,7 @@ def custom_collate_fn(batch):
 
         #other_batch.append((other1, other2))
     
-    # 将 rgb 和 res 张量堆叠成 batch 张量,不用会报错
+    #  rgb  res  batch ,
     rgb_batch = torch.stack(rgb_batch)
     res_batch = torch.stack(res_batch)
     label_batch = torch.stack(label_batch)
@@ -191,11 +191,11 @@ def dataset_builder(args, config):
     print("datasets ",len(dataset))
     logger = get_logger(args.log_name)
     print("tiles ",len(dataset[0]))
-    #sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #获取所有的sampleid 预训练需要注释掉
+    #sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #sampleid 
     shuffle = config.others.subset == 'train'
     if args.distributed:
         if config.others.if_abmil:
-            sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #获取所有的sampleid 预训练需要注释掉
+            sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #sampleid 
             world_size = torch.distributed.get_world_size() 
             rank = torch.distributed.get_rank()
             per_gpu_batch_size = config.others.bs // world_size  
@@ -213,7 +213,7 @@ def dataset_builder(args, config):
                 sampler = CustomDistributedBatchSamplerDDP(dataset, sample_ids, config.others.bs, num_replicas=world_size, rank=rank)#resample in sampler for DDP
                 dataloader = DataLoader(
                         dataset,
-                        batch_sampler=sampler,  # 使用修改后的 GrouspedBatchSampler
+                        batch_sampler=sampler,  #  GrouspedBatchSampler
                         num_workers=args.num_workers
                         #
                     )
@@ -239,7 +239,7 @@ def dataset_builder(args, config):
                                                      collate_fn=custom_collate_fn,
                                                      sampler=sampler)
     elif config.others.if_abmil:#abmil
-        sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #获取所有的sampleid 预训练需要注释掉
+        sample_ids = [dataset[i][-2] for i in range(len(dataset))]  #sampleid 
         config.others.bs = 128
         sampler = CustomBatchSamplerDP(dataset, sample_ids, config.others.bs)#resample in sampler for DDP
         print("if_abmil now!")
@@ -264,7 +264,7 @@ def dataset_builder(args, config):
             '''
             dataloader = DataLoader(
                         dataset,
-                        batch_sampler=sampler,  # 使用修改后的 GrouspedBatchSampler
+                        batch_sampler=sampler,  #  GrouspedBatchSampler
                         num_workers=args.num_workers
                         #
                     )

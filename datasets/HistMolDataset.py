@@ -154,7 +154,7 @@ class HistMolRGB(data.Dataset):
         if_tile = 0
         if "posX" in list(self.label_dict.keys())[0]:
             if_tile = 1
-        samples_count = {}  # 用于跟踪每个 sample_id 的计数
+        samples_count = {}  #  sample_id 
         samples = []
         for file in file_list:
             if if_tile:
@@ -172,7 +172,7 @@ class HistMolRGB(data.Dataset):
                     samples_count[sample_id] = 0
                 self.file_list.append((file, self.label_dict[sample_id]['label']))
                 samples.append(sample_id)
-                samples_count[sample_id] += 1  # 更新计数
+                samples_count[sample_id] += 1  # 
         print_log(f'[DATASET] {len(self.file_list)} tiles were loaded', logger='Dataset')
         assert len(self.file_list) > 0, "No dataset!"
 
@@ -243,7 +243,7 @@ class TCGASlideEmbedding(data.Dataset):
         print("len(file_list)",len(file_list))
         print("len(label_dict)",len(list(self.label_dict.keys())))
         self.file_list = []
-        samples_count = {}  # 用于跟踪每个 sample_id 的计数
+        samples_count = {}  #  sample_id 
         samples = []
         for file in file_list:
             sample_id = file.split('/')[-1].split(".pt")[0]
@@ -260,7 +260,7 @@ class TCGASlideEmbedding(data.Dataset):
                 else:
                     self.file_list.append((file, self.label_dict[sample_id]['label']))
                 samples.append(sample_id)
-                samples_count[sample_id] += 1  # 更新计数
+                samples_count[sample_id] += 1  # 
         print_log(f'[DATASET] {len(self.file_list)} slides were loaded', logger='Dataset')
         assert len(self.file_list) > 0, "No dataset!"
 
@@ -299,7 +299,7 @@ class HistMolABMIL(data.Dataset):
         if "posX" in list(self.label_dict.keys())[0]:
             if_tile = 1
         self.resolution_list = {}
-        samples_count = {}  # 用于跟踪每个 sample_id 的计数
+        samples_count = {}  #  sample_id 
         samples = []
         for file in file_list:
             if if_tile:
@@ -322,7 +322,7 @@ class HistMolABMIL(data.Dataset):
                     else:
                         self.file_list.append((file, self.label_dict[sample_id]['label']))
                     samples.append(sample_id)
-                    samples_count[sample_id] += 1  # 更新计数
+                    samples_count[sample_id] += 1  # 
         print_log(f'[DATASET] {len(self.file_list)} tiles were loaded', logger='Dataset')
         assert len(self.file_list) > 0, "No dataset!"
 
@@ -380,7 +380,7 @@ class HistMolABMIL_embedding(data.Dataset):
         '''
         self.resolution_list = {}
         self.file_list = []
-        samples_count = {}  # 用于跟踪每个 sample_id 的计数
+        samples_count = {}  #  sample_id 
         samples = []
         for file in file_list:
             sample_id = file.split('/')[-2]
@@ -392,7 +392,7 @@ class HistMolABMIL_embedding(data.Dataset):
             #if samples_count[sample_id]<1024:
             self.file_list.append((file, 0))
             samples.append(sample_id)
-            samples_count[sample_id] += 1  # 更新计数
+            samples_count[sample_id] += 1  # 
         print_log(f'[DATASET] {len(self.file_list)} tiles were loaded', logger='Dataset')
         assert len(self.file_list) > 0, "No dataset!"
 

@@ -9,7 +9,7 @@ import matplotlib.colors as mcolors
 from matplotlib.cm import get_cmap
 from sklearn.preprocessing import LabelEncoder
 
-# ========== 路径配置 ==========
+# ==========  ==========
 annotation_dir = "inhouse/annotation_csv_output"
 miso_dir = "inhouse/clustering_miso_hmdb_results"
 storm_dir = "inhouse/results_clusters_hmdb"
@@ -112,11 +112,11 @@ def plot_clusters_comparison(hmid, save_path):
     draw(axs[6], locs.loc[storm_barcodes], storm_df.loc[storm_barcodes]["cluster"].values, "SQUALL", scale)
     shared_barcodes &= set(storm_barcodes)
     #print("shared_barcodes",len(shared_barcodes))
-    # Annotation (最后绘制)
+    # Annotation ()
     anno_path = os.path.join(annotation_dir, f"{hmid}_annotation.csv")
     if os.path.exists(anno_path):
         anno_df = pd.read_csv(anno_path)
-        # 去重：保留每个 barcode 的第一条记录
+        #  barcode 
         anno_df = anno_df.drop_duplicates(subset="barcode", keep="first")
         anno_df["annotation"] = anno_df["annotation"].fillna("other").astype(str)
         anno_df = anno_df.set_index("barcode")
@@ -161,7 +161,7 @@ def plot_clusters_comparison(hmid, save_path):
     plt.savefig(save_path, dpi=500, transparent=True)
     plt.close()
 
-# ========== 执行 ==========
+# ==========  ==========
 os.makedirs("comparison_plots_raw_hmdb_7panel_blind", exist_ok=True)
 for hmid in hmid_list:
     out_path = f"comparison_plots_raw_hmdb_7panel_blind/{hmid}_compare_all_methods_7panel.pdf"

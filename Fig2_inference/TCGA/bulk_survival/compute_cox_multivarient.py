@@ -20,18 +20,18 @@ SURVIVAL_JSON = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/Survival_fi
 CLINICAL_CSV = "outcome_stage.csv"
 GENE_MAP = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/codebase/gene_token_homologs.csv"
 
-# 输出
+# 
 OUT_PB = "cox_multivariate_PB_log1p_age_stage_tumorfrac_FDR.csv"
 OUT_TR = "cox_multivariate_TR_zscore_age_stage_tumorfrac_FDR.csv"
 
-# multivariate 最低样本量
+# multivariate 
 MIN_SAMPLES = 80
 
-# PB / TR 的 gene 变换策略
-PB_TRANSFORM = "log1p"   # PB: log1p（仅对非负 gene）
-TR_TRANSFORM = "zscore"  # TR: zscore（跨样本逐 gene）
+# PB / TR  gene 
+PB_TRANSFORM = "log1p"   # PB: log1p gene
+TR_TRANSFORM = "zscore"  # TR: zscore gene
 
-# 协变量（都要加 tumor_fraction）
+#  tumor_fraction
 COVARS = ["age", "stage_num", "tumor_fraction"]
 
 # =====================================================
@@ -168,7 +168,7 @@ for sample in tqdm(common0, desc="Building PB/TR/tumor_fraction"):
     if expr.shape[0] != expr_rank.shape[0] or expr.shape[0] != coords.shape[0]:
         continue
     if expr.shape[1] != G or expr_rank.shape[1] != G:
-        # 基因维度不一致就跳过（防止 gene_map 不匹配）
+        #  gene_map 
         continue
 
     label_map = load_tile_label_map(label_csv)

@@ -20,7 +20,7 @@ GENE_MAP = "/lustre1/zxzeng/bwqin/SQUALL/disk_5TB-3/hmdb_for_bad_block/hmdb_infe
 OUT_PB = "cox_univariate_pseudobulk_FDR.csv"
 OUT_TR = "cox_univariate_within_tumor_rank_FDR.csv"
 
-MIN_SAMPLES = 20   # 最少样本数
+MIN_SAMPLES = 20   # 
 
 # =====================================================
 # Load survival

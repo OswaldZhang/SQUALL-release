@@ -7,7 +7,7 @@ import seaborn as sns
 from tqdm import tqdm
 from scipy.stats import mannwhitneyu
 
-# === 配置路径 ===
+# ===  ===
 expression_base = "/lustre1/zxzeng/bwqin/SQUALL_main/inference/CESC_expression"
 tile_label_base = "/lustre1/zxzeng/bwqin/SQUALL/yf_TCGA_label/tile_masks"
 output_dir = "final_tcell_treg_analysis"
@@ -21,7 +21,7 @@ geneset_dict = {
 }
 all_genes = sorted(set(g for gs in geneset_dict.values() for g in gs))
 
-# === 工具函数 ===
+# ===  ===
 def normalize_rank(ranks):
     arr = np.array(ranks, dtype=float)
     if len(arr) == 0:
@@ -43,14 +43,14 @@ def pval_to_star(p):
     else:
         return "ns"
 
-# === 统计表达 ===
+# ===  ===
 records = []
 for sample in tqdm(os.listdir(expression_base), desc="Processing Samples"):
     sample_path = os.path.join(expression_base, sample)
     if not os.path.isdir(sample_path):
         continue
 
-    # 加载 label
+    #  label
     label_file = os.path.join(tile_label_base, f"{sample}_tile_labels.csv")
     if not os.path.exists(label_file):
         continue
@@ -58,7 +58,7 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing Samples"):
     df_label["tile"] = df_label["pos"].apply(lambda x: "_".join(x.split("_")[:4]))
     label_map = dict(zip(df_label["tile"], df_label["label"]))
 
-    # 加载 gene 表达
+    #  gene 
     gene_expr = {}
     for g in all_genes:
         f = os.path.join(sample_path, f"{g}.json")
@@ -87,7 +87,7 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing Samples"):
 
 df_all = pd.DataFrame(records)
 
-# === 绘图（带显著性标注） ===
+# ===  ===
 plt.figure(figsize=(len(all_genes) * 0.5 + 2, 6))
 ax = sns.boxplot(
     data=df_all,
@@ -98,7 +98,7 @@ ax = sns.boxplot(
     palette={"Other": "gray", "Tumor": "#D64242"}
 )
 
-# 添加星号显著性标注
+# 
 for i, gene in enumerate(all_genes):
     dfg = df_all[df_all["gene"] == gene]
     tumor_vals = dfg[dfg["region"] == "Tumor"]["rank_score"]

@@ -34,11 +34,11 @@ POINT_SIZE = 0.25
 ALPHA = 0.35
 RANDOM_SEED = 0
 
-# HE 太大时下采样显示
+# HE 
 DOWNSAMPLE = 8
 
-# 原始检查用 scale=1
-# 如果发现整体大小不匹配，可以后续改成 [0.8, 0.9, 1.0, 1.1, 1.2]
+#  scale=1
+#  [0.8, 0.9, 1.0, 1.1, 1.2]
 SCALE_LIST = [1.0]
 
 
@@ -107,13 +107,13 @@ def load_locs(locs_path):
     print(f"[locs columns] {locs_path}")
     print(df.columns.tolist())
 
-    # 优先使用 x/y
+    #  x/y
     if "x" in df.columns and "y" in df.columns:
         x = df["x"].values.astype(float)
         y = df["y"].values.astype(float)
         return x, y, df, "x", "y"
 
-    # 兼容一些常见名字
+    # 
     candidates = [
         ("pxl_col_in_fullres", "pxl_row_in_fullres"),
         ("imagecol", "imagerow"),
@@ -181,7 +181,7 @@ def summarize_coords(name, x, y, W, H):
     print(f"x/W           : {np.nanmax(x) / W:.4f}")
     print(f"y/H           : {np.nanmax(y) / H:.4f}")
 
-    # 判断原始 x/y 是否合理
+    #  x/y 
     score_normal = abs(np.nanmax(x) / W - 1) + abs(np.nanmax(y) / H - 1)
     score_swap = abs(np.nanmax(x) / H - 1) + abs(np.nanmax(y) / W - 1)
 
@@ -445,7 +445,7 @@ def process_one_sample(sample_name, sample_dir):
             scale=scale,
         )
 
-    # 保存一个坐标 summary
+    #  summary
     summary = {
         "sample": sample_name,
         "sample_dir": sample_dir,

@@ -27,28 +27,28 @@ clustering_results_path = '/lustre1/zxzeng/bwqin/SQUALL_main/clustering/OV/clust
 
 def get_dominant_pathotype_per_cluster(adata, cluster_key='hc_clusters', patho_key='annotation'):
     """
-    计算每个 cluster 对应的主要病理类型（pathotype）
+     cluster pathotype
     
     Parameters:
     -----------
     adata : AnnData
-        含有 cluster 和 pathotype 信息的 AnnData 对象
+         cluster  pathotype  AnnData 
     cluster_key : str
-        表示聚类结果的 obs 列名（默认 'hc_clusters'）
+         obs  'hc_clusters'
     patho_key : str
-        表示病理注释的 obs 列名（默认 'pathotype'）
+         obs  'pathotype'
     
     Returns:
     --------
     cluster_to_pathotype : dict
-        每个 cluster 的主导病理类型（最多的那个）
+         cluster 
     """
     df = adata.obs[[cluster_key, patho_key]].dropna()
 
-    # 确保 cluster 是字符串（便于一致性）
+    #  cluster 
     df[cluster_key] = df[cluster_key].astype(str)
 
-    # 分组并找出每个 cluster 中数量最多的 pathotype
+    #  cluster  pathotype
     dominant = df.groupby(cluster_key)[patho_key] \
                  .agg(lambda x: x.value_counts().idxmax())
 
@@ -327,7 +327,7 @@ def get_cluster_dominant_pathotype(cluster_props, meta_info, cluster_columns, pa
             "value": cluster_props[cluster],
             "pathotype": meta_info[pathotype_col]
         })
-        # 取该 cluster 中 value 的总和，按 pathotype 分组
+        #  cluster  value  pathotype 
         dominant = df.groupby("pathotype")["value"].sum().sort_values(ascending=False)
         if not dominant.empty:
             cluster_pathotype_map[cluster] = dominant.index[0]
@@ -475,8 +475,8 @@ def create_heatmap(cluster_props, clinical_df, tumor_type, clinical_var, sig_fea
         cmap='viridis',
         yticklabels=merged_df['Pathology_ID'],
         cbar_kws={'label': 'Cluster Percentage (%)'},
-        row_cluster=False,  # 如果不想对 sample 聚类
-        col_cluster=True,   # Cluster 列聚类
+        row_cluster=False,  #  sample 
+        col_cluster=True,   # Cluster 
         )
     
     ax = sns.clustermap(
@@ -484,8 +484,8 @@ def create_heatmap(cluster_props, clinical_df, tumor_type, clinical_var, sig_fea
     cmap='vlag',
     center=0,
     figsize=(14, 10),
-    row_cluster=False,  # 如果不想对 sample 聚类
-    col_cluster=True,   # Cluster 列聚类
+    row_cluster=False,  #  sample 
+    col_cluster=True,   # Cluster 
     yticklabels=merged_df['Pathology_ID']
     )
     '''
@@ -781,72 +781,72 @@ def create_roc_plot(cluster_props, clinical_df, tumor_type, clinical_var, result
 
 
 def analyze_tumor_recurrence(tumor_type,n_clusters=50,correlation_results_path = None):
-    """分析特定肿瘤类型的复发相关性"""
+    """"""
     print(f"\n{'='*50}")
-    print(f"分析 {tumor_type} 肿瘤的复发相关性")
+    print(f" {tumor_type} ")
     print(f"{'='*50}")
     
-    # 创建输出目录
+    # 
     output_dir = os.path.join(correlation_results_path, tumor_type, 'Recurrence')
     os.makedirs(output_dir, exist_ok=True)
     
-    # 加载数据
+    # 
     adata, clinical_df, cluster_props = load_oc_data(n_clusters=n_clusters)
     
     if adata is None or clinical_df is None or cluster_props is None:
-        print(f"无法加载 {tumor_type} 的数据，跳过分析")
+        print(f" {tumor_type} ")
         return
     
-    # 过滤有复发数据的样本
+    # 
     clinical_recurrence = clinical_df[~clinical_df['Recurrence_Status'].isna()].copy()
     cluster_to_pathotype = get_dominant_pathotype_per_cluster(adata)
-    print(f"复发数据分布: {clinical_recurrence['Recurrence_Status'].value_counts().to_dict()}")
+    print(f": {clinical_recurrence['Recurrence_Status'].value_counts().to_dict()}")
     
-    # 执行增强的相关性分析
+    # 
     #results_df = analyze_correlation_enhanced(cluster_props, clinical_recurrence, 'Recurrence_Status')
     results_df = analyze_cluster_vs_recurrence(cluster_props, clinical_recurrence, 'Recurrence_Status')
     if results_df.empty:
-        print(f"无法为 {tumor_type} 执行复发相关性分析")
+        print(f" {tumor_type} ")
         return
     
-    # 保存结果
+    # 
     results_path = os.path.join(output_dir, f'{tumor_type}_recurrence_correlation.csv')
     results_df.to_csv(results_path, index=False)
-    print(f"结果保存到: {results_path}")
+    print(f": {results_path}")
     
-    # 创建森林图
+    # 
     forest_path = os.path.join(output_dir, f'{tumor_type}_recurrence_forest_plot.png')
     #create_forest_plot(results_df, tumor_type, 'Recurrence_Status', forest_path,cluster_to_pathotype = cluster_to_pathotype)
     dot_path = os.path.join(output_dir, f'{tumor_type}_recurrence_dotplot.png')
     
     create_dotplot(results_df, tumor_type, 'Recurrence_Status', dot_path,cluster_to_pathotype = cluster_to_pathotype)
-    # 获取显著特征 (p < 0.1)
+    #  (p < 0.1)
     sig_features = results_df[results_df['P_Value_Min'] < 0.1]['Feature'].tolist()
     
     if sig_features:
-        # 创建热图
+        # 
         heatmap_path = os.path.join(output_dir, f'{tumor_type}_recurrence_heatmap.png')
         create_heatmap(cluster_props, clinical_recurrence, tumor_type, 'Recurrence_Status', sig_features, heatmap_path)
         
-        # 创建箱线图
+        # 
         create_boxplots(cluster_props, clinical_recurrence, tumor_type, 'Recurrence_Status', sig_features, output_dir)
     
-    # 创建ROC曲线
+    # ROC
     roc_path = os.path.join(output_dir, f'{tumor_type}_recurrence_roc.png')
     create_roc_plot(cluster_props, clinical_recurrence, tumor_type, 'Recurrence_Status', results_df, roc_path)
     
-    # 打印显著发现摘要
+    # 
     sig_results = results_df[results_df['P_Value_Min'] < 0.05]
-    print(f"\n{tumor_type} 的显著复发相关性 (p < 0.05):")
+    print(f"\n{tumor_type}  (p < 0.05):")
     
     if len(sig_results) > 0:
         for _, row in sig_results.iterrows():
             if row['Feature_Type'] == 'cluster':
-                print(f"- 聚类 {row['Feature']}: 最小P值={row['P_Value_Min']:.3f}, "
+                print(f"-  {row['Feature']}: P={row['P_Value_Min']:.3f}, "
                       f"OR={row['Odds_Ratio']:.2f}, AUC={row['AUC']:.3f}, "
-                      f"平均差异={row['Mean_Diff']:.2f}%")
+                      f"={row['Mean_Diff']:.2f}%")
     else:
-        print("未找到显著相关性。")
+        print("")
 
 import pandas as pd
 import numpy as np
@@ -855,23 +855,23 @@ from statsmodels.stats.multitest import multipletests
 
 def analyze_cluster_vs_recurrence(cluster_props, clinical_df, label_col='Recurrence_Status', min_samples=2):
     """
-    对每个 cluster 的占比在 recurrence vs. non-recurrence 样本中进行比较，返回统计显著性和方向。
+     cluster  recurrence vs. non-recurrence 
     
     Parameters
     ----------
     cluster_props : DataFrame
-        样本 × cluster 的占比表（index 为 sample ID，columns 为 cluster ID）
+         × cluster index  sample IDcolumns  cluster ID
     clinical_df : DataFrame
-        包含 sample 的临床标签，至少要有 ['Pathology_ID', label_col]
+         sample  ['Pathology_ID', label_col]
     label_col : str
-        指定用于比较的二分类列名（如 'Recurrence_Status'）
+         'Recurrence_Status'
     min_samples : int
-        每组最少样本数
+        
     
     Returns
     -------
     result_df : DataFrame
-        含 p 值、FDR、方向（正负）、均值差等的结果表
+         p FDR
     """
     results = []
 
@@ -1179,16 +1179,16 @@ def analyze_correlation_enhanced(cluster_props, clinical_df, clinical_var):
         print(f"Machine learning analysis error: {e}")
     
     if not results_df.empty:
-        # 对三种原始 P 值分别进行 FDR 校正（Benjamini-Hochberg）
+        #  P  FDR Benjamini-Hochberg
         for col in ["P_Value_Logit", "P_Value_MannWhitney"]:#, "P_Value_TTest"
             reject, pvals_corrected, _, _ = multipletests(results_df[col], method="fdr_bh")
             results_df[f"{col}_adj"] = pvals_corrected
         
-        # 对 Min P 做额外校正
+        #  Min P 
         reject, pvals_corrected_min, _, _ = multipletests(results_df["P_Value_Min"], method="fdr_bh")
         results_df["P_Value_Min_adj"] = pvals_corrected_min
 
-        # Optional: 重新排序
+        # Optional: 
         results_df = results_df.sort_values("P_Value_Min_adj") 
     return results_df
 
@@ -1572,7 +1572,7 @@ def main():
             print(f"Error in correlation analysis: {e}")
             import traceback
             traceback.print_exc()
-    # 保存结果表格
+    # 
     summary_df = pd.DataFrame(summary_records)
     summary_df = summary_df.sort_values('n_clusters', ascending=False)
     #summary_df.to_csv("correlation_hc_pval_summary_by_n_clusters.csv", index=False)

@@ -32,7 +32,7 @@ TIME_COL = "Time"
 EVENT_COL = "Status"
 CANCER_COL = "CancerType"
 
-# 如果 INPUT_CSV 里 sample 列名不是这些，请手动改 SAMPLE_COL
+#  INPUT_CSV  sample  SAMPLE_COL
 SAMPLE_COL = None
 
 SAMPLE_COL_CANDIDATES = [
@@ -72,15 +72,15 @@ MINPROP = 0.2
 # Cox penalizer
 COX_PENALIZER = 0.05
 
-# 只对模型变量换算成单边 Wald p-value
+#  Wald p-value
 ONE_SIDED_MODEL_P = True
 
-# 单边方向：
+# 
 # "greater": H1: coef > 0, HR > 1
 # "less":    H1: coef < 0, HR < 1
 ONE_SIDED_ALTERNATIVE = "greater"
 
-# 如果 INPUT_CSV 或 CLINICAL_CSV 中存在 tumor_fraction，就自动加入 Cox
+#  INPUT_CSV  CLINICAL_CSV  tumor_fraction Cox
 USE_TUMOR_FRACTION_IF_AVAILABLE = True
 
 # clinical-only rows shown in forest plot

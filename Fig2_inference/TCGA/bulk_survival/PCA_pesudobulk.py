@@ -26,7 +26,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 USE_LOG1P = True
 Z_SCORE_GENES = True
 
-# cache (强烈推荐)
+# cache ()
 CACHE_PB = True
 PB_MATRIX_NPY = os.path.join(OUT_DIR, "pseudobulk_matrix.npy")
 PB_SAMPLES_NPY = os.path.join(OUT_DIR, "pseudobulk_samples.npy")
@@ -71,7 +71,7 @@ else:
         if not os.path.exists(expr_path):
             continue
 
-        # 🔥 关键：mmap，不整块读入内存
+        # 🔥 mmap
         expr = np.load(expr_path, mmap_mode="r")   # (N_tiles, G)
 
         if expr.ndim != 2 or expr.shape[1] != G:
@@ -138,7 +138,7 @@ plt.figure(figsize=(6, 6))
 sc = plt.scatter(
     df_pca["PC1"],
     df_pca["PC2"],
-    c=df_pca["time"],     # 可换成 event / risk / tumor_fraction
+    c=df_pca["time"],     #  event / risk / tumor_fraction
     cmap="viridis",
     s=45,
     alpha=0.85

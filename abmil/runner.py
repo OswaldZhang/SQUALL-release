@@ -55,10 +55,10 @@ class AllGatherWithGrad(Function):
         input, = ctx.saved_tensors
         world_size = dist.get_world_size()
         
-        # 获取当前进程的梯度分块
+        # 
         grad_input = grad_output.chunk(world_size)[dist.get_rank()]
         
-        # 对所有进程的梯度进行 all_reduce 平均
+        #  all_reduce 
         dist.all_reduce(grad_input, op=dist.ReduceOp.SUM)
         grad_input /= world_size
         
@@ -67,8 +67,8 @@ class AllGatherWithGrad(Function):
 def run_net_freeze(args, config, train_writer=None, val_writer=None):
     def print_gpu_memory():
         if torch.cuda.is_available():
-            print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
+            print(f"GPU: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+            #print(f": {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
     print("start")
     print_gpu_memory()
     logger = get_logger(args.log_name)
@@ -126,7 +126,7 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
             print(list(set(label))[0],list(set(sample_id))[0],rgb.shape)
     '''
     
-    # Step 2: 仅第一次获取特征
+    # Step 2: 
     all_features = []
     all_labels = []
     all_sample_id = []
@@ -142,13 +142,13 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
         if args.use_gpu:
             rgb, res, label = rgb.to(args.local_rank), res.to(args.local_rank), label.to(args.local_rank)
 
-        # 转换数据类型
-        rgb = rgb  # .half() 如果需要支持混合精度训练，可以解注释
+        # 
+        rgb = rgb  # .half() 
         res = res  # .half()
         label = label.float()  # .half()
 
-        # 提取预训练特征
-        with torch.no_grad():  # 提取特征不需要计算梯度
+        # 
+        with torch.no_grad():  # 
             if config.fwd_type == 'expr':
                 #print("expression extracted")
                 gathered_features = base_model.module.forward_get_embedding_expr(rgb, res)
@@ -158,7 +158,7 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
             else:
                 gathered_features = base_model.module.forward_get_embedding(rgb, res)
         #print("sample ",sample_id,"gathered_features",gathered_features.shape)
-        # 将特征和标签存储起来
+        # 
         #if "0" in str(base_model.device):
         all_features.append(gathered_features)
         all_labels.append(label)
@@ -171,13 +171,13 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
         if args.use_gpu:
             rgb, res, label = rgb.to(args.local_rank), res.to(args.local_rank), label.to(args.local_rank)
 
-        # 转换数据类型
-        rgb = rgb  # .half() 如果需要支持混合精度训练，可以解注释
+        # 
+        rgb = rgb  # .half() 
         res = res  # .half()
         label = label.float()  # .half()
 
-        # 提取预训练特征
-        with torch.no_grad():  # 提取特征不需要计算梯度
+        # 
+        with torch.no_grad():  # 
             if config.fwd_type == 'expr':
                 #print("expression extracted")
                 gathered_features = base_model.module.forward_get_embedding_expr(rgb, res)
@@ -190,10 +190,10 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
         all_labels_expr_test.append(label)
         all_sample_id_expr_test.append(sample_id[0])
         all_pos_expr_test.append(pos)
-    # 将特征和标签拼接为单个张量
+    # 
     #all_features = torch.cat(all_features, dim=0)
     #all_labels = torch.cat(all_labels, dim=0)
-    # Step 3: 训练过程
+    # Step 3: 
     batch_size = 1
     accumulation_steps = config.accumulation_steps
     #if "0" in str(base_model.device):
@@ -243,24 +243,24 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
                     batch_labels = batch_labels.to(args.local_rank)
                 '''
 
-                # Step 3.2: 训练模型
+                # Step 3.2: 
                 ret, attn_scores = base_model.module.forward_from_embedding(batch_features)
                 #ret, attn_scores = base_model.module.forward_from_embedding_qzk(batch_features)
                 #print("attn_scores.shape",attn_scores.shape)
                 attn_scores = attn_scores.squeeze(1)  # Shape: (batch_size,)
                 #print("attn_scores.shape",attn_scores.shape)
 
-                # 记录注意力分数
+                # 
                 '''
                 for i in range(len(all_pos[idx])):
                     pos_str = all_pos[idx][i]
                     attn_value = attn_scores[i].item()
                     local_attention_map[pos_str] = attn_value
                 '''
-                # 计算损失和准确率
+                # 
                 loss, acc = base_model.module.get_loss_acc(ret, batch_labels[0])
 
-                # 梯度累积处理
+                # 
                 loss = loss / accumulation_steps
                 with torch.autograd.detect_anomaly():
                     loss.backward()
@@ -275,7 +275,7 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
                 #print("ret",ret)
                 #print("label ",label.shape)
                 batch_status.append(label[0])
-            if (idx + 1) % accumulation_steps == 0:  # 每 accumulation_steps 个 batch 更新一次权重
+            if (idx + 1) % accumulation_steps == 0:  #  accumulation_steps  batch 
                 if config.abmil_type == "Survival":
                     batch_ret = torch.stack(batch_ret, dim=0)  # shape: (batch_size, 4)
                     batch_times = torch.stack(batch_times, dim=0)  # shape: (batch_size,)
@@ -291,8 +291,8 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
                     for name, param in base_model.named_parameters():
                         if param.grad is not None:
                             print(f"{name} - grad mean: {param.grad.abs().mean().item()}")
-                    optimizer.step()  # 更新权重
-                    base_model.zero_grad()  # 清零梯度
+                    optimizer.step()  # 
+                    base_model.zero_grad()  # 
                     batch_ret = []
                     batch_times = []
                     batch_status = []
@@ -331,8 +331,8 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
                     if args.distributed:
                         loss = dist_utils.reduce_tensor(loss, args)
                         torch.cuda.synchronize()
-                    optimizer.step()  # 更新权重
-                    base_model.zero_grad()  # 清零梯度
+                    optimizer.step()  # 
+                    base_model.zero_grad()  # 
             else:
                 optimizer.step()
                 base_model.zero_grad()
@@ -447,8 +447,8 @@ def run_net_freeze(args, config, train_writer=None, val_writer=None):
 def run_net(args, config, train_writer=None, val_writer=None):
     def print_gpu_memory():
         if torch.cuda.is_available():
-            print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
+            print(f"GPU: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+            #print(f": {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
     print("start")
     print_gpu_memory()
     logger = get_logger(args.log_name)
@@ -599,7 +599,7 @@ def run_net(args, config, train_writer=None, val_writer=None):
                     if torch.isnan(param.grad).any() or torch.isinf(param.grad).any():
                         print(f"Gradient contains NaN or Inf in layer {name}")
             '''
-            if (idx + 1) % accumulation_steps == 0:  # 每 accumulation_steps 个 batch 更新一次权重
+            if (idx + 1) % accumulation_steps == 0:  #  accumulation_steps  batch 
                 if config.abmil_type == "Survival":
                     '''
                     batch_ret = torch.stack(batch_ret, dim=0)  # shape: (batch_size, 4)
@@ -611,8 +611,8 @@ def run_net(args, config, train_writer=None, val_writer=None):
                     if config.get('grad_norm_clip') is not None:
                         torch.nn.utils.clip_grad_norm_(base_model.parameters(), config.grad_norm_clip, norm_type=2)
                     #loss.backward()
-                    optimizer.step()  # 更新权重
-                    base_model.zero_grad()  # 清零梯度
+                    optimizer.step()  # 
+                    base_model.zero_grad()  # 
                     '''
                     batch_ret = []
                     batch_times = []
@@ -628,8 +628,8 @@ def run_net(args, config, train_writer=None, val_writer=None):
                             print(f"{name} - grad mean: {param.grad.abs().mean().item()}")
                     '''
                     
-                    optimizer.step()  # 更新权重
-                    base_model.zero_grad()  # 清零梯度
+                    optimizer.step()  # 
+                    base_model.zero_grad()  # 
 
             ''''''
             if args.distributed:
@@ -887,39 +887,39 @@ def validate_regression_freeze(base_model, all_features_expr_test,all_labels_exp
         acc = acc[0]
         batch_ret = batch_ret.squeeze(1)
         if epoch %20 == 0:
-            num_genes = batch_ret.shape[1]  # 基因数量
+            num_genes = batch_ret.shape[1]  # 
             pearson_corrs = []
             r2_scores = []
             cos_similarities = []
             
             for gene_idx in range(num_genes):
-                # 提取当前基因在所有样本中的预测值和标签值
+                # 
                 label_gene = batch_status[:, gene_idx].clone().detach().cpu().numpy()
                 ret_gene = batch_ret[:, gene_idx].clone().detach().cpu().numpy()
-                if np.all(label_gene == 0):  # 如果所有值都为 0，跳过
+                if np.all(label_gene == 0):  #  0
                     continue
                 
-                # 1. 计算 Pearson 相关系数
+                # 1.  Pearson 
                 corr, _ = pearsonr(label_gene, ret_gene)
-                pearson_corrs.append((gene_idx, corr))  # 存储索引和相关性
+                pearson_corrs.append((gene_idx, corr))  # 
                 
-                # 2. 计算 R² 分数
+                # 2.  R² 
                 r2 = r2_score(label_gene, ret_gene)
-                r2_scores.append((gene_idx, r2))  # 存储索引和 R²
+                r2_scores.append((gene_idx, r2))  #  R²
                 
-                # 3. 计算余弦相似度
+                # 3. 
                 cos_sim = cosine_similarity(label_gene.reshape(1, -1), ret_gene.reshape(1, -1))[0][0]
-                cos_similarities.append((gene_idx, cos_sim))  # 存储索引和相似度
+                cos_similarities.append((gene_idx, cos_sim))  # 
             
-            # 计算所有基因的平均值
+            # 
             mean_pearson_corr = np.mean([x[1] for x in pearson_corrs])
             mean_r2 = np.mean([x[1] for x in r2_scores])
             mean_cos_sim = np.mean([x[1] for x in cos_similarities])
 
-            # 计算 top 2000 基因
+            #  top 2000 
             pearson_corrs_sorted = sorted(pearson_corrs, key=lambda x: abs(x[1]), reverse=True)[:2000]
 
-            # 用字典提高索引效率
+            # 
             r2_dict = dict(r2_scores)
             cos_sim_dict = dict(cos_similarities)
 
@@ -927,7 +927,7 @@ def validate_regression_freeze(base_model, all_features_expr_test,all_labels_exp
             top2000_r2 = np.mean([r2_dict[x[0]] for x in pearson_corrs_sorted if x[0] in r2_dict])
             top2000_cos_sim = np.mean([cos_sim_dict[x[0]] for x in pearson_corrs_sorted if x[0] in cos_sim_dict])
 
-            # 计算 Pearson 大于 0.5 的基因数量
+            #  Pearson  0.5 
             pearson_gt_0_5_count = sum(1 for x in pearson_corrs if x[1] > 0.5)
 
             print(f"Epoch {epoch}")
@@ -1140,8 +1140,8 @@ def test_net(args, config):
 def get_encoder_batch(args, config, train_writer=None, val_writer=None):
     def print_gpu_memory():
         if torch.cuda.is_available():
-            print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
+            print(f"GPU: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+            #print(f": {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
     print("start")
     print_gpu_memory()
     logger = get_logger(args.log_name)
@@ -1193,7 +1193,7 @@ def get_encoder_batch(args, config, train_writer=None, val_writer=None):
     print("lr start:",optimizer.param_groups[0]['lr'])
     local_attention_map = dict()
     for batch in train_dataloader:
-        rgb,res, label, sample_id,pos = batch  # 假设你的数据集返回的是 (inputs, labels)
+        rgb,res, label, sample_id,pos = batch  #  (inputs, labels)
         if "0" in str(base_model.device):
             print(list(set(label))[0],list(set(sample_id))[0],rgb.shape)
     base_model.eval()  # set model to eval mode
@@ -1292,7 +1292,7 @@ def get_attention_batch(args, config, train_writer=None, val_writer=None):
     print("lr start:",optimizer.param_groups[0]['lr'])
     local_attention_map = dict()
     for batch in train_dataloader:
-        rgb,res, label, sample_id,pos = batch  # 假设你的数据集返回的是 (inputs, labels)
+        rgb,res, label, sample_id,pos = batch  #  (inputs, labels)
         if "0" in str(base_model.device):
             print(list(set(label))[0],list(set(sample_id))[0],rgb.shape)
     base_model.eval()  # set model to eval mode

@@ -132,7 +132,7 @@ class UNI_ABMIL(ABMIL):
             msg = self.encoder.load_state_dict(state_dict, strict=False)
             print(f"Loading checkpoint: {msg}")
     def forward(self,  rgb, res):
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+        rgb = rgb.permute(0, 3, 1, 2)  #  (B, C, H, W)
         z,_ = self.encoder(rgb)
         features = z
         A, x = self.attention_net(features)
@@ -148,9 +148,9 @@ class UNI_ABMIL(ABMIL):
         #old version, attention no gradient 
         A = F.softmax(A, dim=1)
         
-        bag_feature = A * x  # 元素级乘法，对 x 进行加权 => [batchsize, 1024]
+        bag_feature = A * x  #  x  => [batchsize, 1024]
         #print("bag_feature.shape",bag_feature.shape)
-        bag_feature = (x * A).sum(dim=0, keepdim=True)  # 在行上做求和，得到 1x1024 的结果
+        bag_feature = (x * A).sum(dim=0, keepdim=True)  #  1x1024 
         #print("bag_feature.shape",bag_feature.shape)
         attn_scores = A
         '''

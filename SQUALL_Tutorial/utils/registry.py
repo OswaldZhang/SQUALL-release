@@ -272,10 +272,10 @@ def build_from_cfg(cfg, registry, default_args=None):
         cfg = config.merge_new_config(cfg, default_args)
 
     #=================================================== yunfeng add
-    # 将 cfg 转换为 EasyDict 对象
+    #  cfg  EasyDict 
     cfg = EasyDict(cfg)
     
-    obj_type = cfg.NAME  # 这里可以直接通过 cfg.NAME 访问
+    obj_type = cfg.NAME  #  cfg.NAME 
     #=================================================== yunfeng add
     
     

@@ -11,7 +11,7 @@ from scipy.ndimage import gaussian_filter
 
 Image.MAX_IMAGE_PIXELS = None
 
-# ==== 配置路径 ====
+# ====  ====
 survival_json = "/lustre1/zxzeng/bwqin/SQUALL_main/downstream_labels/Survival_five_fold_OS_COX/Survival_TCGA_CESC.json"
 expression_base = "/lustre1/zxzeng/bwqin/SQUALL_main/inference/CESC_expression"
 svs_base = "/lustre1/zxzeng/bwqin/SQUALL/TCGA_svs_0_5/CESC"
@@ -23,22 +23,22 @@ os.makedirs(merged_pdf_output, exist_ok=True)
 os.makedirs(thumb_pdf_output, exist_ok=True)
 os.makedirs(zoom_output, exist_ok=True)
 
-# ==== 设置色图 ====
+# ====  ====
 vortex_cmap = LinearSegmentedColormap.from_list(
     "vortex_cmap", ["#ffffff", "#1c6db7", "#4a8d6e", "#fdb863", "#a91e2c"]#"vortex_cmap", ["#3b0f70", "#1c6db7", "#4a8d6e", "#fdb863", "#a91e2c"]
 )
 norm = Normalize(vmin=0.01, vmax=1)
 
-# ==== 参数 ====
+# ====  ====
 tile_size = 256
 zoom_size = 2000
 genes_to_plot = ["CD8A"]
 
-# ==== 加载 survival 信息 ====
+# ====  survival  ====
 with open(survival_json) as f:
     survival_info = json.load(f)
 
-# ==== 主循环 ====
+# ====  ====
 for sample in tqdm(os.listdir(expression_base), desc="Processing"):
     sid = sample.replace("_", "-")
     if sid not in ["TCGA-DS-A1OD","TCGA-DS-A7WF"]:
@@ -99,7 +99,7 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing"):
             heatmap[countmap > 0] /= countmap[countmap > 0]
             heatmap[countmap == 0] = 0
 
-            # ==== 平滑 + 透明 heatmap ====
+            # ====  +  heatmap ====
             heatmap = gaussian_filter(heatmap, sigma=6)
             colored = vortex_cmap(norm(heatmap))[..., :3]
             rgba = (colored * 255).astype(np.uint8)
@@ -107,14 +107,14 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing"):
             alpha = (norm(heatmap) * 255).astype(np.uint8)
             heatmap_img.putalpha(Image.fromarray(alpha))
 
-            # ==== 合成主图 ====
+            # ====  ====
             base_crop = base_img.crop((x_min, y_min, x_max, y_max)).convert("RGBA")
             blended = Image.alpha_composite(base_crop, heatmap_img)
             full_img = Image.new("RGBA", (W, H), (255, 255, 255, 255))
             full_img.paste(blended, (x_min, y_min), blended)
             panel_images.append(full_img.convert("RGB"))
             '''
-            # ==== 小图像放大 ====
+            # ====  ====
             top_tiles = sorted(zip(coords, values), key=lambda x: -x[1])
             seen = set()
             fig, axs = plt.subplots(4, 5, figsize=(15, 12))
@@ -151,7 +151,7 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing"):
             print(f"[Error] {sid} {gene}: {e}")
             panel_images.append(Image.new("RGB", (W, H), (255, 255, 255)))
 
-    # ==== 主图保存 ====
+    # ====  ====
     fig, axs = plt.subplots(1, len(panel_images), figsize=(20, 5))
     titles = ["H&E"] + genes_to_plot
     for i, ax in enumerate(axs):
@@ -163,10 +163,10 @@ for sample in tqdm(os.listdir(expression_base), desc="Processing"):
             microns_per_pixel = 0.5  # 0.5μm/pixel
             pixels_per_mm = int(1000 / microns_per_pixel)  # = 2000 px
 
-            # scale bar 尺寸（单位：图像坐标）
-            bar_x = 50  # 离左边 100 px
-            bar_height = 50  # 粗细
-            bar_y = panel_images[i].height - 30 - bar_height  # 离底部 100 px
+            # scale bar 
+            bar_x = 50  #  100 px
+            bar_height = 50  # 
+            bar_y = panel_images[i].height - 30 - bar_height  #  100 px
 
             ax.add_patch(plt.Rectangle(
                 (bar_x, bar_y), pixels_per_mm, bar_height,

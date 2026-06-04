@@ -106,7 +106,7 @@ class SpotDataset(Dataset):
         isin = np.isfinite(x).all((-1, -2))
         self.x = x[isin]
         self.locs = new_locs[isin]
-        self.y = y[:len(self.x)]  # 或者自己对应删
+        self.y = y[:len(self.x)]  # 
         #self.y = y[isin]
         #self.locs = locs[isin]
         self.size = x_all.shape[:2]
@@ -155,7 +155,7 @@ def get_patches_flat(img, locs, mask):
         patch = img[
             s[0]+r[0][0]:s[0]+r[0][1],
             s[1]+r[1][0]:s[1]+r[1][1]]
-        # 防止超界，patch尺寸异常
+        # patch
         if patch.shape[0] != mask.shape[0] or patch.shape[1] != mask.shape[1]:
             continue
         
@@ -164,7 +164,7 @@ def get_patches_flat(img, locs, mask):
         else:
             x = patch[mask]
         
-        if x.size == 0:  # patch真的空了
+        if x.size == 0:  # patch
             continue
 
         x_list.append(x)
@@ -182,15 +182,15 @@ def get_patches_flat(img, locs, mask):
     center = shape // 2
     r = np.stack([-center, shape-center], -1)  # offset
     x_list = []
-    H, W = img.shape[:2]  # img大小
+    H, W = img.shape[:2]  # img
     print("locs",locs)
     for s in locs:
         i_start, i_end = s[0]+r[0][0], s[0]+r[0][1]
         j_start, j_end = s[1]+r[1][0], s[1]+r[1][1]
 
-        # 加边界判断！
+        # 
         if i_start < 0 or i_end > H or j_start < 0 or j_end > W:
-            continue  # 超出边界就跳过
+            continue  # 
         patch = img[
                 s[0]+r[0][0]:s[0]+r[0][1],
                 s[1]+r[1][0]:s[1]+r[1][1]]
