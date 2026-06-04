@@ -152,7 +152,7 @@ def load_section(root: str, patient: str, section: str, subtype: str):
     import gzip
 
     file_root = root + "/" + subtype + "/" + patient + "/" + patient + "_" + section
-    print("fuck file_root",file_root)
+    print("  file_root",file_root)
     # image = skimage.io.imread(file_root + ".jpg")
     image = file_root + ".jpg"
 
@@ -193,8 +193,8 @@ def load_raw(root: str):
 
     # Wildcard search for patients/sections
     images = glob.glob(root + "/*/*/*_*.jpg")
-    print("fuck root ",root)
-    print("fuck images",images)
+    print("  root ",root)
+    print("  images",images)
     # Dict mapping patient ID (str) to a list of all sections available for the patient (List[str])
     patient = collections.defaultdict(list)
     for (p, s) in map(lambda x: x.split("/")[-1][:-4].split("_"), images):
