@@ -1,6 +1,6 @@
 # SQUALL
 
-<img src="https://squall.readthedocs.io/en/latest/assets/logo-SHnFptD4.png" alt="SQUALL Logo" width="400" align="right" />
+<img src="https://squall.readthedocs.io/en/latest/assets/logo-SHnFptD4.png" alt="SQUALL Logo" width="250" align="right" />
 
 For SQUALL pretraining, the data are available at:  
 <https://zenodo.org/records/17318279>
