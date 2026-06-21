@@ -3,7 +3,7 @@
 <img src="https://squall.readthedocs.io/en/latest/assets/logo-SHnFptD4.png" alt="SQUALL Logo" width="250" align="right" />
 
 For SQUALL pretraining, the data are available at:  
-<https://zenodo.org/records/17318279>
+<[https://zenodo.org/records/17318279](https://zenodo.org/records/20587149)>
 
 Please refer to the following resources for more information:
 
