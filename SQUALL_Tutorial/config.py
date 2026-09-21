@@ -1,58 +1,39 @@
-"""Configuration settings for the STORM analysis pipeline."""
+"""Portable settings for the SQUALL tutorial.
 
-import os
-import warnings
-import logging
+All bundled-resource paths are resolved relative to this file.  Users only need
+to supply their own checkpoint location when running the embedding script.
+"""
 
-# Suppress warnings
-warnings.filterwarnings('ignore', category=FutureWarning)
-warnings.filterwarnings('ignore', category=UserWarning)
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-logging.getLogger('tensorflow').setLevel(logging.ERROR)
+from pathlib import Path
 
-# Base directories
-BASE_DIR = '/data200T/STORM'
 
-# HMDB_DIR = os.path.join(BASE_DIR, 'hmdb')
-# FEATURE_DIR = os.path.join(BASE_DIR, 'hmdb_feature_old')
+TUTORIAL_DIR = Path(__file__).resolve().parent
 
-HMDB_DIR = os.path.join(BASE_DIR, 'HMDB')
-FEATURE_DIR = os.path.join(BASE_DIR, 'hmdb_feature_cluster_check/newBreastPt')
+# Bundled tutorial inputs
+DATA_ROOT = TUTORIAL_DIR / "HMDB_sample"
+MODEL_CONFIG_PATH = TUTORIAL_DIR / "config.yaml"
+GENE_TOKEN_PATH = TUTORIAL_DIR / "gene_token_homologs.csv"
+OFFSET_JSON = TUTORIAL_DIR / "offset.json"
 
-OUTPUT_DIR = os.path.join(BASE_DIR, 'hmdb_feature_cluster_check/combined_gm_tab20')
+# Generated files.  Keeping them in a dedicated directory avoids modifying the
+# downloaded example data.
+OUTPUT_DIR = TUTORIAL_DIR / "outputs"
 
-# Model and data paths for generating embeddings
-MODEL_CONFIG_PATH = '/home/wyf/coding_test/storm/STORM_code/large_ddp_rpb_lowres_benchmark.yaml'
-MODEL_CHECKPOINT_PATH = '/data200T/STORM/ckpt_HD/ckpt-epoch-300.pth'
-GENE_TOKEN_PATH = '/home/wyf/coding_test/storm/gene_token_homologs.csv'
-SAMPLE_LIST_PATH = '/home/wyf/coding_test/storm/STORM_code/functionDebuger/texture_mapping/histMol.xlsx'
+# The repository does not include the trained checkpoint.  Put it here or pass
+# another location with --checkpoint when running the embedding script.
+MODEL_CHECKPOINT_PATH = TUTORIAL_DIR / "weights" / "SQUALL_lowres.pth"
 
-# Offset file paths
-OFFSET_CSV = '/home/wyf/coding_test/storm/STORM_code/functionDebuger/texture_mapping/histMol_final_updated.csv'
-# OFFSET_JSON = '/home/wyf/coding_test/storm/STORM_code/functionDebuger/texture_mapping/offset.json'
-OFFSET_JSON = '/home/wyf/coding_test/storm/STORM_code/functionDebuger/texture_mapping/hmidFiles/offset_updated2.json'
-
-# Processing parameters
+# Embedding settings
 PATCH_SIZE = 224
 STRIDE = 16
-BATCH_SIZE = 16
+BATCH_SIZE = 2
 TARGET_SIZE = (14, 14)
+RESOLUTION = 4.0
+NUM_WORKERS = 0
 
-# Analysis parameters
-N_CLUSTERS = 10
-N_PCA_COMPONENTS = 10
-N_NEIGHBORS = 6
+# Clustering settings used by feature_clustering_squall_tutorial.py
 N_POINTS = 10000
 RANDOM_SEED = 0
-
-# Clustering parameters
-CLUSTERING_PARAMS = {
-    'gm': {
-        'n_components': N_CLUSTERS,
-        'covariance_type': 'diag',
-        'max_iter': 100,
-        'n_init': 1,
-        'reg_covar': 1e-4,
-        'random_state': RANDOM_SEED
-    }
-}
+N_PCA_COMPONENTS = 10
+N_NEIGHBORS = 6
+N_CLUSTERS = 10
