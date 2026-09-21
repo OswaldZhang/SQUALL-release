@@ -31,7 +31,6 @@ Storm = Squall
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
-# 配置日志
 log_format = '%(asctime)s - %(levelname)s - [%(hostname)s] %(message)s'
 
 class HostnameFilter(logging.Filter):
@@ -96,7 +95,6 @@ def timer(name):
 
 @njit(parallel=True)
 def process_patch_mask(x_coords, y_coords, x_st, y_st, patch_size):
-    """使用numba加速掩码计算"""
     mask = np.zeros(len(x_coords), dtype=np.bool_)
     for i in prange(len(x_coords)):
         if (x_coords[i] >= x_st and x_coords[i] < x_st + patch_size and
@@ -122,14 +120,12 @@ class IntegratedDataset(Dataset):
             he_patch, expr_matrix = self.patches[idx]
             x, y = self.coordinates[idx]
 
-            # 输出调试信息
-            if idx == 0:  # 只对第一个样本输出详细信息
+            if idx == 0:
                 logger.info(f"Sample {idx} details:")
                 logger.info(f"HE patch shape: {he_patch.shape}")
                 logger.info(f"Expression matrix shape: {expr_matrix.shape}")
                 logger.info(f"Coordinates: ({x}, {y})")
 
-            # 图像预处理
             if not isinstance(he_patch, np.ndarray):
                 raise ValueError(f"HE patch is not a numpy array: {type(he_patch)}")
 
@@ -140,7 +136,6 @@ class IntegratedDataset(Dataset):
                 he_patch = he_patch / 255.0
             rgb_tensor = torch.from_numpy(he_patch).float()
 
-            # 处理表达式矩阵
             if isinstance(expr_matrix, csr_matrix):
                 expr = torch.from_numpy(expr_matrix.toarray()).float()
             else:
@@ -149,8 +144,7 @@ class IntegratedDataset(Dataset):
             size = int(math.sqrt(expr_matrix.shape[0]))
             expr = expr.reshape(size, size, -1)
 
-            # 检查最终张量的形状
-            if idx == 0:  # 只对第一个样本输出详细信息
+            if idx == 0:
                 logger.info(f"Final tensor shapes:")
                 logger.info(f"RGB tensor: {rgb_tensor.shape}")
                 logger.info(f"Expression tensor: {expr.shape}")
@@ -169,22 +163,17 @@ class IntegratedDataset(Dataset):
             raise e
 
 def process_patches(x_st, y_st, patch_size, processer):
-    """处理单个patch"""
     try:
-        # 检查边界条件
         if x_st + patch_size > processer.pd_he.shape[1] or y_st + patch_size > processer.pd_he.shape[0]:
             logger.warning(f"Skip patch at ({x_st}, {y_st}): would exceed image bounds")
             return None
 
-        # 提取patch
         patch_he = processer.pd_he[y_st:y_st + patch_size, x_st:x_st + patch_size].copy()
 
-        # 检查patch尺寸
         if patch_he.shape[:2] != (patch_size, patch_size):
             logger.error(f"Invalid patch shape at ({x_st}, {y_st}): {patch_he.shape}")
             return None
 
-        # 计算mask
         x_coords = processer.tissue_grid['tl_xn'].values
         y_coords = processer.tissue_grid['tl_yn'].values
         tissue_mask = process_patch_mask(x_coords, y_coords, x_st, y_st, patch_size)
@@ -202,13 +191,11 @@ def process_patches(x_st, y_st, patch_size, processer):
     return None
 
 def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
-    """分批收集patches以控制内存使用"""
     grid_xmin, grid_xmax, grid_ymin, grid_ymax = grid_bounds
     processed_patches = []
     patch_coordinates = []
     start_time = time.time()
 
-    # 输出 image 和 grid 信息
     logger.info(f"Image shape: {processer.pd_he.shape}")
     logger.info(f"Grid bounds: xmin={grid_xmin}, xmax={grid_xmax}, ymin={grid_ymin}, ymax={grid_ymax}")
     logger.info(f"Patch size: {patch_size}, Stride: {stride}")
@@ -226,7 +213,6 @@ def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
                     patch_data, coords = result
                     he_patch, expr_matrix = patch_data
 
-                    # 检查 patch 形状
                     if he_patch.shape[:2] != (patch_size, patch_size):
                         logger.warning(f"Skipping patch with wrong shape: {he_patch.shape}")
                         continue
@@ -234,7 +220,6 @@ def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
                     processed_patches.append(patch_data)
                     patch_coordinates.append(coords)
 
-                    # 当收集到足够的patches时，返回当前 batch
                     if len(processed_patches) >= batch_size:
                         elapsed = time.time() - start_time
                         logger.info(f"\nProcessed {len(processed_patches)} patches in {elapsed:.1f}s")
@@ -244,7 +229,6 @@ def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
 
                 pbar.update(1)
 
-    # 返回最后一批数据
     if processed_patches:
         yield processed_patches, patch_coordinates
 
@@ -252,12 +236,10 @@ def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
 def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
                                 batch_size=32, sample_id="default",
                                 target_size=(14, 14), device='cuda'):
-    """优化版本：直接将推理结果放入大图对应位置"""
     start_time = time.time()
     patch_count = 0
     batch_count = 0
 
-    # 计算网格边界
     grid_bounds = (
         int(processer.tissue_grid['tl_xn'].min()),
         int(processer.tissue_grid['tl_xn'].max()),
@@ -265,8 +247,7 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
         int(processer.tissue_grid['tl_yn'].max())
     )
 
-    # 计算大图尺寸
-    feature_size = target_size[0]  # 假设target_size是正方形
+    feature_size = target_size[0]
     max_x = grid_bounds[1]
     max_y = grid_bounds[3]
     # target_height = int(max_y / stride + feature_size)
@@ -274,7 +255,6 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
     target_height = int(max_y / stride)
     target_width = int(max_x / stride)
 
-    # 初始化大图和计数器
     large_expr_embedding = torch.zeros((target_height, target_width, 1024),
                                        dtype=torch.float32, device=device)
     large_rgb_embedding = torch.zeros((target_height, target_width, 1024),
@@ -284,7 +264,6 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
 
     logger.info(f"Initialized target embeddings of size: {target_height}x{target_width}")
 
-    # 分批处理patches
     for processed_patches, patch_coordinates in collect_patches(
             processer, patch_size, stride, grid_bounds, batch_size=256
     ):
@@ -310,19 +289,16 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
             data_batch, _, res = batch_data
             coords = data_batch["coords"]
 
-            # 准备数据并推理
             res = res.unsqueeze(-1).unsqueeze(-1).to(device)
             rgb = data_batch["rgb"].to(device, non_blocking=True).permute(0, 3, 1, 2)
             expr = data_batch["expr"].to(device).permute(0, 3, 1, 2)
 
             all_embedding = model.forward_all(rgb, expr, res)
 
-            # 分割embeddings
             mid = all_embedding.shape[1] // 2
             rgb_emb = all_embedding[:, :mid, :].view(-1, *target_size, 1024)
             expr_emb = all_embedding[:, mid:, :].view(-1, *target_size, 1024)
 
-            # 直接将结果放入大图对应位置
             for i in range(len(coords)):
                 x, y = coords[i]
                 start_x = int(x / stride)
@@ -337,7 +313,6 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
             patch_count += len(coords)
             batch_count += 1
 
-            # 清理内存
             del rgb_emb, expr_emb, rgb, expr, res, all_embedding
             torch.cuda.empty_cache()
 
@@ -347,12 +322,10 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
         if batch_count % 10 == 0:
             logger.info(f"Processed {patch_count} patches in {batch_count} batches")
 
-    # 平均化重叠区域
     mask = count_image > 0
     large_expr_embedding[mask.repeat(1, 1, 1024)] /= count_image[mask].repeat_interleave(1024)
     large_rgb_embedding[mask.repeat(1, 1, 1024)] /= count_image[mask].repeat_interleave(1024)
 
-    # 汇总处理信息
     end_time = time.time()
     total_time = end_time - start_time
     logger.info(
@@ -395,7 +368,6 @@ class TaskManager:
             lock_file.close()
 
     def get_default_task_info(self):
-        """返回默认的任务信息字典"""
         return {
             'status': 'pending',
             'server': None,
@@ -410,23 +382,19 @@ class TaskManager:
         """Initialize task status file with more detailed status tracking"""
         with self.file_lock():
             if self.task_file.exists():
-                # 如果文件存在，读取并更新缺失的字段
                 with open(self.task_file, 'r') as f:
                     task_status = json.load(f)
                 
-                # 为每个任务添加缺失的字段
                 default_info = self.get_default_task_info()
                 for sample in task_status['tasks']:
                     for key, value in default_info.items():
                         if key not in task_status['tasks'][sample]:
                             task_status['tasks'][sample][key] = value
                 
-                # 添加新的样本
                 for sample in sample_list:
                     if sample not in task_status['tasks']:
                         task_status['tasks'][sample] = self.get_default_task_info()
             else:
-                # 如果文件不存在，创建新的
                 task_status = {
                     'tasks': {
                         sample: self.get_default_task_info() for sample in sample_list
@@ -434,7 +402,6 @@ class TaskManager:
                     'last_update': datetime.now().isoformat()
                 }
             
-            # 保存更新后的状态
             with open(self.task_file, 'w') as f:
                 json.dump(task_status, f, indent=2)
 
@@ -447,7 +414,6 @@ class TaskManager:
             with open(self.task_file, 'r') as f:
                 task_status = json.load(f)
             
-            # 确保每个任务都有 attempts 字段
             for task_info in task_status['tasks'].values():
                 if 'attempts' not in task_info:
                     task_info['attempts'] = 0
@@ -531,7 +497,6 @@ class TaskManager:
             return stats, server_stats, error_stats
 
 def get_homo_sapiens_samples():
-    """读取CSV文件并获取Homo sapiens样本列表"""
     df = pd.read_csv('histMol_final_updated.csv')
     homo_samples = df[df['Species'] == 'Homo sapiens']['hmid_offset'].tolist()
     return homo_samples
