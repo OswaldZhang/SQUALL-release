@@ -1,32 +1,22 @@
 from VisiumOrigin2 import fileReader, Processer
+import argparse
 import yaml
 import torch
-import os
-import json
 import math
 import numpy as np
 import logging
-from datetime import datetime, timedelta
-from functools import partial
-from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
 from torch.utils.data import Dataset, DataLoader
-from torch.cuda.amp import autocast, GradScaler
 from pathlib import Path
-from skimage import io
 from models.Squall import Squall
 from scipy.sparse import csr_matrix
 from tqdm import tqdm
 import time
 from numba import njit, prange
 import warnings
-import itertools
 import gc
-import multiprocessing
 from contextlib import contextmanager
-import pandas as pd
 import socket
-import fcntl
-import random
 Storm = Squall
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -78,8 +68,23 @@ def get_encoder(config_path, ckpt_path, device='cpu'):
     model = Storm(model_config)
 
     # load ckpt
-    state_dict = torch.load(ckpt_path, map_location="cpu")["base_model"]
-    missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=True)
+    checkpoint = torch.load(ckpt_path, map_location="cpu")
+    if isinstance(checkpoint, dict) and "base_model" in checkpoint:
+        state_dict = checkpoint["base_model"]
+    elif isinstance(checkpoint, dict) and "state_dict" in checkpoint:
+        state_dict = checkpoint["state_dict"]
+    elif isinstance(checkpoint, dict) and "model" in checkpoint:
+        state_dict = checkpoint["model"]
+    else:
+        state_dict = checkpoint
+
+    if not isinstance(state_dict, dict):
+        raise TypeError("The checkpoint does not contain a valid model state dictionary")
+    state_dict = {
+        (key[7:] if key.startswith("module.") else key): value
+        for key, value in state_dict.items()
+    }
+    model.load_state_dict(state_dict, strict=True)
 
     # set eval mode & to GPU
     model.eval()
@@ -235,7 +240,8 @@ def collect_patches(processer, patch_size, stride, grid_bounds, batch_size=256):
 @torch.no_grad()
 def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
                                 batch_size=32, sample_id="default",
-                                target_size=(14, 14), device='cuda'):
+                                target_size=(14, 14), resolution=4.0,
+                                num_workers=0, device='cuda'):
     start_time = time.time()
     patch_count = 0
     batch_count = 0
@@ -274,6 +280,7 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
             processed_patches=processed_patches,
             patch_coordinates=patch_coordinates,
             sample_id=sample_id,
+            resolution=resolution,
             target_size=target_size
         )
 
@@ -281,8 +288,8 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
             dataset,
             batch_size=batch_size,
             shuffle=False,
-            num_workers=4,
-            pin_memory=True
+            num_workers=num_workers,
+            pin_memory=(str(device).startswith("cuda"))
         )
 
         for batch_data in dataloader:
@@ -346,170 +353,20 @@ def process_and_infer_optimized(processer, model, patch_size=224, stride=16,
         }
     }
 
-class TaskManager:
-    def __init__(self, shared_dir="/lustre1/zxzeng/bwqin/STORM_main/single_section/hmdb_inference_offset"):
-        self.shared_dir = Path(shared_dir)
-        self.task_file = self.shared_dir / "task_status.json"
-        self.lock_file = self.shared_dir / "task_lock"
-        self.hostname = socket.gethostname()
-        
-        # Ensure shared directory exists
-        self.shared_dir.mkdir(parents=True, exist_ok=True)
-        
-    @contextmanager
-    def file_lock(self):
-        """File lock context manager"""
-        lock_file = open(str(self.lock_file), 'w')
-        try:
-            fcntl.flock(lock_file, fcntl.LOCK_EX)
-            yield
-        finally:
-            fcntl.flock(lock_file, fcntl.LOCK_UN)
-            lock_file.close()
-
-    def get_default_task_info(self):
-        return {
-            'status': 'pending',
-            'server': None,
-            'start_time': None,
-            'end_time': None,
-            'error_type': None,
-            'error_message': None,
-            'attempts': 0
-        }
-
-    def init_task_status(self, sample_list):
-        """Initialize task status file with more detailed status tracking"""
-        with self.file_lock():
-            if self.task_file.exists():
-                with open(self.task_file, 'r') as f:
-                    task_status = json.load(f)
-                
-                default_info = self.get_default_task_info()
-                for sample in task_status['tasks']:
-                    for key, value in default_info.items():
-                        if key not in task_status['tasks'][sample]:
-                            task_status['tasks'][sample][key] = value
-                
-                for sample in sample_list:
-                    if sample not in task_status['tasks']:
-                        task_status['tasks'][sample] = self.get_default_task_info()
-            else:
-                task_status = {
-                    'tasks': {
-                        sample: self.get_default_task_info() for sample in sample_list
-                    },
-                    'last_update': datetime.now().isoformat()
-                }
-            
-            with open(self.task_file, 'w') as f:
-                json.dump(task_status, f, indent=2)
-
-    def get_next_task(self, max_attempts=3):
-        """Get next task, prioritizing failed tasks that haven't exceeded max attempts"""
-        with self.file_lock():
-            if not self.task_file.exists():
-                return None
-                
-            with open(self.task_file, 'r') as f:
-                task_status = json.load(f)
-            
-            for task_info in task_status['tasks'].values():
-                if 'attempts' not in task_info:
-                    task_info['attempts'] = 0
-            
-            # First look for failed tasks that can be retried
-            failed_tasks = [
-                sample for sample, info in task_status['tasks'].items()
-                if info['status'] in ['failed', 'notfound'] 
-                and info.get('attempts', 0) < max_attempts
-            ]
-            
-            # Then look for pending tasks
-            pending_tasks = [
-                sample for sample, info in task_status['tasks'].items()
-                if info['status'] == 'pending'
-            ]
-            
-            available_tasks = failed_tasks + pending_tasks
-            
-            if not available_tasks:
-                return None
-                
-            # Randomly select a task
-            task = random.choice(available_tasks)
-            
-            # Update task status
-            task_status['tasks'][task].update({
-                'status': 'processing',
-                'server': self.hostname,
-                'start_time': datetime.now().isoformat(),
-                'attempts': task_status['tasks'][task]['attempts'] + 1
-            })
-            task_status['last_update'] = datetime.now().isoformat()
-            
-            with open(self.task_file, 'w') as f:
-                json.dump(task_status, f, indent=2)
-            
-            return task
-
-    def update_task_status(self, task, status, error_type=None, error_message=None):
-        """Update task status with detailed error information"""
-        with self.file_lock():
-            with open(self.task_file, 'r') as f:
-                task_status = json.load(f)
-            
-            task_status['tasks'][task].update({
-                'status': status,
-                'end_time': datetime.now().isoformat(),
-                'error_type': error_type,
-                'error_message': error_message
-            })
-            task_status['last_update'] = datetime.now().isoformat()
-            
-            with open(self.task_file, 'w') as f:
-                json.dump(task_status, f, indent=2)
-
-    def get_processing_stats(self):
-        """Get processing statistics with more detailed status breakdown"""
-        with self.file_lock():
-            with open(self.task_file, 'r') as f:
-                task_status = json.load(f)
-            
-            stats = {
-                'pending': 0,
-                'processing': 0,
-                'completed': 0,
-                'failed': 0,
-                'notfound': 0
-            }
-            
-            server_stats = {}
-            error_stats = {}
-            
-            for task, info in task_status['tasks'].items():
-                stats[info['status']] += 1
-                if info['server']:
-                    server_stats[info['server']] = server_stats.get(info['server'], 0) + 1
-                if info['error_type']:
-                    error_stats[info['error_type']] = error_stats.get(info['error_type'], 0) + 1
-            
-            return stats, server_stats, error_stats
-
-def get_homo_sapiens_samples():
-    df = pd.read_csv('histMol_final_updated.csv')
-    homo_samples = df[df['Species'] == 'Homo sapiens']['hmid_offset'].tolist()
-    return homo_samples
-
-def process_single_sample(hmid, model, device):
+def process_single_sample(
+        sample_id, model, device, data_root, output_dir, gene_token_path,
+        patch_size=224, stride=16, batch_size=2, target_size=(14, 14),
+        resolution=4.0, num_workers=0):
     """Process single sample with enhanced error handling"""
-    output_path = Path(f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}_embeddings.pt")
-    #input_path = Path(f"/lustre1/zxzeng/bwqin/STORM_main/single_section/hmdb_others/{hmid}")
-    input_path = Path(f"/lustre1/zxzeng/bwqin/STORM_main/single_section/GSE230098/{hmid}")
-    gene_token_path = Path("/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/gene_token_homologs.csv")
+    data_root = Path(data_root).expanduser().resolve()
+    output_dir = Path(output_dir).expanduser().resolve()
+    gene_token_path = Path(gene_token_path).expanduser().resolve()
+    input_path = data_root / sample_id
+    sample_output_dir = output_dir / sample_id
+    output_path = output_dir / f"{sample_id}_embeddings.pt"
     
     try:
-        logger.info(f"Starting to process sample {hmid}")
+        logger.info(f"Starting to process sample {sample_id}")
         
         # Check if input files exist
         if not input_path.exists():
@@ -528,95 +385,153 @@ def process_single_sample(hmid, model, device):
             key="symbol"
         )
 
-        processer = Processer(reader, 224)
+        processer = Processer(reader, patch_size)
         #processer.crop_img()
         #processer.generate_adata()
-        os.makedirs(f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}",exist_ok=True)
-        processer.save(final_grid_path=f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}/{hmid}_grid.csv",
-                final_h5ad_path=f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}/{hmid}.h5ad",
-                final_png_path=f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}/tissue_{hmid}.png",
-                final_color_path=f"/lustre1/zxzeng/bwqin/STORM_main/single_section/intergrate_GSE230098_offset/{hmid}/raw_color_{hmid}_color.txt")
+        sample_output_dir.mkdir(parents=True, exist_ok=True)
+        processer.save(
+            final_grid_path=str(sample_output_dir / f"{sample_id}_grid.csv"),
+            final_h5ad_path=str(sample_output_dir / f"{sample_id}.h5ad"),
+            final_png_path=str(sample_output_dir / f"tissue_{sample_id}.png"),
+            final_color_path=str(sample_output_dir / f"raw_color_{sample_id}_color.txt")
+        )
         # Process and get embeddings
         
         embeddings = process_and_infer_optimized(
             processer=processer,
             model=model,
-            patch_size=224,
-            stride=16,
-            batch_size=128,
-            sample_id=hmid,
-            target_size=(14, 14),
+            patch_size=patch_size,
+            stride=stride,
+            batch_size=batch_size,
+            sample_id=sample_id,
+            target_size=target_size,
+            resolution=resolution,
+            num_workers=num_workers,
             device=device
         )
 
         # Save results
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        torch.save(embeddings[hmid], output_path)
+        torch.save(embeddings[sample_id], output_path)
         process_time = time.time() - start_time
-        logger.info(f"Successfully processed sample {hmid}, time: {process_time:.1f}s")
+        logger.info(
+            f"Successfully processed sample {sample_id}, time: {process_time:.1f}s; "
+            f"saved to {output_path}"
+        )
         return True, None, None
 
     except FileNotFoundError as e:
-        logger.error(f"File not found for sample {hmid}: {str(e)}")
+        logger.error(f"File not found for sample {sample_id}: {str(e)}")
         return False, "notfound", str(e)
     except Exception as e:
-        logger.error(f"Error processing sample {hmid}: {str(e)}", exc_info=True)
+        logger.error(f"Error processing sample {sample_id}: {str(e)}", exc_info=True)
         return False, "failed", str(e)
     finally:
         # Clean up memory
         torch.cuda.empty_cache()
         gc.collect()
 
+def parse_args():
+    script_dir = Path(__file__).resolve().parent
+    parser = argparse.ArgumentParser(
+        description="Create SQUALL embeddings from one or more Visium sample directories."
+    )
+    parser.add_argument(
+        "--data-root", type=Path, required=True,
+        help="Directory containing one subdirectory per sample."
+    )
+    parser.add_argument(
+        "--output-dir", type=Path, required=True,
+        help="Directory in which processed files and embeddings will be written."
+    )
+    parser.add_argument(
+        "--checkpoint", type=Path, required=True,
+        help="SQUALL checkpoint file."
+    )
+    parser.add_argument(
+        "--model-config", type=Path, default=script_dir / "config.yaml",
+        help="Model YAML file (default: config.yaml beside this script)."
+    )
+    parser.add_argument(
+        "--gene-token", type=Path, default=script_dir / "gene_token_homologs.csv",
+        help="Gene-token CSV (default: gene_token_homologs.csv beside this script)."
+    )
+    parser.add_argument(
+        "--sample-id", action="append", dest="sample_ids",
+        help="Sample subdirectory to process; repeat for multiple samples. "
+             "If omitted, every subdirectory under --data-root is processed."
+    )
+    parser.add_argument("--device", default="auto", choices=("auto", "cuda", "cpu"))
+    parser.add_argument("--patch-size", type=int, default=224)
+    parser.add_argument("--stride", type=int, default=16)
+    parser.add_argument("--batch-size", type=int, default=2)
+    parser.add_argument("--target-size", type=int, default=14)
+    parser.add_argument("--resolution", type=float, default=4.0)
+    parser.add_argument("--num-workers", type=int, default=0)
+    return parser.parse_args()
+
+
+def resolve_device(name):
+    if name == "auto":
+        return torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if name == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA was requested, but no CUDA device is available")
+    return torch.device(name)
+
+
 def main():
-    # Set device
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    args = parse_args()
+    data_root = args.data_root.expanduser().resolve()
+    output_dir = args.output_dir.expanduser().resolve()
+    model_config = args.model_config.expanduser().resolve()
+    checkpoint = args.checkpoint.expanduser().resolve()
+    gene_token = args.gene_token.expanduser().resolve()
+
+    required_paths = {
+        "data root": data_root,
+        "model config": model_config,
+        "checkpoint": checkpoint,
+        "gene-token CSV": gene_token,
+    }
+    for label, path in required_paths.items():
+        if not path.exists():
+            raise FileNotFoundError(f"{label} not found: {path}")
+
+    device = resolve_device(args.device)
     logger.info(f"Using device: {device}")
-    
-    # Load model
-    config_path = '/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/large_ddp_rpb_lowres_benchmark.yaml'
-    ckpt_path = '/lustre1/zxzeng/bwqin/STORM/disk_5TB-3/hmdb_for_bad_block/hmdb_inference/ckpt-epoch-300.pth'
-    model = get_encoder(config_path, ckpt_path, device=device)
-    
-    # Get sample list and initialize task manager
-    #samples = get_homo_sapiens_samples()
-    folder_path = "/lustre1/zxzeng/bwqin/STORM_main/single_section/GSE230098"
-    subdirs = [d for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
-    samples = subdirs
-    print("samples",samples)
-    task_manager = TaskManager()
-    task_manager.init_task_status(samples)
-    
-    logger.info(f"Server {socket.gethostname()} started processing")
-    
-    while True:
-        # Get next task
-        task = task_manager.get_next_task()
-        
-        if task is None:
-            logger.info("All tasks completed")
-            break
-            
-        # Process task
-        success, error_type, error_message = process_single_sample(task, model, device)
-        
-        # Update task status
-        status = 'completed' if success else error_type or 'failed'
-        task_manager.update_task_status(task, status, error_type, error_message)
-        
-        # Display processing statistics
-        stats, server_stats, error_stats = task_manager.get_processing_stats()
-        logger.info("\nCurrent processing statistics:")
-        logger.info(f"Pending: {stats['pending']}")
-        logger.info(f"Processing: {stats['processing']}")
-        logger.info(f"Completed: {stats['completed']}")
-        logger.info(f"Failed: {stats['failed']}")
-        logger.info(f"Not Found: {stats['notfound']}")
-        logger.info("\nServer statistics:")
-        for server, count in server_stats.items():
-            logger.info(f"{server}: {count} tasks")
-        logger.info("\nError statistics:")
-        for error_type, count in error_stats.items():
-            logger.info(f"{error_type}: {count} occurrences")
+    model = get_encoder(model_config, checkpoint, device=device)
+
+    samples = args.sample_ids
+    if not samples:
+        samples = sorted(path.name for path in data_root.iterdir() if path.is_dir())
+    if not samples:
+        raise ValueError(f"No sample directories found under {data_root}")
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    failures = []
+    for sample_id in samples:
+        success, error_type, error_message = process_single_sample(
+            sample_id=sample_id,
+            model=model,
+            device=device,
+            data_root=data_root,
+            output_dir=output_dir,
+            gene_token_path=gene_token,
+            patch_size=args.patch_size,
+            stride=args.stride,
+            batch_size=args.batch_size,
+            target_size=(args.target_size, args.target_size),
+            resolution=args.resolution,
+            num_workers=args.num_workers,
+        )
+        if not success:
+            failures.append((sample_id, error_type, error_message))
+
+    if failures:
+        for sample_id, error_type, error_message in failures:
+            logger.error(f"{sample_id}: {error_type}: {error_message}")
+        return 1
+    return 0
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
