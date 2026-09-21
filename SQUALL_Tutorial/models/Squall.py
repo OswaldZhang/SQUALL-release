@@ -415,9 +415,9 @@ class Squall(nn.Module):
         rgb_emb = z[:, :mid, :]
         pred_expr = self.decoder.forward_rgb_to_expr(rgb_emb, res)
         #expr_predicted_perm = pred_expr.permute(0, 3, 1, 2)
-        # 2. 插值为 224x224
+
         #expr_predicted_upsampled = F.interpolate(expr_predicted_perm, size=(224, 224), mode='bilinear', align_corners=False)
-        # 3. 转回 [B, 224, 224, 15757]
+
         #expr_predicted_upsampled = expr_predicted_upsampled.permute(0, 2, 3, 1)
         return pred_expr
 
@@ -730,9 +730,9 @@ class SquallClassification(nn.Module):
         self.loss_ce = nn.CrossEntropyLoss()
 
     def get_loss_acc(self, ret, gt):
-        # ret 是模型的 logits 输出，形状 [batch_size, num_classes]
-        # label 是实际标签，形状 [batch_size]
-        logits = ret.clone()  # logits 形状为 [batch_size, num_classes]
+
+
+        logits = ret.clone()
         #label = torch.where(label == -1, torch.tensor(12, device=label.device), label)  # used for cancer classification
         labels = gt.clone().view(-1).long()  # latten
         #print("labels ",labels)
@@ -742,20 +742,20 @@ class SquallClassification(nn.Module):
         loss = self.ce_loss(logits, labels)
 
         preds = logits.argmax(dim=-1)  # 
-        #Top-1, Top-3, 和 Top-5 accuracy
+
         top1_correct = preds.eq(labels).sum().item()  # Top-1 accuracy
         topk_correct = []
         top1_acc = top1_correct / logits.size(0)
-        if self.cls_dim > 2:  # 仅在类别数大于 2 时计算 Top-3
+        if self.cls_dim > 2:
             for k in [3, 5]:
-                # 获取 logits 的 top-k 预测
+
                 topk_preds = torch.topk(logits, k=k, dim=1).indices
                 correct_k = topk_preds.eq(labels.view(-1, 1)).sum().item()
                 topk_correct.append(correct_k)
             top3_acc = topk_correct[0] / logits.size(0)
             top5_acc = topk_correct[1] / logits.size(0)
         else:
-            top3_acc = 0  # 二分类任务中 Top-3 无意义
+            top3_acc = 0
             top5_acc = 0
 
         # accuracy
@@ -1012,27 +1012,27 @@ class CoxSurvLoss(object):
         #current_batch_len = 1
         R_mat = np.zeros([current_batch_len, current_batch_len], dtype=int)
 
-        # 创建 R 矩阵，R[i,j] 表示 j 的生存时间是否大于等于 i
+
         for i in range(current_batch_len):
             for j in range(current_batch_len):
                 R_mat[i, j] = time[j] >= time[i]
 
-        # 将 status 和 R 矩阵转换为 tensor，确保与 hazards 的 dtype 和 device 一致
+
         status = torch.tensor(status, dtype=hazards.dtype, device=hazards.device).unsqueeze(1)
         R_mat = torch.tensor(R_mat, dtype=hazards.dtype, device=hazards.device)
 
-        # 计算 Cox 损失
-        theta = hazards.view(current_batch_len, -1)  # 确保 theta 的形状为 [batch_size, num_outputs]
+
+        theta = hazards.view(current_batch_len, -1)
         exp_theta = torch.exp(theta)
         #print("theta",theta)
         #print("exp_theta",exp_theta)
-        # 对每列风险值进行操作，并累加结果
+
         loss_cox = 0
-        for t in range(theta.shape[1]):  # 遍历每一个时间点的风险值
-            theta_t = theta[:, t]  # 当前时间点的 theta，形状为 [10]
-            exp_theta_t = exp_theta[:, t]  # 当前时间点的 exp(theta)，形状为 [10]
-            log_sum_exp_t = torch.log(torch.sum(exp_theta_t.unsqueeze(1) * R_mat, dim=1))  # 按列操作 R_mat
-            loss_cox += -torch.mean((theta_t - log_sum_exp_t) * (1 - status.squeeze()))  # 汇总所有时间点的损失
+        for t in range(theta.shape[1]):
+            theta_t = theta[:, t]
+            exp_theta_t = exp_theta[:, t]
+            log_sum_exp_t = torch.log(torch.sum(exp_theta_t.unsqueeze(1) * R_mat, dim=1))
+            loss_cox += -torch.mean((theta_t - log_sum_exp_t) * (1 - status.squeeze()))
 
         return loss_cox
 
@@ -1042,18 +1042,18 @@ class nll_loss(object):
         hazard : max predicted hazard
         time : survival times B*1
         '''
-        # 确保 batch_size 为 1
+
         batch_size = 1 if Y.numel() == 1 else Y.shape[0]
 
-        Y = Y.view(batch_size, 1).long()  # ground truth bin, 1,2,...,k，确保 Y 是 int64 类型
+        Y = Y.view(batch_size, 1).long()
         c = c.view(batch_size, 1).float()  # censorship status, 0 or 1
 
-        # 计算累计生存概率，如果 S 为空则计算 S
+
         if S is None:
             if batch_size == 1:
-                S = torch.cumprod(1 - hazards, dim=0)  # 在 dim=0 维度上累计乘积
+                S = torch.cumprod(1 - hazards, dim=0)
             else:
-                S = torch.cumprod(1 - hazards, dim=1)  # 在 dim=0 维度上累计乘积
+                S = torch.cumprod(1 - hazards, dim=1)
 
         
         '''
@@ -1065,17 +1065,17 @@ class nll_loss(object):
         '''
 
 
-        # 进行维度匹配，以便进行拼接
-        S = S.view(batch_size, -1)  # 将 S 转换为二维张量 [batch_size, num_intervals]
 
-        # 在前面添加一个值为 1 的元素，用于表示起始生存概率
-        S_padded = torch.cat([torch.ones((batch_size, 1), device=c.device), S], dim=1)  # 在 dim=1 上拼接
+        S = S.view(batch_size, -1)
 
-        # 调整 hazards 的形状
-        hazards = hazards.view(batch_size, -1)  # 确保 hazards 形状为 [batch_size, num_intervals]
+
+        S_padded = torch.cat([torch.ones((batch_size, 1), device=c.device), S], dim=1)
+
+
+        hazards = hazards.view(batch_size, -1)
         #print("S_padded:", S_padded)
         #print("hazards:", hazards)
-        # 计算 uncensored 和 censored 的损失
+
         uncensored_loss = -(1 - c) * (
             torch.log(torch.gather(S_padded, 1, Y).clamp(min=eps)) +
             torch.log(torch.gather(hazards, 1, Y).clamp(min=eps))
@@ -1083,7 +1083,7 @@ class nll_loss(object):
         #print("uncensored_loss",uncensored_loss)
         censored_loss = - c * torch.log(torch.gather(S_padded, 1, Y + 1).clamp(min=eps))
         #print("censored_loss",censored_loss)
-        # 计算总的负对数似然损失
+
         neg_l = censored_loss + uncensored_loss
         loss = (1 - alpha) * neg_l + alpha * uncensored_loss
         #print("loss calculate",loss)
@@ -1180,15 +1180,11 @@ def bootstrap_evaluation(model, X_test, y_test, n_iter=1000):
 
 
 def calculate_metrics_vectorized(label, ret):
-    """
-    使用矢量化操作计算 Pearson 相关系数、R² 分数和余弦相似度
-    """
-    # 筛选非全零基因
     non_zero_mask = ~(label == 0).all(axis=0)
     label = label[:, non_zero_mask]
     ret = ret[:, non_zero_mask]
 
-    # 1. 计算 Pearson 相关系数
+
     label_mean = label.mean(axis=0)
     ret_mean = ret.mean(axis=0)
     label_std = label.std(axis=0)
@@ -1196,12 +1192,12 @@ def calculate_metrics_vectorized(label, ret):
     cov = np.mean((label - label_mean) * (ret - ret_mean), axis=0)
     pearson_corrs = cov / (label_std * ret_std)
 
-    # 2. 计算 R² 分数
+
     ss_total = np.sum((label - label_mean) ** 2, axis=0)
     ss_residual = np.sum((label - ret) ** 2, axis=0)
     r2_scores = 1 - (ss_residual / ss_total)
 
-    # 3. 计算余弦相似度
+
     label_norm = np.linalg.norm(label, axis=0)
     ret_norm = np.linalg.norm(ret, axis=0)
     dot_product = np.sum(label * ret, axis=0)
@@ -1348,29 +1344,29 @@ class ABMIL(nn.Module):
                     if 'relative_attention_bias' in k and 'encoder' in k:
                         print("relative_attention_bias ",base_ckpt[k[len('encoder.'):]])
                     if 'encoder' in k and 'lookup_table_weight' in k:
-                        old_shape = base_ckpt[k[len('encoder.'):]].shape  # 检查旧参数的形状
-                        new_shape = self.state_dict()[k[len('encoder.'):]].shape  # 获取当前模型需要的形状
+                        old_shape = base_ckpt[k[len('encoder.'):]].shape
+                        new_shape = self.state_dict()[k[len('encoder.'):]].shape
                         print("old ",base_ckpt[k[len('encoder.'):]])
                         print("new ",self.state_dict()[k[len('encoder.'):]])
                         if old_shape[-1] == 49 and new_shape[-1] == 50:
                             print("start change load")
-                            # 创建一个新的参数，增加额外的维度
+
                             new_param = torch.zeros(new_shape, device=base_ckpt[k[len('encoder.'):]].device, dtype=base_ckpt[k[len('encoder.'):]].dtype)
-                            new_param[..., :-1] = base_ckpt[k[len('encoder.'):]]  # 将原始权重填充到新参数中，最后一列留空或为零
-                            new_param[..., -1] =  0 # 将原始权重填充到新参数中，最后一列留空或为零
-                            base_ckpt[k[len('encoder.'):]] = new_param  # 更新到 ckpt 参数中
+                            new_param[..., :-1] = base_ckpt[k[len('encoder.'):]]
+                            new_param[..., -1] =  0
+                            base_ckpt[k[len('encoder.'):]] = new_param
                     if 'encoder' in k and 'lookup_table_bias' in k:
-                        old_shape = base_ckpt[k[len('encoder.'):]].shape  # 检查旧参数的形状
-                        new_shape = self.state_dict()[k[len('encoder.'):]].shape  # 获取当前模型需要的形状
+                        old_shape = base_ckpt[k[len('encoder.'):]].shape
+                        new_shape = self.state_dict()[k[len('encoder.'):]].shape
                         print("old ",base_ckpt[k[len('encoder.'):]])
                         print("new ",self.state_dict()[k[len('encoder.'):]])
                         if old_shape[-1] == 49 and new_shape[-1] == 50:
                             print("start change load")
-                            # 创建一个新的参数，增加额外的维度
+
                             new_param = torch.zeros(new_shape, device=base_ckpt[k[len('encoder.'):]].device, dtype=base_ckpt[k[len('encoder.'):]].dtype)
-                            new_param[..., :-1] = base_ckpt[k[len('encoder.'):]]  # 将原始权重填充到新参数中，最后一列留空或为零
-                            new_param[..., -1] =  0 # 将原始权重填充到新参数中，最后一列留空或为零
-                            base_ckpt[k[len('encoder.'):]] = new_param  # 更新到 ckpt 参数中
+                            new_param[..., :-1] = base_ckpt[k[len('encoder.'):]]
+                            new_param[..., -1] =  0
+                            base_ckpt[k[len('encoder.'):]] = new_param
 
                 incompatible = self.load_state_dict(base_ckpt, strict=False)
                 if log:
@@ -1418,15 +1414,15 @@ class ABMIL(nn.Module):
     def get_loss_acc(self, ret, label):
         if self.config.loss == "COX":
             time,status = label
-            # NLL 生存损失函数
+
             loss = self.loss_abmil(ret,time, status)
             print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
             if batch_size > 1:
                 #print("USE C-index calculate")
-                # 使用 c-index 来衡量模型性能
+
                 #print("ret.max()",ret.max())
-                #pred_risk = -ret.max()[0]  # 选择 risk 最大的那一个作为预测
+
                 pred_risk = -ret.clone().detach().max(dim=2)[0].cpu().numpy()#.detach()
                 pred_risk = pred_risk.flatten()
                 status_bool = status.detach().cpu().numpy().astype(bool).flatten()
@@ -1457,15 +1453,15 @@ class ABMIL(nn.Module):
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "NLL":
             time,status = label
-            # NLL 生存损失函数
+
             loss = self.loss_abmil(ret,None, time, status)
             #print("loss",loss)
             batch_size = 1 if time.numel() == 1 else time.shape[0]
             if batch_size > 1:
                 #print("USE C-index calculate")
-                # 使用 c-index 来衡量模型性能
+
                 #print("ret.max()",ret.max())
-                #pred_risk = -ret.max()[0]  # 选择 risk 最大的那一个作为预测
+
                 pred_risk = -ret.clone().detach().max(dim=2)[0].cpu().numpy()#.detach()
                 pred_risk = pred_risk.flatten()
                 status_bool = status.detach().cpu().numpy().astype(bool).flatten()
@@ -1494,9 +1490,9 @@ class ABMIL(nn.Module):
                 dynamic_auc = [0] * 4
             return loss, (cindex * 100,dynamic_auc,cindex * 100,)
         if self.config.loss == "CE":
-            # ret 是模型的 logits 输出，形状 [batch_size, num_classes]
-            # label 是实际标签，形状 [batch_size]
-            logits = ret.clone()  # logits 形状为 [batch_size, num_classes]
+
+
+            logits = ret.clone()
             #label = torch.where(label == -1, torch.tensor(12, device=label.device), label)  # used for cancer classification
             labels = label.clone().view(-1).long()  # latten
             #print("labels ",labels)
@@ -1508,20 +1504,20 @@ class ABMIL(nn.Module):
             loss = self.ce_loss(logits, labels)
 
             preds = logits.argmax(dim=-1)  # 
-            #Top-1, Top-3, 和 Top-5 accuracy
+
             top1_correct = preds.eq(labels).sum().item()  # Top-1 accuracy
             topk_correct = []
             top1_acc = top1_correct / logits.size(0)
-            if self.cls_dim > 2:  # 仅在类别数大于 2 时计算 Top-3
+            if self.cls_dim > 2:
                 for k in [3, 5]:
-                    # 获取 logits 的 top-k 预测
+
                     topk_preds = torch.topk(logits, k=k, dim=1).indices
                     correct_k = topk_preds.eq(labels.view(-1, 1)).sum().item()
                     topk_correct.append(correct_k)
                 top3_acc = topk_correct[0] / logits.size(0)
                 top5_acc = topk_correct[1] / logits.size(0)
             else:
-                top3_acc = 0  # 二分类任务中 Top-3 无意义
+                top3_acc = 0
                 top5_acc = 0
 
             # accuracy
@@ -1544,20 +1540,20 @@ class ABMIL(nn.Module):
             batch_size = label.shape[0]
             pearson_corrs = []
             for i in range(batch_size):
-                corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的皮尔森相关系数
+                corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())
                 pearson_corrs.append(corr)
             mean_pearson_corr = np.mean(pearson_corrs)
 
             r2_scores = []
             for i in range(batch_size):
-                r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的R²
+                r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())
                 r2_scores.append(r2)
             mean_r2 = np.mean(r2_scores)
 
-            # 3. 计算平均余弦相似度
+
             cos_similarities = []
             for i in range(batch_size):
-                cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]  # 计算每个样本的余弦相似度
+                cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]
                 cos_similarities.append(cos_sim)
             mean_cos_sim = np.mean(cos_similarities)
             '''
@@ -1565,24 +1561,24 @@ class ABMIL(nn.Module):
                 #per sample
                 pearson_corrs = []
                 for i in range(batch_size):
-                    corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的皮尔森相关系数
+                    corr, _ = pearsonr(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())
                     pearson_corrs.append(corr)
                 mean_pearson_corr = np.mean(pearson_corrs)
 
                 r2_scores = []
                 for i in range(batch_size):
-                    r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())  # 计算每个样本的R²
+                    r2 = r2_score(label[i].clone().detach().cpu().numpy(), ret[i].clone().detach().cpu().numpy())
                     r2_scores.append(r2)
                 mean_r2 = np.mean(r2_scores)
 
-                # 3. 计算平均余弦相似度
+
                 cos_similarities = []
                 for i in range(batch_size):
-                    cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]  # 计算每个样本的余弦相似度
+                    cos_sim = cosine_similarity(label[i].clone().detach().cpu().numpy().reshape(1, -1), ret[i].clone().detach().cpu().numpy().reshape(1, -1))[0][0]
                     cos_similarities.append(cos_sim)
                 mean_cos_sim = np.mean(cos_similarities)
             else:
-                num_genes = label.shape[1]  # 基因数量
+                num_genes = label.shape[1]
                 pearson_corrs = []
                 r2_scores = []
                 cos_similarities = []
@@ -1591,7 +1587,7 @@ class ABMIL(nn.Module):
                 label_np = []
                 ret_np = []
                 for gene_idx in range(num_genes):
-                    # 提取当前基因在所有样本中的预测值和标签值
+
                     label_gene = label[:, gene_idx].clone().detach().cpu().numpy()
                     ret_gene = ret[:, gene_idx].clone().detach().cpu().numpy()
                     if np.all(label_gene == 0):
@@ -1600,7 +1596,7 @@ class ABMIL(nn.Module):
                     ret_np.append(ret_gene)
 
                 for gene_idx in range(num_genes):
-                    # 提取当前基因在所有样本中的预测值和标签值
+
                     label_gene = label[:, gene_idx].clone().detach().cpu().numpy()
                     ret_gene = ret[:, gene_idx].clone().detach().cpu().numpy()
                     if np.all(label_gene == 0):
@@ -1608,7 +1604,7 @@ class ABMIL(nn.Module):
                     #print("label_gene",label_gene.shape)
                     #print("ret_gene",ret_gene.shape)
                     
-                    # 1. 计算 Pearson 相关系数
+
                     corr, _ = pearsonr(label_gene, ret_gene)
                     pearson_corrs.append(corr)
                     
@@ -1767,5 +1763,4 @@ class ABMIL(nn.Module):
         output = self.classifier(bag_feature)#.clone()
         
         return output,attn_scores
-
 
