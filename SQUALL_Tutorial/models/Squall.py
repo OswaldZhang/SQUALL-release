@@ -1612,19 +1612,15 @@ class ABMIL(nn.Module):
                     corr, _ = pearsonr(label_gene, ret_gene)
                     pearson_corrs.append(corr)
                     
-                    # 2. 计算 R² 分数
                     r2 = r2_score(label_gene, ret_gene)
                     r2_scores.append(r2)
                     
-                    # 3. 计算余弦相似度
                     cos_sim = cosine_similarity(label_gene.reshape(1, -1), ret_gene.reshape(1, -1))[0][0]
                     cos_similarities.append(cos_sim)
                 
                 mean_pearson_corr = np.mean(pearson_corrs)
                 mean_r2 = np.mean(r2_scores)
                 mean_cos_sim = np.mean(cos_similarities)
-
-                # 计算每个统计量的平均值
                 #print("pearson_corrs",pearson_corrs)
                 #print("r2_scores",r2_scores)
                 #print("cos_similarities",cos_similarities)
@@ -1636,9 +1632,8 @@ class ABMIL(nn.Module):
     def forward_ddp(self,  rgb, res):
         def print_gpu_memory():
             if torch.cuda.is_available():
-                print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+                print(f"GPU allocated: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+        rgb = rgb.permute(0, 3, 1, 2)  # (B, C, H, W)
         cls = self.cls_token.expand(rgb.shape[0], -1, -1) + self.cls_pos
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)
@@ -1660,7 +1655,7 @@ class ABMIL(nn.Module):
 
     def forward_get_embedding(self,  rgb, res):
         rgb = rgb.permute(0, 3, 1, 2)  # (B, C, H, W)
-        cls = self.cls_token.expand(rgb.shape[0], -1, -1)# + self.cls_pos
+        cls = self.cls_token.expand(rgb.shape[0], -1, -1)
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)
         x = torch.cat([cls, x], dim=1)
@@ -1669,7 +1664,7 @@ class ABMIL(nn.Module):
         z = self.blocks.forward_rgb(x)
 
         features = z[:, 0]
-        #features = z[:, -1]# maybe for iRPB is work
+        #features = z[:, -1]
         features = features.contiguous()
         gathered_features = AllGatherWithGrad.apply(features)
         return gathered_features
@@ -1677,12 +1672,11 @@ class ABMIL(nn.Module):
     def forward_get_embedding_expr(self,  expr, res):
         def print_gpu_memory():
             if torch.cuda.is_available():
-                print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
-        expr = expr.to_dense().float() #qbw10.16
+                print(f"GPU allocated: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+        expr = expr.to_dense().float() 
         size = int(math.sqrt(expr.shape[1]))
-        expr = expr.reshape(expr.shape[0],size, size, expr.shape[-1])#qbw10.16
-        expr = expr.permute(0, 3, 1, 2)#qbw10.16
+        expr = expr.reshape(expr.shape[0],size, size, expr.shape[-1])
+        expr = expr.permute(0, 3, 1, 2)
         cls = self.cls_token.expand(expr.shape[0], -1, -1)# + self.cls_pos
         x = self.patch_embed_expr(expr)
         x = self.pos_embed(x, res)
@@ -1712,9 +1706,9 @@ class ABMIL(nn.Module):
         #old version, attention no gradient 
         A = F.softmax(A, dim=1)
         
-        bag_feature = A * x  # 元素级乘法，对 x 进行加权 => [batchsize, 1024]
+        bag_feature = A * x  #[batchsize, 1024]
         #print("bag_feature.shape",bag_feature.shape)
-        bag_feature = (x * A).sum(dim=0, keepdim=True)  # 在行上做求和，得到 1x1024 的结果
+        bag_feature = (x * A).sum(dim=0, keepdim=True)  #
         #print("bag_feature.shape",bag_feature.shape)
         attn_scores = A
         '''
@@ -1736,9 +1730,8 @@ class ABMIL(nn.Module):
     def forward(self,  rgb, res):
         def print_gpu_memory():
             if torch.cuda.is_available():
-                print(f"当前GPU占用内存: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
-            #print(f"模型计算图保留的内存: {torch.cuda.memory_reserved() / (1024 ** 2):.2f} MB")
-        rgb = rgb.permute(0, 3, 1, 2)  # 将维度调整为 (B, C, H, W)
+                print(f"GPU allocated: {torch.cuda.memory_allocated() / (1024 ** 2):.2f} MB")
+        rgb = rgb.permute(0, 3, 1, 2)  # (B, C, H, W)
         cls = self.cls_token.expand(rgb.shape[0], -1, -1)# + self.cls_pos
         x = self.patch_embed_rgb(rgb)
         x = self.pos_embed(x, res)
@@ -1763,9 +1756,9 @@ class ABMIL(nn.Module):
         #old version, attention no gradient 
         A = F.softmax(A, dim=1)
         
-        bag_feature = A * x  # 元素级乘法，对 x 进行加权 => [batchsize, 1024]
+        bag_feature = A * x  
         #print("bag_feature.shape",bag_feature.shape)
-        bag_feature = (x * A).sum(dim=0, keepdim=True)  # 在行上做求和，得到 1x1024 的结果
+        bag_feature = (x * A).sum(dim=0, keepdim=True)  
         #print("bag_feature.shape",bag_feature.shape)
         attn_scores = A
         '''
