@@ -118,7 +118,6 @@ class Processer:
         print(self.scaleJson['tissue_hires_scalef'], flush=True)
         print("scale:", self.scaleJson['tissue_hires_scalef'], type(self.scaleJson['tissue_hires_scalef']), flush=True)
         print("Columns in tissue_position_list:", self.tissue_position_list.columns.tolist(), flush=True)
-        # 确保 scale 获取正确
         scale = self.scaleJson['tissue_hires_scalef'].iloc[0] if isinstance(self.scaleJson['tissue_hires_scalef'], pd.Series) else self.scaleJson['tissue_hires_scalef']#.iloc[0]
         print(f"Scale value: {scale}", flush=True)
         self.tissue_position_list[['pxl_row_in_hires','pxl_col_in_hires']] = self.tissue_position_list[['pxl_row_in_fullres','pxl_col_in_fullres']]* scale
