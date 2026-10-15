@@ -18,6 +18,15 @@ If you encounter any problems accessing the model, feel free to open an issue on
 
 Suggestions and feedback are very welcome!
 
+## Repository layout
+
+- [SQUALL_tutorial/](SQUALL_tutorial/): tutorial code and example data.
+- [get_embedding/](get_embedding/): embedding extraction and downstream model routines.
+- [SQUALL_reproducibility/](SQUALL_reproducibility/): figure reproduction code and results:
+  - [Fig2_inference/](SQUALL_reproducibility/Fig2_inference/)
+  - [Fig3_clustering/Clustering/](SQUALL_reproducibility/Fig3_clustering/Clustering/)
+  - [Fig5_CESC_survival/](SQUALL_reproducibility/Fig5_CESC_survival/)
+
 ## Citation
 
 If you find SQUALL useful, please consider citing our work:
