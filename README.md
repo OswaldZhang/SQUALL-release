@@ -3,7 +3,7 @@
 <img src="https://squall.readthedocs.io/en/latest/assets/logo-SHnFptD4.png" alt="SQUALL Logo" width="250" align="right" />
 
 For SQUALL pretraining, the data are available at:  
-<[https://zenodo.org/records/17318279](https://zenodo.org/records/20587149)>
+<[https://zenodo.org/records/23180078](https://zenodo.org/records/23180078)>, and a versioned data manifest provided for data exposure audit is avaliable [here](https://zenodo.org/records/23180078/files/histMol%20manifest%20v1.0.xlsx?download=1).
 
 Please refer to the following resources for more information:
 
@@ -32,8 +32,8 @@ Suggestions and feedback are very welcome!
 If you find SQUALL useful, please consider citing our work:
 
 ```bibtex
-@article{Zhang2026Integrating,
-  title={Integrating Histology with Spatial Molecular Programs Using a Multimodal Foundation Model},
+@article{Zhang2026Multimodal,
+  title={A Multimodal Foundation Model to Integrate Histology with Spatial Molecular Programs},
   author={Zongxu Zhang and Bowen Qin and Yahui Zhao and Zekun Qi and Hanlin Xu and Yunfeng Wang and Wenjin Zheng and Jiateng Dai and Anxin Chen and Nachuan Wang and Lanxi Nie and Peng Zhang and Haorui Zhang and Yanping Zhao and Tian Xu and Siyu Lin and Pengfei Ren and Zhe Zhang and Liyan Xue and Xuemin Xue and Zhaoyang Yang and Jiaqi Xu and Jiahao Ma and Deng Pan and Cunyu Wang and Zhihua Liu and Yuanguang Meng and Zexian Zeng},
   journal={bioRxiv},
   year={2026},
